@@ -142,6 +142,41 @@ class ClaimIntegrityTests(unittest.TestCase):
         self.assertEqual([], self.check(record))
         record['claims'][0]['verification']['protocol_version'] = None
         self.rejected(record, 'pinned protocol')
+        for method_and_limitations in ('   ', '\u200b'):
+            with self.subTest(method_and_limitations=repr(method_and_limitations)):
+                record = self.verified(); record['claims'][0]['evidence_grade'] = 'independent_measurement'
+                record['publication']['fields'][0]['display_evidence_grade'] = 'independent_measurement'
+                record['claims'][0]['method_and_limitations'] = method_and_limitations
+                self.rejected(record, 'independent_measurement requires method and limitations')
+
+    def test_reproduced_test_requires_substantive_protocol_version(self):
+        valid = self.verified(); valid['claims'][0]['evidence_grade'] = 'independent_measurement'
+        valid['publication']['fields'][0]['display_evidence_grade'] = 'independent_measurement'
+        self.assertEqual([], self.check(valid))
+        for protocol_version in ('   ', '\u200b'):
+            with self.subTest(protocol_version=repr(protocol_version)):
+                record = self.verified(); record['claims'][0]['evidence_grade'] = 'independent_measurement'
+                record['publication']['fields'][0]['display_evidence_grade'] = 'independent_measurement'
+                record['claims'][0]['verification']['protocol_version'] = protocol_version
+                self.rejected(record, 'pinned protocol')
+
+    def test_allowed_rights_review_requires_substantive_reviewer(self):
+        self.assertEqual([], self.check(fixture()))
+        for reviewer in ('   ', '\u200b'):
+            with self.subTest(reviewer=repr(reviewer)):
+                record = fixture(); record['rights_decisions'][0]['reviewer'] = reviewer
+                self.rejected(record, 'allowed source use requires reviewer and decision receipt')
+
+    def test_estimate_requires_substantive_method_and_limitations(self):
+        valid = fixture(); valid['claims'][0]['evidence_grade'] = 'estimate'
+        valid['claims'][0]['method_and_limitations'] = 'Synthetic estimate assumes monthly usage and excludes taxes.'
+        valid['publication']['fields'][0]['display_evidence_grade'] = 'estimate'
+        self.assertEqual([], self.check(valid))
+        for method_and_limitations in ('   ', '\u200b'):
+            with self.subTest(method_and_limitations=repr(method_and_limitations)):
+                record = copy.deepcopy(valid)
+                record['claims'][0]['method_and_limitations'] = method_and_limitations
+                self.rejected(record, 'estimates require method, assumptions and limitations')
 
     def test_pending_and_rejected_review_dates_are_validated(self):
         for status in ('pending', 'rejected'):

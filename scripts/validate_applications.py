@@ -156,6 +156,11 @@ def normalize_identity(value):
     return " ".join(text.strip().casefold().removeprefix("@").split())
 
 
+def has_substantive_content(value):
+    """Check content after the same Unicode and whitespace normalization used for identities."""
+    return bool(normalize_identity(value))
+
+
 def load_json(path):
     """Reject ambiguous object keys and non-JSON numbers before applying gates."""
     def unique_pairs(pairs):
@@ -351,7 +356,7 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                 if verified and claim["checked_on"] is not None and verified.isoformat() < claim["checked_on"]:
                     fail(errors, path, "verification predates latest claim check")
                 url_errors(verification["receipt_url"], path + ".receipt_url", errors, synthetic)
-                if verification["method"] == "reproduced_test" and not verification["protocol_version"]:
+                if verification["method"] == "reproduced_test" and not has_substantive_content(verification["protocol_version"]):
                     fail(errors, path, "reproduced tests require a pinned protocol version")
                 if verification["method"] == "independent_second_source":
                     vs = verification["source_id"]
@@ -364,9 +369,9 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
         if claim["evidence_grade"] == "independent_measurement":
             if claim["verification_status"] != "verified" or verification is None:
                 fail(errors, path, "independent_measurement requires a valid independent verification receipt, not vendor documentation alone")
-            if not claim["method_and_limitations"].strip():
+            if not has_substantive_content(claim["method_and_limitations"]):
                 fail(errors, path, "independent_measurement requires method and limitations")
-        if claim["evidence_grade"] == "estimate" and not claim["method_and_limitations"]:
+        if claim["evidence_grade"] == "estimate" and not has_substantive_content(claim["method_and_limitations"]):
             fail(errors, path, "estimates require method, assumptions and limitations")
         if claim["fact_type"] == "pricing" and claim["value_status"] == "known":
             value = claim["value"]
@@ -400,7 +405,7 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             except ValueError:
                 fail(errors, path, "expires_on must be a real date")
         if right["decision"] == "allowed":
-            if not right["reviewer"] or not right["decision_url"]:
+            if not has_substantive_content(right["reviewer"]) or not right["decision_url"]:
                 fail(errors, path, "allowed source use requires reviewer and decision receipt")
         if right["decision_url"]:
             url_errors(right["decision_url"], path + ".decision_url", errors, synthetic)
