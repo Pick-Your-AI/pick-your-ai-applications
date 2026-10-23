@@ -1,4 +1,4 @@
 Authorized applications foundation import, 2026-10-23.
 Source bundle SHA256: 679f2d6a336505e72f9851e767ec561ff044ca43fe9e9ffc03c5b1a50b237f8a
 Scope: Pick-Your-AI/pick-your-ai-applications only; contributor branch, 135 planned issues and 134 native internal parent relationships. Preserve human edits; no main writes, no credentials or access changes, no evidence or publication approval. Independent review remains required.
-Run: 1
+Run: 2. Dotted work-package/task marker parsing corrected and tested against all 135 real issue definitions, with duplicate rejection. Resume only after the prior serialized run completes; existing issues and parents are reconciled, never duplicated or overwritten.
