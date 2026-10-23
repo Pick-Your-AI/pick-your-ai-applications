@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.bootstrap-state.json
+.bootstrap-state.json.tmp
+build/
+dist/
+*.log
+.bootstrap-state.json.lock

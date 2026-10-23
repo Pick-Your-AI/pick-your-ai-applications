@@ -1,0 +1,80 @@
+{
+  "snapshot_date": "2026-10-22",
+  "purpose": "Source inspection for application taxonomy and research-method alignment; no product capability verification.",
+  "entries": [
+    {
+      "path": ".github/CONTRIBUTING.md",
+      "url": "https://github.com/Pick-Your-AI/.github/blob/main/CONTRIBUTING.md",
+      "blob_sha": "18b247ac191ce57ae20b856c2b9374a6009c6854",
+      "read_scope": "Complete file saved by parent in shared standards."
+    },
+    {
+      "path": "AGENTS.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/AGENTS.md",
+      "blob_sha": "d687912e30489adab113ae365970c83510552f80",
+      "read_scope": "Complete file saved by parent in shared standards."
+    },
+    {
+      "path": "prompts/SHARED.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/prompts/SHARED.md",
+      "read_scope": "Complete file saved by parent in shared standards; hash not independently requested by this subtask."
+    },
+    {
+      "path": "docs/RESEARCH_METHOD.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/RESEARCH_METHOD.md",
+      "blob_sha": "96a77c2a8bafe4caad5676ad80e02a915ea10de9",
+      "read_scope": "Complete retrieved document."
+    },
+    {
+      "path": "docs/RESEARCH_WORKFLOW.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/RESEARCH_WORKFLOW.md",
+      "blob_sha": "17d534335e4af4115bbcbf668029641d4b6d79e8",
+      "read_scope": "Retrieved complete file; reviewed submission, evidence and validation sections."
+    },
+    {
+      "path": "research/T1-model-selection/model-taxonomy.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/T1-model-selection/model-taxonomy.md",
+      "blob_sha": "78793d4891324a9a8fded6d11878b5d604ea2fab",
+      "read_scope": "Complete retrieved document."
+    },
+    {
+      "path": "research/market/competitors.json",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/market/competitors.json",
+      "blob_sha": "9e326f5d4c0fccb028a650d99088f6c3763678b3",
+      "read_scope": "Retrieved complete JSON; inspected identity, evidence, rights and current/recheck structure; not a fresh vendor-source audit."
+    },
+    {
+      "path": "research/market/synthesis.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/market/synthesis.md",
+      "blob_sha": "0f5cfff57671097695ceef9fd62906587b90e6b5",
+      "read_scope": "Lines 1–90, including current decision packet and bounded validation scope."
+    },
+    {
+      "path": "research/market/integrations.json",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/market/integrations.json",
+      "blob_sha": "159766a48d7ec4460cbdc327dd5033d9f1b137a7",
+      "read_scope": "Retrieved complete JSON; inspected identity, evidence, rights and current/recheck structure; not a fresh vendor-source audit."
+    },
+    {
+      "path": "docs/market-research/research-methodology.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/market-research/research-methodology.md",
+      "blob_sha": "5881fc6e09a5eea5ffa35dcf26ef83b902d61ba3",
+      "read_scope": "Complete retrieved methodology, bounded to lines 1–160."
+    },
+    {
+      "path": "research/T4-agents-integrations/README.md",
+      "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/T4-agents-integrations/README.md",
+      "blob_sha": "72502d7038f59a404cd6a09d9e6030d61d0ea7c9",
+      "read_scope": "Lines 1–120: summary, scope, handoff and component distinctions; not the entire long T4 history."
+    }
+  ],
+  "failed_reads": [
+    {
+      "path": "research/market/README.md",
+      "status": "404 not found",
+      "resolution": "Read docs/market-research/research-methodology.md, listed research/market, and read competitor catalog, integration inventory and synthesis instead."
+    }
+  ],
+  "capability_claims_created": 0,
+  "application_products_researched": 0
+}

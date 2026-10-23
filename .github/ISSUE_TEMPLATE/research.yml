@@ -1,0 +1,25 @@
+name: Application research
+description: Propose a bounded, source-linked research deliverable.
+title: "[Research] "
+body:
+  - type: textarea
+    id: decision
+    attributes:
+      label: User decision and scope
+      description: Define included products/workflows, exclusions and the canonical parent.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Existing evidence and known unknowns
+      description: Link primary sources and existing research; do not assert unverified capabilities.
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Deliverable and acceptance criteria
+      description: Name the exact path, independently reviewable outcome, task/subtask steps and receiving handoffs.
+    validations:
+      required: true

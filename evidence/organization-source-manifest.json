@@ -1,0 +1,80 @@
+[
+  {
+    "key": "CONTRIBUTING.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/CONTRIBUTING.md",
+    "blob_sha": "e5e0652d4a55ed1d9aa4d95a2221bfb50880fdee",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "docs/RESEARCH_METHOD.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/RESEARCH_METHOD.md",
+    "blob_sha": "96a77c2a8bafe4caad5676ad80e02a915ea10de9",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "docs/RESEARCH_WORKFLOW.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/RESEARCH_WORKFLOW.md",
+    "blob_sha": "17d534335e4af4115bbcbf668029641d4b6d79e8",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "docs/CONTRACT_MAPPING.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/CONTRACT_MAPPING.md",
+    "blob_sha": "23487e48f9f3e19be4a990756ed193b6a586ecfa",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "docs/DEPENDENCIES.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/DEPENDENCIES.md",
+    "blob_sha": "089b20a461094b35728d0d3fef2ac681d33c69ed",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "docs/PUBLICATION_ELIGIBILITY_HANDOFF.md",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/PUBLICATION_ELIGIBILITY_HANDOFF.md",
+    "blob_sha": "7d3cab3ae8a24448c68f6fc0c93b9b78f5199e90",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "T1",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/T1-model-selection/README.md",
+    "blob_sha": "f368200be51d6cc80aa28b351b61c2a55ad7a5d4",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "T4",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/T4-agents-integrations/README.md",
+    "blob_sha": "72502d7038f59a404cd6a09d9e6030d61d0ea7c9",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "marketmethod",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/docs/market-research/research-methodology.md",
+    "blob_sha": "5881fc6e09a5eea5ffa35dcf26ef83b902d61ba3",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "marketproject",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/market/project-configuration.json",
+    "blob_sha": "241d094adebdc635d3da72cde9d70a8054a23118",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "sourcepolicy",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/T0-configuration/catalog-data-sources.md",
+    "blob_sha": "c862112312d45bbe13b9e9261b8f83ee581cafa6",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "org-CONTRIBUTING",
+    "url": "https://github.com/Pick-Your-AI/.github/blob/main/CONTRIBUTING.md",
+    "blob_sha": "18b247ac191ce57ae20b856c2b9374a6009c6854",
+    "read_date": "2026-10-22"
+  },
+  {
+    "key": "research-AGENTS",
+    "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/AGENTS.md",
+    "blob_sha": "d687912e30489adab113ae365970c83510552f80",
+    "read_date": "2026-10-22"
+  }
+]
