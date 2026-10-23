@@ -1,0 +1,39 @@
+name: Prepare application review fixes
+on:
+  push:
+    branches: [contrib/CompleteDotTech/applications-review-hardening]
+    paths: [.review/READY]
+permissions:
+  contents: read
+concurrency:
+  group: applications-review-hardening
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'Pick-Your-AI/pick-your-ai-applications' && github.actor == 'CompleteDotTech'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: transport
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: foundation
+          ref: 517ebf62e560341dc75239a4949e3645ba4007c4
+          persist-credentials: false
+      - name: Validate hash-pinned patch and prepare commit objects only
+        run: python3 transport/.review/prepare.py
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Retain validation and immutable commit receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: applications-review-hardening-receipt
+          path: transport/.review/results/
+          if-no-files-found: error
+          retention-days: 30

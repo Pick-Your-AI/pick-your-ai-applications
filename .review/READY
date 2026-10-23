@@ -1,0 +1,1 @@
+Apply only the hash-pinned eight-file review patch to immutable base 517ebf62e560341dc75239a4949e3645ba4007c4. Validate both validators and all 102 tests. Create commit objects only; do not update any branch, change access, approve or merge, or modify research issues or records. Patch SHA256 70230c5776f401ca126363ec2670f37c4099045f0176e03d906ac35056036524.
