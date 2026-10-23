@@ -36,7 +36,7 @@ Both validators and all 60 tests passed. Application and price schemas also pass
 | --- | --- | --- |
 | Project item/field reconciliation | All 135 item placements and 945 intended initial values remain to be reconciled against Project #10. Do not overwrite later human triage. | Program #1; `docs/PROVISIONING.md` |
 | Cross-repository native parent | Program #1 links research #509 in its body but has not been attached as its native child. | Program #1; research #509 |
-| Team-based access and policy enforcement | No team grant was performed. The repository rulesets endpoint, including parent rulesets, returned an empty list. Enforcement is not claimed from the presence of CONTRIBUTING/CODEOWNERS. | [APP-F01.02 / #65](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/65) |
+| Team-based access and policy enforcement | No team grant was performed. The repository rulesets endpoint, including parent rulesets, returned an empty list. Enforcement is not claimed from the presence of CONTRIBUTING/CODEOWNERS. | [APP-F01.03 / #66](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/66) |
 | Independent review and merge | PR #136 remains open. A qualified non-author must approve after the final push, with required checks and organization boundaries satisfied. | PR #136 |
 | Default-branch verification | Full scaffold validation on `main` must follow an authorized reviewed merge. | PR #136 |
 
