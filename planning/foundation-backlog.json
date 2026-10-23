@@ -1,0 +1,2715 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_status": "proposed-delivery-backlog",
+  "source_inspection_date": "2026-10-22",
+  "scope": "Application research foundations; complements category research and does not duplicate existing component/website/runtime work.",
+  "representation": {
+    "program_epic_work_package_task": "native sub-issue when independently reviewable",
+    "small_subtask": "body checklist; do not duplicate native child links"
+  },
+  "ownership": "No individual assignments or receiving approvals invented.",
+  "workstreams": [
+    {
+      "id": "APP-F01",
+      "title": "Governance, scope and review",
+      "parent": "APP-PROGRAM",
+      "priority": "Critical",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "What counts as an application and when is its research accepted?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F01.01",
+          "title": "Define application inclusion and exclusion rules",
+          "parent": "APP-F01",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which purchasable, installable or directly usable AI software/service entities belong here?",
+          "scope_in": [
+            "Distinguish product, service, embedded AI feature, plugin, app suite and professional-service business.",
+            "Define exclusions for standalone models, hardware, inference engines, general agencies and purely speculative offerings."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/SCOPE.md",
+            "research/foundations/application-scope.md"
+          ],
+          "research_questions": [
+            "Distinguish product, service, embedded AI feature, plugin, app suite and professional-service business.",
+            "Define exclusions for standalone models, hardware, inference engines, general agencies and purely speculative offerings."
+          ],
+          "acceptance_criteria": [
+            "Boundary cases have reproducible inclusion/exclusion examples with reasons.",
+            "Application and model/provider identities remain distinct.",
+            "The broad directory mission and existing #47 NARROW product validation are explicitly compatible.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F01.01.T01",
+              "title": "Review entity boundary cases",
+              "parent": "APP-F01.01",
+              "independently_reviewable_output": "A decision table for ambiguous entities",
+              "subtasks": [
+                {
+                  "id": "APP-F01.01.T01.S01",
+                  "text": "Compare a standalone application with its component model and its integration package.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.01.T01.S02",
+                  "text": "Define when an AI-enabled feature deserves a feature record rather than a new application.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F01.01.T02",
+              "title": "Accept scope and exclusions",
+              "parent": "APP-F01.01",
+              "independently_reviewable_output": "A versioned scope decision with accountable follow-ups",
+              "subtasks": [
+                {
+                  "id": "APP-F01.01.T02.S01",
+                  "text": "List eligible audiences and product/service forms.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.01.T02.S02",
+                  "text": "Record unresolved boundary cases for future triage without inventing product capabilities.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#509",
+              "kind": "information",
+              "rationale": "The applications expansion is G12; preserve prior research boundaries.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#47",
+              "kind": "information",
+              "rationale": "Commercial validation remains a separately bounded program.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F01.02",
+          "title": "Define source ownership and receiving interfaces",
+          "parent": "APP-F01",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Where should each application fact and implementation responsibility live?",
+          "scope_in": [
+            "Map research, datasets, papers, catalog pipeline, website and mobile responsibilities.",
+            "Define exact artifact/revision/field and review-receipt requirements for cross-repo handoffs."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/OWNERSHIP_HANDOFFS.md",
+            "planning/handoffs.json"
+          ],
+          "research_questions": [
+            "Map research, datasets, papers, catalog pipeline, website and mobile responsibilities.",
+            "Define exact artifact/revision/field and review-receipt requirements for cross-repo handoffs."
+          ],
+          "acceptance_criteria": [
+            "Every interface names a producing artifact and receiving responsibility without duplicating implementation.",
+            "Information links and native prerequisites are separate.",
+            "Absent owners are not represented as having approved anything.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F01.02.T01",
+              "title": "Map canonical responsibilities",
+              "parent": "APP-F01.02",
+              "independently_reviewable_output": "A repository-to-concern matrix",
+              "subtasks": [
+                {
+                  "id": "APP-F01.02.T01.S01",
+                  "text": "Crosswalk T1 product/model/provider distinctions and T4 application/integration boundaries.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.02.T01.S02",
+                  "text": "Keep website and pipeline runtime work with their actual repository owners.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F01.02.T02",
+              "title": "Define receiving receipts",
+              "parent": "APP-F01.02",
+              "independently_reviewable_output": "A handoff template and pending decisions ledger",
+              "subtasks": [
+                {
+                  "id": "APP-F01.02.T02.S01",
+                  "text": "Specify reviewer, source revision, consumer scope, conditions and unresolved follow-up.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.02.T02.S02",
+                  "text": "Mark unavailable consumer repositories or issues unresolved until their actual identity is confirmed.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#40",
+              "kind": "information",
+              "rationale": "Shared component contract authority remains central.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Reuse evidence/freshness policy.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#26",
+              "kind": "information",
+              "rationale": "Reuse tool and integration component semantics.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F01.03",
+          "title": "Establish contributor review and conflict policy",
+          "parent": "APP-F01",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "How can contributions be reviewed without changing evidence or commercial neutrality?",
+          "scope_in": [
+            "Adopt issue headings, branches, independent review and actual assignment rules.",
+            "Define vendor contribution disclosure, sponsorship/conflict disclosure and correction review."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "CONTRIBUTING.md",
+            "docs/REVIEW_POLICY.md",
+            "templates/research-note.md"
+          ],
+          "research_questions": [
+            "Adopt issue headings, branches, independent review and actual assignment rules.",
+            "Define vendor contribution disclosure, sponsorship/conflict disclosure and correction review."
+          ],
+          "acceptance_criteria": [
+            "Workflow follows canonical organization access and review policy.",
+            "Review of sponsored/vendor submissions does not silently upgrade evidence.",
+            "The exact PR/commit and reviewer scope are recorded; partial work keeps its issue open.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F01.03.T01",
+              "title": "Write contributor workflow",
+              "parent": "APP-F01.03",
+              "independently_reviewable_output": "A usable submission/review guide",
+              "subtasks": [
+                {
+                  "id": "APP-F01.03.T01.S01",
+                  "text": "Describe incomplete notes, complete proposals and synthetic fixtures separately.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.03.T01.S02",
+                  "text": "Provide partial Refs and full-acceptance closure rules.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F01.03.T02",
+              "title": "Define review integrity",
+              "parent": "APP-F01.03",
+              "independently_reviewable_output": "A review checklist with conflict and evidence boundaries",
+              "subtasks": [
+                {
+                  "id": "APP-F01.03.T02.S01",
+                  "text": "Require material affiliations to be disclosed without exposing private data.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.03.T02.S02",
+                  "text": "Require actual evidence review and preserve unresolved disagreements.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/.github/CONTRIBUTING.md",
+              "kind": "information",
+              "rationale": "Canonical organization rules.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F01.04",
+          "title": "Define research and publication state transitions",
+          "parent": "APP-F01",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which evidence changes permit promotion, rejection, withdrawal or publication?",
+          "scope_in": [
+            "Separate candidate, source checked, reviewed, independently verified, publication eligible and published.",
+            "Define rejection, disputed evidence, retirement and re-review paths."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/RESEARCH_METHOD.md",
+            "docs/ADMISSION_POLICY.md"
+          ],
+          "research_questions": [
+            "Separate candidate, source checked, reviewed, independently verified, publication eligible and published.",
+            "Define rejection, disputed evidence, retirement and re-review paths."
+          ],
+          "acceptance_criteria": [
+            "Each state transition has required evidence and accountable review.",
+            "Unknown cannot become false/zero by default.",
+            "Research completion, issue state and publication eligibility are independent.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F01.04.T01",
+              "title": "Specify evidence transitions",
+              "parent": "APP-F01.04",
+              "independently_reviewable_output": "A state and transition table",
+              "subtasks": [
+                {
+                  "id": "APP-F01.04.T01.S01",
+                  "text": "Map Documented/Exercised/Unsupported/Unknown without conflating source checking and reproduction.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.04.T01.S02",
+                  "text": "Describe claim-level rather than whole-source evidence grades.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F01.04.T02",
+              "title": "Specify acceptance and withdrawal",
+              "parent": "APP-F01.04",
+              "independently_reviewable_output": "Acceptance and correction criteria",
+              "subtasks": [
+                {
+                  "id": "APP-F01.04.T02.S01",
+                  "text": "Require child completion plus synthesis for parent closure.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F01.04.T02.S02",
+                  "text": "Retain historical claims and superseding decisions when a record is withdrawn.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Apply accepted source/evidence distinctions.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#60",
+              "kind": "information",
+              "rationale": "Existing source-use decisions do not grant blanket rights.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "APP-F02",
+      "title": "Identity and application data contracts",
+      "parent": "APP-PROGRAM",
+      "priority": "Critical",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "How should application products and their scoped evidence be represented?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F02.01",
+          "title": "Define canonical application and organization identity",
+          "parent": "APP-F02",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which records are the same product and which are related editions or services?",
+          "scope_in": [
+            "Separate vendor, operator, product family, concrete product, edition/plan, release/channel and distribution.",
+            "Represent aliases, renames, mergers, spinouts, retired names and hosted versus open-source editions.",
+            "Review the initial schemas/application.schema.json definitions and embedded source/claim model; any extraction into separate schemas remains a proposed versioned change, not an implemented prerequisite."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/application-identity.md",
+            "schemas/application-identity.schema.json",
+            "schemas/application.schema.json"
+          ],
+          "research_questions": [
+            "Separate vendor, operator, product family, concrete product, edition/plan, release/channel and distribution.",
+            "Represent aliases, renames, mergers, spinouts, retired names and hosted versus open-source editions."
+          ],
+          "acceptance_criteria": [
+            "Identity rules prevent same-name collisions and preserve historical identifiers.",
+            "Canonical IDs survive renames; merge/split rules retain redirects and evidence.",
+            "Third-party app/store IDs are scoped aliases rather than sole canonical identity.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F02.01.T01",
+              "title": "Specify identity decisions",
+              "parent": "APP-F02.01",
+              "independently_reviewable_output": "An entity/relationship decision record",
+              "subtasks": [
+                {
+                  "id": "APP-F02.01.T01.S01",
+                  "text": "Work through generic synthetic rename, edition and same-name cases.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.01.T01.S02",
+                  "text": "Define product versus feature versus suite identity.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F02.01.T02",
+              "title": "Validate identity invariants",
+              "parent": "APP-F02.01",
+              "independently_reviewable_output": "Schema and fixtures for identity changes",
+              "subtasks": [
+                {
+                  "id": "APP-F02.01.T02.S01",
+                  "text": "Reject duplicate canonical IDs and inconsistent aliases.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.01.T02.S02",
+                  "text": "Exercise merge/split and unknown operator cases without manufacturing real data.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#5",
+              "kind": "information",
+              "rationale": "Provider/operator identity is reusable context.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#6",
+              "kind": "information",
+              "rationale": "Do not confuse an application with a model release.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F02.02",
+          "title": "Formalize taxonomy and multifaceted classification",
+          "parent": "APP-F02",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Can users browse applications by job, audience, industry and platform without double counting?",
+          "scope_in": [
+            "Review the proposed domain/category/subcategory taxonomy and inclusion rules.",
+            "Keep use case, modality, geography, language, operating mode, openness and audience as cross-cutting facets."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/taxonomy-adoption.md",
+            "schemas/taxonomy.schema.json"
+          ],
+          "research_questions": [
+            "Review the proposed domain/category/subcategory taxonomy and inclusion rules.",
+            "Keep use case, modality, geography, language, operating mode, openness and audience as cross-cutting facets."
+          ],
+          "acceptance_criteria": [
+            "Every category has stable ID, inclusion/exclusion, parent and coverage responsibility.",
+            "Multi-category membership does not inflate global unique-entity totals.",
+            "Versioned rename/move/deprecation handling is specified.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F02.02.T01",
+              "title": "Review category coverage",
+              "parent": "APP-F02.02",
+              "independently_reviewable_output": "A taxonomy acceptance matrix",
+              "subtasks": [
+                {
+                  "id": "APP-F02.02.T01.S01",
+                  "text": "Check emerging and non-generative AI application uses.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.02.T01.S02",
+                  "text": "Document overlaps and explicit exclusions instead of duplicate canonical entries.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F02.02.T02",
+              "title": "Specify facet semantics",
+              "parent": "APP-F02.02",
+              "independently_reviewable_output": "Facet definitions and migration rules",
+              "subtasks": [
+                {
+                  "id": "APP-F02.02.T02.S01",
+                  "text": "Separate advertised language/platform support from tested support.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.02.T02.S02",
+                  "text": "Preserve unknown and not-applicable semantics per facet.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "taxonomy/taxonomy.json",
+              "kind": "information",
+              "rationale": "Initial taxonomy is a planning proposal requiring acceptance.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F02.03",
+          "title": "Define product, plan, deployment and enterprise fields",
+          "parent": "APP-F02",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which product facts are required for useful enterprise and end-user comparisons?",
+          "scope_in": [
+            "Specify platform, deployment/operator, installation, offline operation and enterprise plan facts.",
+            "Scope SSO/SCIM/RBAC, administration, tenancy, retention, training use, export, data residence, support and SLA claims to documented plans.",
+            "Review the initial schemas/application.schema.json definitions and embedded source/claim model; any extraction into separate schemas remains a proposed versioned change, not an implemented prerequisite."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/product-field-guide.md",
+            "schemas/product-profile.schema.json",
+            "schemas/application.schema.json"
+          ],
+          "research_questions": [
+            "Specify platform, deployment/operator, installation, offline operation and enterprise plan facts.",
+            "Scope SSO/SCIM/RBAC, administration, tenancy, retention, training use, export, data residence, support and SLA claims to documented plans.",
+            "What export formats/completeness, migration/portability, account deletion versus retained backups, and customer-provided model/key entitlements are documented or actually exercised?"
+          ],
+          "acceptance_criteria": [
+            "Every field has type, meaning, allowed unknown state and evidence scope.",
+            "Hosted and self-operated offerings are represented without inferring model deployment mode.",
+            "Security/compliance claims retain issuer, scope, dates and documentary limits.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending.",
+            "Portability, deletion and BYOK/BYOM claims identify product/plan/date and distinguish documented promises from exercised behavior."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F02.03.T01",
+              "title": "Define product comparison fields",
+              "parent": "APP-F02.03",
+              "independently_reviewable_output": "A field guide for user-facing capabilities",
+              "subtasks": [
+                {
+                  "id": "APP-F02.03.T01.S01",
+                  "text": "Specify modality and input/output constraints at feature level.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.03.T01.S02",
+                  "text": "Separate advertised availability from account eligibility and platform testing.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F02.03.T02",
+              "title": "Define enterprise conditions",
+              "parent": "APP-F02.03",
+              "independently_reviewable_output": "A plan-conditioned enterprise attribute contract",
+              "subtasks": [
+                {
+                  "id": "APP-F02.03.T02.S01",
+                  "text": "Distinguish feature existence from entitlement and configured enforcement.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.03.T02.S02",
+                  "text": "Require dated source links for privacy, retention and regional service claims.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#3",
+              "kind": "information",
+              "rationale": "Existing operator/capacity vocabulary informs but does not automatically classify whole apps.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#35",
+              "kind": "information",
+              "rationale": "Reuse safety/guardrail boundary context.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F02.04",
+          "title": "Define claim, observation and evidence contracts",
+          "parent": "APP-F02",
+          "status": "Backlog",
+          "priority": "Critical",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Can every exported field be traced to an exact observation and its evidence?",
+          "scope_in": [
+            "Link each atomic claim to entity/feature/offer, source, dates, conditions and assessment.",
+            "Separate factual observation, analyst inference, estimate, test outcome and publication permission.",
+            "Review the initial schemas/application.schema.json definitions and embedded source/claim model; any extraction into separate schemas remains a proposed versioned change, not an implemented prerequisite."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "schemas/claim.schema.json",
+            "schemas/source.schema.json",
+            "schemas/observation.schema.json",
+            "research/foundations/provenance-contract.md",
+            "schemas/application.schema.json"
+          ],
+          "research_questions": [
+            "Link each atomic claim to entity/feature/offer, source, dates, conditions and assessment.",
+            "Separate factual observation, analyst inference, estimate, test outcome and publication permission."
+          ],
+          "acceptance_criteria": [
+            "Non-Unknown claims require claim-level provenance with actual dates and scope.",
+            "Verified/reproduced claims require eligible independent evidence references.",
+            "Schemas permit incomplete research notes without invented required values.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F02.04.T01",
+              "title": "Specify evidence entities",
+              "parent": "APP-F02.04",
+              "independently_reviewable_output": "Claim/source/observation schemas",
+              "subtasks": [
+                {
+                  "id": "APP-F02.04.T01.S01",
+                  "text": "Represent failed access, disputed sources and superseding observations.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.04.T01.S02",
+                  "text": "Keep reviewer identity and verification evidence separate.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F02.04.T02",
+              "title": "Exercise evidence failure cases",
+              "parent": "APP-F02.04",
+              "independently_reviewable_output": "Negative and valid synthetic fixtures",
+              "subtasks": [
+                {
+                  "id": "APP-F02.04.T02.S01",
+                  "text": "Reject a vendor document promoted to verified without reproduction.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F02.04.T02.S02",
+                  "text": "Reject broken evidence references and ambiguous duplicate JSON keys.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#40",
+              "kind": "information",
+              "rationale": "Any shared-contract adoption remains a separately reviewed versioned proposal.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Evidence policy remains canonical.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "APP-F03",
+      "title": "Source rights, commercial terms and trust evidence",
+      "parent": "APP-PROGRAM",
+      "priority": "High",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "Which application facts may be researched, compared and published?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F03.01",
+          "title": "Build source and intended-use decisions register",
+          "parent": "APP-F03",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which sources and fields can be acquired or shown under which conditions?",
+          "scope_in": [
+            "Separate official docs, app stores, repositories, directories, reviews, vendor submissions and permitted public registries.",
+            "Record retrieval, internal research, display, cache, export, redistribution, logo/screenshot and benchmark permissions individually."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/source-policy.md",
+            "data/source-use-decisions.json"
+          ],
+          "research_questions": [
+            "Separate official docs, app stores, repositories, directories, reviews, vendor submissions and permitted public registries.",
+            "Record retrieval, internal research, display, cache, export, redistribution, logo/screenshot and benchmark permissions individually."
+          ],
+          "acceptance_criteria": [
+            "Every source-use decision names exact material, intended use, basis, conditions and reviewer status.",
+            "Unknown rights prevent ineligible promotion but remain visible as research gaps.",
+            "No public URL or software license is treated as a universal redistribution grant.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F03.01.T01",
+              "title": "Inventory source classes",
+              "parent": "APP-F03.01",
+              "independently_reviewable_output": "A scoped source register and permitted investigation strategy",
+              "subtasks": [
+                {
+                  "id": "APP-F03.01.T01.S01",
+                  "text": "Identify authoritative primary pages for product, pricing and terms.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.01.T01.S02",
+                  "text": "Record access failures without substituting unsupported sources.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F03.01.T02",
+              "title": "Assess intended uses",
+              "parent": "APP-F03.01",
+              "independently_reviewable_output": "A field/material-by-use decision proposal",
+              "subtasks": [
+                {
+                  "id": "APP-F03.01.T02.S01",
+                  "text": "Carry attribution, notice, retention and withdrawal obligations.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.01.T02.S02",
+                  "text": "Route decisions needing central #41/#60 acceptance without implying it exists.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Canonical evidence/freshness policy.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#60",
+              "kind": "information",
+              "rationale": "Canonical source-rights decisions.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F03.02",
+          "title": "Define claim attribution and contradiction handling",
+          "parent": "APP-F03",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "How are ambiguous, conflicting or superseded application claims presented?",
+          "scope_in": [
+            "Map source passages to atomic claim scopes and track source revisions.",
+            "Resolve conflicting plans/regions/versions without collapsing uncertainty."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/claim-attribution.md",
+            "templates/conflict-record.md"
+          ],
+          "research_questions": [
+            "Map source passages to atomic claim scopes and track source revisions.",
+            "Resolve conflicting plans/regions/versions without collapsing uncertainty."
+          ],
+          "acceptance_criteria": [
+            "Specific eligible scope and controlling official terms outrank broad marketing claims where appropriate.",
+            "Equal-rank unresolved contradictions remain disputed/unknown with next action.",
+            "Historical values and reasons for replacement are preserved.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F03.02.T01",
+              "title": "Specify source-to-field mappings",
+              "parent": "APP-F03.02",
+              "independently_reviewable_output": "A provenance mapping format",
+              "subtasks": [
+                {
+                  "id": "APP-F03.02.T01.S01",
+                  "text": "Support multiple fields/sources without whole-record rights inheritance.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.02.T01.S02",
+                  "text": "Record quotations only within permitted and necessary limits; prefer summaries and links.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F03.02.T02",
+              "title": "Specify conflict decisions",
+              "parent": "APP-F03.02",
+              "independently_reviewable_output": "A reproducible contradiction review method",
+              "subtasks": [
+                {
+                  "id": "APP-F03.02.T02.S01",
+                  "text": "Normalize units and plan/region/date before declaring conflict.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.02.T02.S02",
+                  "text": "Record winning and superseded evidence and review scope.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Reuse accepted conflict policy without inventing a universal rule.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F03.03",
+          "title": "Normalize application plans, prices and commercial restrictions",
+          "parent": "APP-F03",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What would a user pay for a specific app plan and what remains unknown?",
+          "scope_in": [
+            "Separate subscription, seats, credits, metered consumption, outcome billing, trials, bundles and enterprise quotes.",
+            "Record currency, billing interval, region, minimums, quotas, overages, add-ons, tax and promotional conditions."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/application-pricing.md",
+            "schemas/pricing.schema.json",
+            "schemas/pricing-record.schema.json"
+          ],
+          "research_questions": [
+            "Separate subscription, seats, credits, metered consumption, outcome billing, trials, bundles and enterprise quotes.",
+            "Record currency, billing interval, region, minimums, quotas, overages, add-ons, tax and promotional conditions.",
+            "What renewal, cancellation, refund, unused-credit and trial-to-paid conditions apply, and what model/API-key costs or vendor charges remain with BYOK/BYOM?"
+          ],
+          "acceptance_criteria": [
+            "A free trial is not represented as permanent free access.",
+            "Unknown enterprise quotes and uncovered costs are not zero.",
+            "Calculations show assumptions, effective dates and source scope; unsupported shared meters stay in app research.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending.",
+            "Rates and terms include renewal/cancellation/refunds, trial conversion and external-model costs or explicit Unknown, scoped by product/plan/region/date."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F03.03.T01",
+              "title": "Define offer and meter records",
+              "parent": "APP-F03.03",
+              "independently_reviewable_output": "An app-specific pricing proposal contract",
+              "subtasks": [
+                {
+                  "id": "APP-F03.03.T01.S01",
+                  "text": "Specify usage credits and conversion uncertainty.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.03.T01.S02",
+                  "text": "Separate plan entitlement from a listed headline price.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F03.03.T02",
+              "title": "Review price comparisons",
+              "parent": "APP-F03.03",
+              "independently_reviewable_output": "Conditioned comparison and TCO examples",
+              "subtasks": [
+                {
+                  "id": "APP-F03.03.T02.S01",
+                  "text": "Use synthetic examples to exercise monthly/annual and minimum-seat conditions.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.03.T02.S02",
+                  "text": "Record #39 receiving questions for any shared downstream pricing normalization.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#39",
+              "kind": "information",
+              "rationale": "Shared price semantics remain with the cost owner.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F03.01",
+              "kind": "information",
+              "rationale": "Price-source publication rights require exact scope.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F03.04",
+          "title": "Research privacy, security and provenance disclosures",
+          "parent": "APP-F03",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What trust information does the supplier actually document for a specific product/plan?",
+          "scope_in": [
+            "Cover training-data use, prompts/outputs retention, deletion, subprocessors, region, encryption, access and incident disclosures.",
+            "Distinguish certification reports, marketing assertions, implemented controls and actual tested behavior."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/trust-evidence.md",
+            "templates/trust-assessment.md"
+          ],
+          "research_questions": [
+            "Cover training-data use, prompts/outputs retention, deletion, subprocessors, region, encryption, access and incident disclosures.",
+            "Distinguish certification reports, marketing assertions, implemented controls and actual tested behavior.",
+            "What does the supplier state about input/output ownership, commercial use, confidentiality and reuse restrictions for each product/plan/date?"
+          ],
+          "acceptance_criteria": [
+            "Trust claims bind product/plan and dated documentary scope.",
+            "No absence of an incident or named certification becomes proof of safety/compliance.",
+            "Sensitive security findings and private customer information stay outside public research.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending.",
+            "Input/output ownership and commercial-use claims remain attributed supplier statements; independent legal conclusions are not implied."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F03.04.T01",
+              "title": "Define documentary trust intake",
+              "parent": "APP-F03.04",
+              "independently_reviewable_output": "A trust evidence matrix",
+              "subtasks": [
+                {
+                  "id": "APP-F03.04.T01.S01",
+                  "text": "Separate vendor declarations, auditor reports and reproducible observations.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.04.T01.S02",
+                  "text": "Record access limitations for gated assurance materials.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F03.04.T02",
+              "title": "Define trust presentation limits",
+              "parent": "APP-F03.04",
+              "independently_reviewable_output": "Review rules for security/compliance labels",
+              "subtasks": [
+                {
+                  "id": "APP-F03.04.T02.S01",
+                  "text": "Prohibit blanket compliance or suitability badges without scoped evidence.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F03.04.T02.S02",
+                  "text": "Document correction and responsible disclosure routing.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#35",
+              "kind": "information",
+              "rationale": "Existing guardrail research is context, not an app-specific certification.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Public source and rights requirements still apply.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "APP-F04",
+      "title": "Coverage, discovery and maintenance",
+      "parent": "APP-PROGRAM",
+      "priority": "High",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "How can breadth and freshness be measured without claiming all AI is covered?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F04.01",
+          "title": "Define coverage denominators and quality reporting",
+          "parent": "APP-F04",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What does near-exhaustive mean for the chosen discovery scope?",
+          "scope_in": [
+            "Measure taxonomy breadth separately from candidate, deduplicated, sourced, reviewed, reproduced, eligible and published counts.",
+            "Declare the discovery frame, exclusions, geographic/language and product-state boundaries."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/COVERAGE.md",
+            "schemas/coverage-ledger.schema.json",
+            "coverage/ledger.json"
+          ],
+          "research_questions": [
+            "Measure taxonomy breadth separately from candidate, deduplicated, sourced, reviewed, reproduced, eligible and published counts.",
+            "Declare the discovery frame, exclusions, geographic/language and product-state boundaries."
+          ],
+          "acceptance_criteria": [
+            "Unknown universe size is explicit; no single misleading all-AI completion percentage.",
+            "Counters reconcile to included records and multi-category membership.",
+            "Zero seeded product records is reported truthfully rather than fabricated coverage.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F04.01.T01",
+              "title": "Specify measurable coverage",
+              "parent": "APP-F04.01",
+              "independently_reviewable_output": "Coverage dimensions and denominator policy",
+              "subtasks": [
+                {
+                  "id": "APP-F04.01.T01.S01",
+                  "text": "Distinguish known-source sample from the unknown full market universe.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.01.T01.S02",
+                  "text": "Track underserved languages, regions, industries and deployment forms.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F04.01.T02",
+              "title": "Implement coverage consistency checks",
+              "parent": "APP-F04.01",
+              "independently_reviewable_output": "Deterministic local ledger checks",
+              "subtasks": [
+                {
+                  "id": "APP-F04.01.T02.S01",
+                  "text": "Reject counts unsupported by record membership.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.01.T02.S02",
+                  "text": "Ensure global unique counts do not sum overlapping category memberships.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#509",
+              "kind": "information",
+              "rationale": "Program-wide coverage proposal guides measurement.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F04.02",
+          "title": "Define discovery and deduplication campaigns",
+          "parent": "APP-F04",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "How are new candidates discovered across regions and product types?",
+          "scope_in": [
+            "Use documented candidate-source strategies for vendors, app stores, open-source releases, enterprise suites and vertical software.",
+            "Include non-English/local offerings and non-generative AI while respecting source-use permissions."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/DISCOVERY_PLAYBOOK.md",
+            "templates/discovery-log.md"
+          ],
+          "research_questions": [
+            "Use documented candidate-source strategies for vendors, app stores, open-source releases, enterprise suites and vertical software.",
+            "Include non-English/local offerings and non-generative AI while respecting source-use permissions."
+          ],
+          "acceptance_criteria": [
+            "Every campaign names scope, source frames, exclusions and failed-access handling.",
+            "Candidate discovery never asserts product capability or entitlement.",
+            "Existing market/T1/T4 identities are crosswalked before a new product is admitted.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F04.02.T01",
+              "title": "Write discovery protocols",
+              "parent": "APP-F04.02",
+              "independently_reviewable_output": "Repeatable category discovery instructions",
+              "subtasks": [
+                {
+                  "id": "APP-F04.02.T01.S01",
+                  "text": "Specify how to retain searched terms, source class and access status.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.02.T01.S02",
+                  "text": "Avoid paid account creation, automatic scraping or outreach absent separate authorization.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F04.02.T02",
+              "title": "Specify deduplication review",
+              "parent": "APP-F04.02",
+              "independently_reviewable_output": "Entity matching and exception guidance",
+              "subtasks": [
+                {
+                  "id": "APP-F04.02.T02.S01",
+                  "text": "Check aliases, suites, editions, white-label services and related integration packages.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.02.T02.S02",
+                  "text": "Keep uncertain matches unresolved and reviewable.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F02.01",
+              "kind": "information",
+              "rationale": "Identity rules guide deduplication.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F03.01",
+              "kind": "information",
+              "rationale": "Retrieval permissions constrain each campaign.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F04.03",
+          "title": "Define freshness, retirement and corrections",
+          "parent": "APP-F04",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What changes trigger renewed review or downstream withdrawal?",
+          "scope_in": [
+            "Track source changes, stale current-state facts, plan changes, acquisitions, shutdowns and rights withdrawals.",
+            "Separate immutable release facts from current product state."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/MAINTENANCE.md",
+            "schemas/change-event.schema.json",
+            "templates/correction.md"
+          ],
+          "research_questions": [
+            "Track source changes, stale current-state facts, plan changes, acquisitions, shutdowns and rights withdrawals.",
+            "Separate immutable release facts from current product state."
+          ],
+          "acceptance_criteria": [
+            "Records retain actual last-check and effective dates.",
+            "No unsupported universal TTL is imposed as existing policy.",
+            "Corrections propagate to linked projections and preserve revision history.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F04.03.T01",
+              "title": "Specify refresh triggers",
+              "parent": "APP-F04.03",
+              "independently_reviewable_output": "An event/risk-based refresh proposal",
+              "subtasks": [
+                {
+                  "id": "APP-F04.03.T01.S01",
+                  "text": "Describe changed terms, broken source links, retired offers and disputed claims.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.03.T01.S02",
+                  "text": "Choose any future review cadence explicitly as a proposal with justification.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F04.03.T02",
+              "title": "Specify correction lifecycle",
+              "parent": "APP-F04.03",
+              "independently_reviewable_output": "Correction, supersession and withdrawal records",
+              "subtasks": [
+                {
+                  "id": "APP-F04.03.T02.S01",
+                  "text": "Define acknowledgement, evidence review and downstream notification requirements.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.03.T02.S02",
+                  "text": "Retain old identifiers and source dates while preventing withdrawn fields from current exports.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Version-pinned facts and dated current-state policy are canonical.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F06.02",
+              "kind": "information",
+              "rationale": "Publication projection must support withdrawal.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F04.04",
+          "title": "Define community and vendor contribution intake",
+          "parent": "APP-F04",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "How can outside submissions improve breadth without creating promotional claims?",
+          "scope_in": [
+            "Distinguish candidate nominations, vendor corrections, evidence contributions and disputes.",
+            "Handle duplicate/spam submissions, material affiliations and private attachments."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/CONTRIBUTOR_INTAKE.md",
+            ".github/ISSUE_TEMPLATE/application-candidate.yml",
+            ".github/ISSUE_TEMPLATE/correction.yml"
+          ],
+          "research_questions": [
+            "Distinguish candidate nominations, vendor corrections, evidence contributions and disputes.",
+            "Handle duplicate/spam submissions, material affiliations and private attachments."
+          ],
+          "acceptance_criteria": [
+            "Submitters can mark unknowns without inventing facts.",
+            "Vendor-submitted evidence retains vendor evidence class until independently assessed.",
+            "Corrections have traceable decisions and do not erase historical attribution.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F04.04.T01",
+              "title": "Design candidate and correction forms",
+              "parent": "APP-F04.04",
+              "independently_reviewable_output": "Minimal issue templates with evidence questions",
+              "subtasks": [
+                {
+                  "id": "APP-F04.04.T01.S01",
+                  "text": "Ask for canonical URL, product distinction, category and claim sources.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.04.T01.S02",
+                  "text": "Ask for affiliation disclosure and sanitized public evidence.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F04.04.T02",
+              "title": "Specify moderation and triage",
+              "parent": "APP-F04.04",
+              "independently_reviewable_output": "Reviewable intake states and escalation rules",
+              "subtasks": [
+                {
+                  "id": "APP-F04.04.T02.S01",
+                  "text": "Use duplicate links without deleting unique evidence history.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F04.04.T02.S02",
+                  "text": "Separate factual corrections from requests for placement, ranking or paid promotion.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F01.03",
+              "kind": "information",
+              "rationale": "Contribution integrity and review requirements apply.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "APP-F05",
+      "title": "Comparison, evaluation and user suitability",
+      "parent": "APP-PROGRAM",
+      "priority": "High",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "Which comparisons are justified by available app-level evidence?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F05.01",
+          "title": "Define reproducible application workflow evaluations",
+          "parent": "APP-F05",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What constitutes an observed app capability under specific conditions?",
+          "scope_in": [
+            "Pin product/release, account plan, platform, region, inputs, settings, test time and success criteria.",
+            "Separate end-user workflow success from underlying model benchmarks."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/EVALUATION_METHOD.md",
+            "schemas/evaluation-run.schema.json",
+            "templates/evaluation-protocol.md"
+          ],
+          "research_questions": [
+            "Pin product/release, account plan, platform, region, inputs, settings, test time and success criteria.",
+            "Separate end-user workflow success from underlying model benchmarks."
+          ],
+          "acceptance_criteria": [
+            "Protocols predefine expected outputs, failure/recovery cases and limitations.",
+            "Exercised claims reference actual run artifacts; documentation-only work cannot claim execution.",
+            "Reproduced results preserve privacy, permitted access and rights boundaries.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F05.01.T01",
+              "title": "Specify evaluation identities",
+              "parent": "APP-F05.01",
+              "independently_reviewable_output": "An application workflow protocol",
+              "subtasks": [
+                {
+                  "id": "APP-F05.01.T01.S01",
+                  "text": "Record account entitlement and variable service/model behavior.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.01.T01.S02",
+                  "text": "Define reproducible input and observed success measures without customer data.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F05.01.T02",
+              "title": "Define measurement evidence",
+              "parent": "APP-F05.01",
+              "independently_reviewable_output": "A sanitized run/result manifest",
+              "subtasks": [
+                {
+                  "id": "APP-F05.01.T02.S01",
+                  "text": "Capture actual environment and artifact locators with stable authorized access.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.01.T02.S02",
+                  "text": "Mark unavailable functions and unrun scenarios explicitly rather than assigning scores.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#36",
+              "kind": "information",
+              "rationale": "Central evaluation methodology informs comparability.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F03.01",
+              "kind": "information",
+              "rationale": "Testing and evidence reuse must be permitted.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F05.02",
+          "title": "Define truthful comparison and ranking limits",
+          "parent": "APP-F05",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which fields may be compared or ranked across applications?",
+          "scope_in": [
+            "Compare matching feature/plan/workflow conditions and distinguish binary documentation from measurement.",
+            "Set unknown/missing-data behavior, sponsorship neutrality and criteria weighting policy."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/COMPARISON_POLICY.md",
+            "templates/comparison-record.md"
+          ],
+          "research_questions": [
+            "Compare matching feature/plan/workflow conditions and distinguish binary documentation from measurement.",
+            "Set unknown/missing-data behavior, sponsorship neutrality and criteria weighting policy."
+          ],
+          "acceptance_criteria": [
+            "No overall quality/security ranking is derived from marketing completeness.",
+            "Comparability requires matched conditions or clearly stated limits.",
+            "Weighted recommendations expose user criteria and missing evidence.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F05.02.T01",
+              "title": "Define comparison eligibility",
+              "parent": "APP-F05.02",
+              "independently_reviewable_output": "Field and measurement comparison rules",
+              "subtasks": [
+                {
+                  "id": "APP-F05.02.T01.S01",
+                  "text": "Prevent Unknown from contributing as unsupported or zero.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.02.T01.S02",
+                  "text": "Keep capability, entitlement, measured quality and price comparisons distinct.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F05.02.T02",
+              "title": "Specify user-facing caveats",
+              "parent": "APP-F05.02",
+              "independently_reviewable_output": "Comparison examples and receiving requirements",
+              "subtasks": [
+                {
+                  "id": "APP-F05.02.T02.S01",
+                  "text": "Show evidence class, date, source and limits beside claims.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.02.T02.S02",
+                  "text": "Define when a ranking must be suppressed due to missing comparability or rights.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F05.01",
+              "kind": "information",
+              "rationale": "Actual evaluated workflows are a separate source from documentation.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#62",
+              "kind": "information",
+              "rationale": "Existing benchmark comparability work remains in its original scope.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F05.03",
+          "title": "Define accessibility, language and platform evaluation",
+          "parent": "APP-F05",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Can intended audiences actually use the claimed features?",
+          "scope_in": [
+            "Separate UI localization, accepted input language, output quality and documentation language.",
+            "Research screen readers, keyboard access, captions, cognitive access, assistive integrations and mobile/browser/desktop parity."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/foundations/accessibility-localization.md",
+            "templates/accessibility-assessment.md"
+          ],
+          "research_questions": [
+            "Separate UI localization, accepted input language, output quality and documentation language.",
+            "Research screen readers, keyboard access, captions, cognitive access, assistive integrations and mobile/browser/desktop parity."
+          ],
+          "acceptance_criteria": [
+            "Advertised support and exercised accessibility are distinct evidence.",
+            "Platform/version-specific missing evidence remains Unknown.",
+            "Coverage includes regional constraints and low-connectivity/offline use without assuming availability.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F05.03.T01",
+              "title": "Specify inclusive comparison fields",
+              "parent": "APP-F05.03",
+              "independently_reviewable_output": "Accessibility/language/platform field guidance",
+              "subtasks": [
+                {
+                  "id": "APP-F05.03.T01.S01",
+                  "text": "Identify testable tasks and documented accommodations.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.03.T01.S02",
+                  "text": "Separate app UI availability from model language ability.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F05.03.T02",
+              "title": "Define bounded assessment protocols",
+              "parent": "APP-F05.03",
+              "independently_reviewable_output": "Repeatable access checks and evidence limits",
+              "subtasks": [
+                {
+                  "id": "APP-F05.03.T02.S01",
+                  "text": "Use synthetic content and authorized accessible routes.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.03.T02.S02",
+                  "text": "Record tested assistive environment, application version and unresolved barriers.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F02.03",
+              "kind": "information",
+              "rationale": "Product/platform fields supply exact conditions.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F05.01",
+              "kind": "information",
+              "rationale": "Actual tests require reproducible run identity.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F05.04",
+          "title": "Define sensitive-domain and consequential-use limitations",
+          "parent": "APP-F05",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "How should the directory describe high-impact applications responsibly?",
+          "scope_in": [
+            "Scope medical, legal, finance, employment, education, children, public-sector, security and autonomous-action applications.",
+            "Distinguish intended use, evidence of performance, supplier restrictions and applicable approvals."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/SUITABILITY_LIMITS.md",
+            "templates/domain-risk-note.md"
+          ],
+          "research_questions": [
+            "Scope medical, legal, finance, employment, education, children, public-sector, security and autonomous-action applications.",
+            "Distinguish intended use, evidence of performance, supplier restrictions and applicable approvals."
+          ],
+          "acceptance_criteria": [
+            "No listing implies professional advice, regulatory authorization or suitability.",
+            "Claims about jurisdictions/standards carry dated authoritative sources and scoped review.",
+            "Approval workflows, human oversight and action side effects remain product-specific questions.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F05.04.T01",
+              "title": "Define suitability research questions",
+              "parent": "APP-F05.04",
+              "independently_reviewable_output": "A domain-risk research template",
+              "subtasks": [
+                {
+                  "id": "APP-F05.04.T01.S01",
+                  "text": "Separate assistance from autonomous consequential decisions.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.04.T01.S02",
+                  "text": "Record user group, jurisdiction, actual intended use and human oversight expectations.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F05.04.T02",
+              "title": "Define directory presentation gates",
+              "parent": "APP-F05.04",
+              "independently_reviewable_output": "Requirements for limitations and unresolved evidence",
+              "subtasks": [
+                {
+                  "id": "APP-F05.04.T02.S01",
+                  "text": "Avoid badges implying lawful or safe use from vendor marketing.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F05.04.T02.S02",
+                  "text": "Link authoritative evidence and unreviewed interpretation separately.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#35",
+              "kind": "information",
+              "rationale": "Existing guardrail work informs questions without certifying applications.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F03.04",
+              "kind": "information",
+              "rationale": "Trust disclosures are documentary inputs.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "APP-F06",
+      "title": "Consumer contracts and publication handoff",
+      "parent": "APP-PROGRAM",
+      "priority": "High",
+      "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+      "readiness": "Ready",
+      "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+      "status": "Backlog",
+      "research_confidence": "Unverified",
+      "user_decision": "How can approved application evidence reach the public directory faithfully?",
+      "central_approval_status": "Not requested or recorded by this planning artifact. Existing receiving owners retain their decisions.",
+      "packages": [
+        {
+          "id": "APP-F06.01",
+          "title": "Define versioned application export contract",
+          "parent": "APP-F06",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What stable application artifact should the shared pipeline and website consume?",
+          "scope_in": [
+            "Define stable entity/claim/source/offer IDs, schema version, release identity and cross-references.",
+            "Specify unknowns, evidence labels, field rights, corrections, removals and backward compatibility."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "contracts/applications/v0/README.md",
+            "schemas/application-export.schema.json",
+            "docs/CONSUMER_CONTRACT.md"
+          ],
+          "research_questions": [
+            "Define stable entity/claim/source/offer IDs, schema version, release identity and cross-references.",
+            "Specify unknowns, evidence labels, field rights, corrections, removals and backward compatibility."
+          ],
+          "acceptance_criteria": [
+            "Export semantics do not mutate frozen component v1.",
+            "Synthetic examples are isolated and rejected from production exports.",
+            "Actual pipeline/website reviewers receive a concrete proposed interface and pending decisions remain explicit.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F06.01.T01",
+              "title": "Specify export wire format",
+              "parent": "APP-F06.01",
+              "independently_reviewable_output": "A reviewable application metadata contract",
+              "subtasks": [
+                {
+                  "id": "APP-F06.01.T01.S01",
+                  "text": "Separate research-only fields from eligible public projection.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.01.T01.S02",
+                  "text": "Define ordering/identity and version migration expectations.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F06.01.T02",
+              "title": "Build contract fixtures",
+              "parent": "APP-F06.01",
+              "independently_reviewable_output": "Valid/invalid synthetic consumer fixtures",
+              "subtasks": [
+                {
+                  "id": "APP-F06.01.T02.S01",
+                  "text": "Exercise unknown prices, withdrawn claims and renamed products.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.01.T02.S02",
+                  "text": "Check consumer handling of unsupported schema revisions and missing evidence.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#40",
+              "kind": "information",
+              "rationale": "Shared adoption needs affected-owner/version review.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F02.04",
+              "kind": "information",
+              "rationale": "Claim and evidence identities are foundational inputs.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F06.02",
+          "title": "Specify field-level publication and withdrawal projection",
+          "parent": "APP-F06",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Which fields can enter each public release and how are permissions enforced?",
+          "scope_in": [
+            "Require exact source/use decisions, claim scope and reviewer acceptance for included fields.",
+            "Define display versus downloadable/API export projections and retention of attribution."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/PUBLICATION_GATES.md",
+            "schemas/publication-decision.schema.json",
+            "scripts/validate_publication.py"
+          ],
+          "research_questions": [
+            "Require exact source/use decisions, claim scope and reviewer acceptance for included fields.",
+            "Define display versus downloadable/API export projections and retention of attribution."
+          ],
+          "acceptance_criteria": [
+            "Unknown/denied rights exclude affected fields; mixed-source records do not inherit permission.",
+            "Rights withdrawal invalidates affected projected versions and identifies consumers.",
+            "Validator failure blocks eligibility; passing does not create legal permission or evidence truth.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F06.02.T01",
+              "title": "Define publication decision records",
+              "parent": "APP-F06.02",
+              "independently_reviewable_output": "A field/source/use projection policy",
+              "subtasks": [
+                {
+                  "id": "APP-F06.02.T01.S01",
+                  "text": "Require exact terms basis and review scope for each intended output.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.02.T01.S02",
+                  "text": "Distinguish logos/screenshots/reviews from ordinary product metadata.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F06.02.T02",
+              "title": "Validate eligible projection behavior",
+              "parent": "APP-F06.02",
+              "independently_reviewable_output": "Offline admission checks and negative fixtures",
+              "subtasks": [
+                {
+                  "id": "APP-F06.02.T02.S01",
+                  "text": "Reject a field with missing rights or missing attribution.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.02.T02.S02",
+                  "text": "Reject changed/withdrawn evidence from a current projection and preserve the audit reason.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F03.01",
+              "kind": "acceptance_gate",
+              "rationale": "Final projection acceptance requires actual source-use decisions.",
+              "native_blocker": false,
+              "note": "Research can proceed independently; do not create a native execution blocker merely from final acceptance ordering."
+            },
+            {
+              "target": "APP-F06.01",
+              "kind": "information",
+              "rationale": "Output contract must carry rights and revision metadata.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#41",
+              "kind": "information",
+              "rationale": "Evidence/source policy remains central.",
+              "native_blocker": false
+            },
+            {
+              "target": "Pick-Your-AI/pick-your-ai-research#60",
+              "kind": "information",
+              "rationale": "No blanket grant is implied.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F06.03",
+          "title": "Define searchable directory and correction requirements",
+          "parent": "APP-F06",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "What must the website show to preserve the research meaning?",
+          "scope_in": [
+            "Specify application/entity pages, facets, comparisons, source links, as-of dates and evidence labels.",
+            "Define aliases, retired products, accessible/localized labels, correction links and SEO-readable stable URLs."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "docs/WEBSITE_HANDOFF.md",
+            "planning/consumer-requirements.json"
+          ],
+          "research_questions": [
+            "Specify application/entity pages, facets, comparisons, source links, as-of dates and evidence labels.",
+            "Define aliases, retired products, accessible/localized labels, correction links and SEO-readable stable URLs."
+          ],
+          "acceptance_criteria": [
+            "Requirements name consumer outcomes and test cases, not a duplicate frontend implementation.",
+            "Unknown and restricted fields remain explicit/omitted with correct semantics.",
+            "Receiving website owner accepts or narrows the exact requirements with revision and limitations.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F06.03.T01",
+              "title": "Specify directory information requirements",
+              "parent": "APP-F06.03",
+              "independently_reviewable_output": "Application-specific browse/search/detail requirements",
+              "subtasks": [
+                {
+                  "id": "APP-F06.03.T01.S01",
+                  "text": "Map taxonomy and facets to user decisions.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.03.T01.S02",
+                  "text": "Define source, revision and claim-state presentation.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F06.03.T02",
+              "title": "Specify consumer acceptance cases",
+              "parent": "APP-F06.03",
+              "independently_reviewable_output": "Website handoff tests and open decisions",
+              "subtasks": [
+                {
+                  "id": "APP-F06.03.T02.S01",
+                  "text": "Cover renamed/retired apps and withdrawn fields.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.03.T02.S02",
+                  "text": "Require accessible navigation and evidence labels without inferring UI implementation is complete.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "Pick-Your-AI/pick-your-ai-website#15",
+              "kind": "information",
+              "rationale": "Existing real-data consumer handoff remains canonical.",
+              "native_blocker": false
+            },
+            {
+              "target": "APP-F06.01",
+              "kind": "information",
+              "rationale": "Use the proposed application export contract.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        },
+        {
+          "id": "APP-F06.04",
+          "title": "Define and execute a bounded end-to-end acceptance pilot",
+          "parent": "APP-F06",
+          "status": "Backlog",
+          "priority": "High",
+          "priority_rationale": "Foundation for truthful, reusable application research and downstream directory consumption.",
+          "readiness": "Ready",
+          "readiness_rationale": "Bounded planning and evidence-method work can start from the inspected organization standards; unassigned execution remains Backlog until ownership is accepted.",
+          "research_confidence": "Unverified",
+          "assignees": [],
+          "review_roles": [
+            "Application research reviewer",
+            "Affected receiving owner when the interface changes"
+          ],
+          "user_decision": "Can an eligible app subset travel from source research to accepted consumer artifact?",
+          "scope_in": [
+            "Select a small explicitly bounded set across hosted, enterprise and open-source product forms after source permission review.",
+            "Trace actual research, identity, evidence review, publication projection and receiving decisions."
+          ],
+          "scope_out": [
+            "Changing frozen research contracts/v1 or accepted research ownership",
+            "Website/runtime implementation and unapproved source copying",
+            "Claiming planned research or structural checks as independently verified product behavior"
+          ],
+          "deliverable_paths": [
+            "research/pilot/README.md",
+            "research/pilot/acceptance-matrix.json",
+            "research/pilot/validation.md"
+          ],
+          "research_questions": [
+            "Select a small explicitly bounded set across hosted, enterprise and open-source product forms after source permission review.",
+            "Trace actual research, identity, evidence review, publication projection and receiving decisions."
+          ],
+          "acceptance_criteria": [
+            "Each pilot product has real scoped evidence; no synthetic fixture is promoted as a real application.",
+            "Source accuracy, research review, publication eligibility and consumer receipt are recorded separately.",
+            "All remaining gaps remain visible; pilot completion never claims near-exhaustive coverage or deployed website functionality.",
+            "Every factual conclusion has scoped evidence or remains explicitly unknown; source access and review dates are real.",
+            "Required receiving decisions are linked with actual reviewer, reviewed revision, scope and retained conditions; missing decisions remain pending."
+          ],
+          "tasks": [
+            {
+              "id": "APP-F06.04.T01",
+              "title": "Prepare pilot selection and protocol",
+              "parent": "APP-F06.04",
+              "independently_reviewable_output": "A bounded pilot plan with real prerequisites",
+              "subtasks": [
+                {
+                  "id": "APP-F06.04.T01.S01",
+                  "text": "Choose candidates only after identifying permitted source/use scopes.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.04.T01.S02",
+                  "text": "Record actual ownership and expected receiving evidence.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            },
+            {
+              "id": "APP-F06.04.T02",
+              "title": "Collect pilot acceptance evidence",
+              "parent": "APP-F06.04",
+              "independently_reviewable_output": "An exact revision-based evidence matrix",
+              "subtasks": [
+                {
+                  "id": "APP-F06.04.T02.S01",
+                  "text": "Run repository validation and record actual results.",
+                  "representation": "checklist",
+                  "completed": false
+                },
+                {
+                  "id": "APP-F06.04.T02.S02",
+                  "text": "Obtain scoped research and consumer review; retain every unmet criterion.",
+                  "representation": "checklist",
+                  "completed": false
+                }
+              ],
+              "acceptance_criteria": [
+                "The named output is committed with scope, actual evidence references and retained unknowns.",
+                "A reviewer assesses the exact revision; structural validation is reported separately from factual acceptance."
+              ]
+            }
+          ],
+          "dependencies": [
+            {
+              "target": "APP-F06.02",
+              "kind": "acceptance_gate",
+              "rationale": "Public projection cannot be accepted before source-use and field eligibility decisions.",
+              "native_blocker": false,
+              "note": "Research can proceed independently; do not create a native execution blocker merely from final acceptance ordering."
+            },
+            {
+              "target": "APP-F06.03",
+              "kind": "acceptance_gate",
+              "rationale": "Consumer acceptance requires actual receiving review.",
+              "native_blocker": false,
+              "note": "Research can proceed independently; do not create a native execution blocker merely from final acceptance ordering."
+            },
+            {
+              "target": "APP-F04.01",
+              "kind": "information",
+              "rationale": "Coverage reporting must keep the pilot denominator bounded.",
+              "native_blocker": false
+            }
+          ],
+          "open_questions": [
+            "Which current maintainer accepts execution ownership and which reviewer accepts this exact contribution?"
+          ]
+        }
+      ]
+    }
+  ]
+}

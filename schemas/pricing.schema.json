@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "properties": {
+    "offering_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "plan_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "amount_status": {
+      "enum": [
+        "known",
+        "unknown",
+        "contact_sales",
+        "custom"
+      ]
+    },
+    "amount": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(0|[1-9][0-9]*)(\\.[0-9]+)?$"
+    },
+    "currency": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[A-Z]{3}$"
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "billing_period": {
+      "enum": [
+        "one_time",
+        "day",
+        "week",
+        "month",
+        "year",
+        "usage",
+        null
+      ]
+    },
+    "meter": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "commitment": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "tax_treatment": {
+      "enum": [
+        "included",
+        "excluded",
+        "unknown"
+      ]
+    },
+    "minimum_seats": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "included_allowance": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "overage_terms": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "promotion_conditions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "effective_on": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+  },
+  "required": [
+    "offering_id",
+    "plan_name",
+    "amount_status",
+    "amount",
+    "currency",
+    "regions",
+    "billing_period",
+    "meter",
+    "commitment",
+    "tax_treatment",
+    "minimum_seats",
+    "included_allowance",
+    "overage_terms",
+    "promotion_conditions",
+    "effective_on"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pickyour.ai/schemas/applications/0.1.0/pricing.schema.json",
+  "title": "Dated application offering pricing observation",
+  "description": "Independent application research contract; not the frozen builder Pricebook v1 contract. Decimal amounts are strings. Unknown/contact-sales/custom amount is null, never zero."
+}
