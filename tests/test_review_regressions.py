@@ -99,6 +99,19 @@ class ClaimIntegrityTests(unittest.TestCase):
                 record = fixture(); record['claims'][0]['review']['reviewer'] = reviewer
                 self.rejected(record, 'reviewer other than its researcher')
 
+    def test_invisible_format_characters_cannot_self_approve(self):
+        for reviewer in ('synthetic-researcher\u200b', '\u200bSYNTHETIC-RESEARCHER', 'synthetic-\u00adresearcher',
+                         'synthetic\u2060-researcher', 'synthetic-researcher\ufeff', '\u200b'):
+            with self.subTest(reviewer=repr(reviewer)):
+                record = fixture(); record['claims'][0]['review']['reviewer'] = reviewer
+                self.assertTrue(self.check(record), 'invisible characters admitted a self-approval')
+
+    def test_invisible_format_characters_cannot_fake_independent_verifier(self):
+        for verifier in ('synthetic-researcher\u200b', 'synthetic\u2060vendor'.replace('\u2060', '\u2060 ')):
+            with self.subTest(verifier=repr(verifier)):
+                record = self.verified(); record['claims'][0]['verification']['verifier'] = verifier
+                self.rejected(record, 'independent of')
+
     def test_blank_researcher_is_rejected(self):
         record = fixture(); record['claims'][0]['researcher'] = '  '
         self.rejected(record, 'researcher must not be blank')

@@ -147,8 +147,13 @@ def date_value(value, path, errors, as_of, nullable=False):
 
 
 def normalize_identity(value):
-    """Comparison key only: preserve the original evidence spelling in records."""
-    return " ".join(unicodedata.normalize("NFKC", value or "").strip().casefold().removeprefix("@").split())
+    """Comparison key only: preserve the original evidence spelling in records.
+
+    Invisible format characters (Unicode category Cf, e.g. zero-width space, soft hyphen,
+    word joiner, BOM) are removed so they cannot make one identity compare as another.
+    """
+    text = "".join(ch for ch in unicodedata.normalize("NFKC", value or "") if unicodedata.category(ch) != "Cf")
+    return " ".join(text.strip().casefold().removeprefix("@").split())
 
 
 def load_json(path):
