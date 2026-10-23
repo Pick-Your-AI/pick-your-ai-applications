@@ -1,0 +1,36 @@
+name: Prepare applications foundation
+on:
+  push:
+    branches:
+      - contrib/CompleteDotTech/applications-provisioning
+    paths:
+      - .bootstrap/READY
+permissions:
+  contents: read
+concurrency:
+  group: applications-foundation-provisioning
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.repository == 'Pick-Your-AI/pick-your-ai-applications' && github.actor == 'CompleteDotTech'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate and provision the authorized applications plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .bootstrap/run.py
+      - name: Retain execution receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: applications-establishment-receipt
+          path: .bootstrap/receipt.json
+          if-no-files-found: ignore
+          retention-days: 30
