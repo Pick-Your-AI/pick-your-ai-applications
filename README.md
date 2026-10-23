@@ -6,6 +6,8 @@ Research and planning for an evidence-backed directory of end-user and enterpris
 
 Parent: [Pick-Your-AI research #509, G12](https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509).
 
+**Live delivery:** [program #1](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1) contains the native hierarchy for all 135 planned issues and 134 internal parent relationships. [Project #10](https://github.com/orgs/Pick-Your-AI/projects/10) exists; its item and field population is still pending. The scaffold is submitted in [PR #136](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/136), not yet merged. See the [establishment status](planning/ESTABLISHMENT_STATUS.md) for review, access-policy and cross-repository handoff gates.
+
 ## Scope
 
 Research software that people or organizations use to accomplish a task: assistants, coding products, creative tools, business software, research applications, industry products, automation services and complete self-hosted applications. Include predictive, classification, perception, recommendation and optimization applications alongside generative products. Identifiable software-delivered services, including human-assisted operational services with a distinct software workflow, are in scope; generic consulting or implementation agencies without that workflow stay outside application counts. Include hosted, local, open-source, proprietary, mobile, desktop, web and hybrid delivery when supported by evidence. Record AI-enabled features within broader products without treating every feature as a new product.
@@ -15,7 +17,8 @@ Model families, checkpoints, inference engines, hardware, framework libraries, s
 ## Start here
 
 - [Taxonomy](taxonomy/README.md): domains, categories, subcategories, facets and exclusions.
-- [Delivery backlog](planning/BACKLOG.md): program, epics, work packages, task and subtask structure.
+- [Live backlog](planning/LIVE_BACKLOG.md): native GitHub program and epic entry points, plus the complete verified issue-ID mapping.
+- [Authored delivery plan](planning/BACKLOG.md): program, epics, work packages, task and subtask structure.
 - [Organization alignment](docs/ORGANIZATION_ALIGNMENT.md): inspected policies, ownership and existing handoffs.
 - [Research workflow](docs/RESEARCH_WORKFLOW.md): candidate discovery through reviewed evidence and a separate publication decision.
 - [Application contract](docs/APPLICATION_CONTRACT.md): standalone versioned metadata; no changes to research's frozen builder v1.

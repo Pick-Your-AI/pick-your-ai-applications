@@ -2,6 +2,14 @@
 
 `scripts/provision_github.py` provisions only `Pick-Your-AI/pick-your-ai-applications`, its dedicated organization Project, and the program's native parent relationship to research issue #509. It reads the prepared backlog, issue bodies and Project configuration without rewriting those authored artifacts.
 
+## Current checkpoint: October 23, 2026
+
+The repository, Project #10, all 135 planned issues and all 134 internal native parent relationships already exist. The foundation is in PR #136, not `main`. Do not restart from an assumption that these resources are absent. See [establishment status](../planning/ESTABLISHMENT_STATUS.md) and [the live mapping](../planning/GITHUB_ESTABLISHMENT_RECEIPT.json).
+
+A separate repository-scoped Actions import completed the internal backlog. The general CLI helper below has not executed the remaining organization-Project or cross-repository steps. Use its readback and conflict protections to reconcile existing resources; no duplicate repository, Project or issues are needed. Project membership/fields, the native root-to-research-#509 edge, team access, review-policy enforcement and the reviewed merge remain distinct gates.
+
+The committed authored plan intentionally retains `prepared_not_provisioned` as its snapshot state. It is not the live resource inventory. The receipt provides the actual GitHub IDs; do not regenerate a competing plan or erase live triage.
+
 ## Before executing
 
 Use an authorized GitHub CLI session on Linux or macOS. Authentication remains owned by `gh`; this script never reads or prints a token. It creates no credentials, grants no access, changes no teams or rulesets, submits no reviews and merges no pull requests. Repository and Project creation require the corresponding existing account permissions. Do not broaden credentials or bypass organization rules to make a failed request pass.
@@ -71,4 +79,4 @@ The implementation was checked against current official documentation on 2026-10
 - [Using the API to manage Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-api-to-manage-projects): item creation and separate field updates.
 - [Sub-issue nesting limits](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/adding-sub-issues): the local plan is checked for native depth and direct-child bounds.
 
-No live provisioning was executed when this helper was prepared. Mocked tests cover duplicate protection, existing human changes, native-parent conflicts, Project-value preservation, JSON stdin transport, rate-limit/timeout checkpoints, partial GraphQL errors and batched field readback. They do not certify actual account permission or live GitHub API compatibility.
+The general CLI helper was prepared with mocked tests; the later repository-scoped import has a separate successful live receipt. The CLI helper's organization-Project and cross-repository paths remain unverified live. Mocked tests cover duplicate protection, existing human changes, native-parent conflicts, Project-value preservation, JSON stdin transport, rate-limit/timeout checkpoints, partial GraphQL errors and batched field readback. They do not certify actual account permission or live GitHub API compatibility.
