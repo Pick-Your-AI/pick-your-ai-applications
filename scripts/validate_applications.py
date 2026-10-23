@@ -322,7 +322,7 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                     fail(errors, path, "source access date is later than claim check")
         elif claim["checked_on"] is not None:
             fail(errors, path, "unchecked claim cannot have a checked date")
-        if claim["temporal_scope"] == "version_pinned" and not claim["version"]:
+        if claim["temporal_scope"] == "version_pinned" and not has_substantive_content(claim["version"]):
             fail(errors, path, "version-pinned facts need a concrete version")
         if claim["temporal_scope"] == "current_state" and claim["source_status"] == "checked" and claim["as_of"] != claim["checked_on"]:
             fail(errors, path, "current-state facts must display their checked date as as_of")
@@ -356,6 +356,8 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                 if verified and claim["checked_on"] is not None and verified.isoformat() < claim["checked_on"]:
                     fail(errors, path, "verification predates latest claim check")
                 url_errors(verification["receipt_url"], path + ".receipt_url", errors, synthetic)
+                if not has_substantive_content(verification["limitations"]):
+                    fail(errors, path, "verification receipts require their limitations")
                 if verification["method"] == "reproduced_test" and not has_substantive_content(verification["protocol_version"]):
                     fail(errors, path, "reproduced tests require a pinned protocol version")
                 if verification["method"] == "independent_second_source":

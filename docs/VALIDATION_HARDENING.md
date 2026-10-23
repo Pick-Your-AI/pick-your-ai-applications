@@ -12,7 +12,12 @@ contradict one another. Null scope remains valid for genuinely product-wide fact
 
 For independence comparisons, researcher/reviewer/verifier and publisher names are
 normalized using Unicode NFKC, case folding, trimmed/collapsed whitespace and an
-optional leading `@`. Original spelling is retained. Blank identities are rejected.
+optional leading `@`, after removing invisible format characters (Unicode `Cf`).
+Original spelling is retained. Blank identities are rejected. The same normalization
+decides whether a required text value has content: a rights reviewer, a reproduced-test
+protocol version, a version-pinned claim's version, verification limitations, and the
+method and limitations of estimates and independent measurements cannot be only
+whitespace or invisible characters.
 This prevents spelling variations from satisfying a non-author gate; it does not
 prove two different names belong to different people. Reviewers must still check
 actual identity and conflicts. Every non-null review date is validated, including

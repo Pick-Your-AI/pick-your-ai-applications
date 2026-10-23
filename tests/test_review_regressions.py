@@ -160,6 +160,23 @@ class ClaimIntegrityTests(unittest.TestCase):
                 record['claims'][0]['verification']['protocol_version'] = protocol_version
                 self.rejected(record, 'pinned protocol')
 
+    def test_version_pinned_claim_requires_substantive_version(self):
+        valid = fixture(); valid['claims'][0].update(temporal_scope='version_pinned', version='synthetic-app 2.1')
+        self.assertEqual([], self.check(valid))
+        for version in ('   ', '\u200b'):
+            with self.subTest(version=repr(version)):
+                record = copy.deepcopy(valid); record['claims'][0]['version'] = version
+                self.rejected(record, 'version-pinned facts need a concrete version')
+
+    def test_verification_receipt_requires_substantive_limitations(self):
+        valid = self.verified(); valid['claims'][0]['evidence_grade'] = 'independent_measurement'
+        valid['publication']['fields'][0]['display_evidence_grade'] = 'independent_measurement'
+        self.assertEqual([], self.check(valid))
+        for limitations in ('   ', '\u200b'):
+            with self.subTest(limitations=repr(limitations)):
+                record = copy.deepcopy(valid); record['claims'][0]['verification']['limitations'] = limitations
+                self.rejected(record, 'verification receipts require their limitations')
+
     def test_allowed_rights_review_requires_substantive_reviewer(self):
         self.assertEqual([], self.check(fixture()))
         for reviewer in ('   ', '\u200b'):
