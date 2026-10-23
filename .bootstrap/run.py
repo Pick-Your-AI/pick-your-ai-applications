@@ -208,7 +208,7 @@ def issue_index(issues):
     for issue in issues:
         if 'pull_request' in issue:
             continue
-        markers = re.findall(r'<!-- plan-id: ([A-Z0-9-]+) -->', issue.get('body') or '')
+        markers = re.findall(r'<!-- plan-id: ([A-Z0-9.-]+) -->', issue.get('body') or '')
         check(len(markers) <= 1, 'Multiple plan markers on one issue')
         if markers:
             check(markers[0] not in result, 'Duplicate stable plan ID: ' + markers[0])
