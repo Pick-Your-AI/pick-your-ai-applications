@@ -8,3 +8,4 @@ build/
 dist/
 *.log
 .bootstrap-state.json.lock
+.bootstrap-started.json

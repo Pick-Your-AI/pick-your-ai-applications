@@ -10,6 +10,7 @@ import json
 import math
 import re
 import sys
+import unicodedata
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -145,28 +146,69 @@ def date_value(value, path, errors, as_of, nullable=False):
         return None
 
 
+def normalize_identity(value):
+    """Comparison key only: preserve the original evidence spelling in records."""
+    return " ".join(unicodedata.normalize("NFKC", value or "").strip().casefold().removeprefix("@").split())
+
+
+def load_json(path):
+    """Reject ambiguous object keys and non-JSON numbers before applying gates."""
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON object key: {key!r}")
+            result[key] = value
+        return result
+    def invalid_constant(value):
+        raise ValueError(f"non-finite JSON number: {value}")
+    def finite_float(value):
+        number = float(value)
+        if not math.isfinite(number):
+            invalid_constant(value)
+        return number
+    return json.loads(Path(path).read_text(encoding="utf-8"), object_pairs_hook=unique_pairs,
+                      parse_constant=invalid_constant, parse_float=finite_float)
+
+
 def url_errors(url, path, errors, synthetic=False):
+    # Metadata validation only. Retrieval code must separately recheck resolved
+    # addresses and every redirect; this deliberately performs no DNS/network I/O.
     try:
-        p = urlsplit(url)
-        if p.scheme not in {"http", "https"} or not p.hostname or p.username or p.password:
+        if not isinstance(url, str) or not url or any(ord(c) <= 32 or ord(c) == 127 for c in url) or "\\" in url:
             raise ValueError()
-        if p.query or p.fragment:
-            # Public anchors are useful; reject query-bearing locators only, since
-            # they can contain signed credentials. Store a stable canonical URL.
-            if p.query:
-                raise ValueError()
-        host = p.hostname.lower()
-        if host == "localhost" or host.endswith(".localhost"):
+        p = urlsplit(url)
+        if p.scheme not in {"http", "https"} or not p.hostname or p.username is not None or p.password is not None or p.query:
+            raise ValueError()
+        _ = p.port  # Invalid/out-of-range ports must not escape validation.
+        host = p.hostname.rstrip(".").lower()
+        if "%" in host:
+            raise ValueError()
+        if ":" not in host:
+            host = host.encode("idna").decode("ascii").lower()
+        if host == "localhost" or host.endswith((".localhost", ".local", ".internal", ".lan", ".home")):
             raise ValueError()
         try:
             address = ipaddress.ip_address(host)
         except ValueError:
             address = None
-        if address is not None and not address.is_global:
-            raise ValueError()
+        if address is not None:
+            if not address.is_global or address.is_multicast or address.is_reserved:
+                raise ValueError()
+            mapped = getattr(address, "ipv4_mapped", None)
+            if mapped is not None and not mapped.is_global:
+                raise ValueError()
+        else:
+            # Browsers accept integer, octal, hexadecimal and short IPv4 forms.
+            # Reject these ambiguous numeric hosts, rather than resolving them.
+            if "." not in host or re.fullmatch(r"(?:0x[0-9a-f]+|[0-9]+)", host.rsplit(".", 1)[-1]):
+                raise ValueError()
+            labels = host.split(".")
+            if len(host) > 253 or any(not re.fullmatch(r"[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?", label) for label in labels):
+                raise ValueError()
         if not synthetic and (host.endswith((".invalid", ".test", ".example")) or host in {"example.com", "example.org", "example.net"}):
             raise ValueError()
-    except (ValueError, TypeError):
+    except (ValueError, TypeError, UnicodeError):
         fail(errors, path, "needs a stable public HTTP(S) URL, without credentials or query parameters; fixture URLs are test-only")
 
 
@@ -182,7 +224,7 @@ def unique_map(items, key, path, errors):
 
 def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None):
     as_of = as_of or dt.datetime.now(dt.timezone.utc).date()
-    schema = json.loads((SCHEMA_DIR / "application.schema.json").read_text())
+    schema = load_json(SCHEMA_DIR / "application.schema.json")
     errors = check_schema_vocabulary(schema) + schema_errors(record, schema)
     if errors:
         return errors
@@ -202,6 +244,11 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
     if record["entity_type"] != "application_product":
         fail(errors, "$", "models, integrations, releases and offerings cannot masquerade as application products")
     identity = record["identity"]
+    for key in ("name", "vendor_name"):
+        if not normalize_identity(identity[key]):
+            fail(errors, "identity", f"{key} must not be blank")
+    if any(not normalize_identity(alias) for alias in identity["aliases"]):
+        fail(errors, "identity", "aliases must not be blank")
     if identity["canonical_url"] is not None:
         url_errors(identity["canonical_url"], "identity.canonical_url", errors, synthetic)
     if record["record_id"] != identity["product_id"]:
@@ -235,6 +282,13 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
         subject = claim["subject"]
         if refs.get(subject["id"]) != subject["entity_type"]:
             fail(errors, path, "claim subject must resolve to an exact registered entity and kind")
+        offering = claim["scope"]["offering_id"]
+        if offering is not None and refs.get(offering) != "application_offering":
+            fail(errors, path, "scoped offering_id must resolve to a registered application offering for this product")
+        if offering is not None and subject["entity_type"] == "application_offering" and subject["id"] != offering:
+            fail(errors, path, "offering subject and scoped offering_id must agree")
+        if not normalize_identity(claim["researcher"]):
+            fail(errors, path, "researcher must not be blank")
         missing = set(claim["source_ids"]) - sources.keys()
         if missing:
             fail(errors, path, "unresolved source IDs: " + ", ".join(sorted(missing)))
@@ -247,6 +301,8 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             fail(errors, path, "known/unsupported claims require an explicit value")
         if claim["value_status"] == "unsupported" and (claim["source_status"] != "checked" or not claim["explicit_negative_evidence"]):
             fail(errors, path, "unsupported needs checked explicit negative evidence; omission is unknown")
+        if claim["value_status"] == "unsupported" and claim["value"] is not False:
+            fail(errors, path, "unsupported claims must use the explicit JSON false value")
         if claim["source_status"] == "checked":
             if not claim["source_ids"] or not any(sources[s]["authority"] == "primary" for s in claim["source_ids"] if s in sources):
                 fail(errors, path, "checked claims require primary source evidence")
@@ -262,8 +318,10 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             fail(errors, path, "current-state facts must display their checked date as as_of")
         date_value(claim["as_of"], path + ".as_of", errors, as_of, nullable=True)
         review = claim["review"]
+        if review["reviewed_on"] is not None:
+            date_value(review["reviewed_on"], path + ".reviewed_on", errors, as_of)
         if review["status"] == "approved":
-            if not review["reviewer"] or review["reviewer"] == claim["researcher"]:
+            if not normalize_identity(review["reviewer"]) or normalize_identity(review["reviewer"]) == normalize_identity(claim["researcher"]):
                 fail(errors, path, "approved claim requires a reviewer other than its researcher")
             reviewed = date_value(review["reviewed_on"], path + ".reviewed_on", errors, as_of)
             checked = date_value(claim["checked_on"], path + ".checked_on", errors, as_of, nullable=True)
@@ -280,9 +338,9 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             else:
                 if not verification["independent"]:
                     fail(errors, path, "vendor measurements are not independent verification")
-                if verification["verifier"] == claim["researcher"]:
+                if not normalize_identity(verification["verifier"]) or normalize_identity(verification["verifier"]) == normalize_identity(claim["researcher"]):
                     fail(errors, path, "verification must be independent of the claim researcher")
-                if verification["verifier"].casefold() in {identity["vendor_name"].casefold(), *(sources[s]["publisher"].casefold() for s in claim["source_ids"] if s in sources and sources[s]["authority"] == "primary")}:
+                if normalize_identity(verification["verifier"]) in {normalize_identity(identity["vendor_name"]), *(normalize_identity(sources[s]["publisher"]) for s in claim["source_ids"] if s in sources and sources[s]["authority"] == "primary")}:
                     fail(errors, path, "verification must be independent of the product vendor")
                 verified = date_value(verification["verified_on"], path + ".verified_on", errors, as_of)
                 if verified and claim["checked_on"] is not None and verified.isoformat() < claim["checked_on"]:
@@ -294,19 +352,28 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                     vs = verification["source_id"]
                     if vs not in sources or sources.get(vs, {}).get("authority") != "independent" or vs not in claim["source_ids"]:
                         fail(errors, path, "second-source verification needs a cited independent source")
+                    elif normalize_identity(sources[vs]["publisher"]) in {normalize_identity(identity["vendor_name"]), *(normalize_identity(sources[s]["publisher"]) for s in claim["source_ids"] if s in sources and sources[s]["authority"] == "primary")}:
+                        fail(errors, path, "independent source publisher cannot be the product vendor or primary publisher")
         elif verification is not None:
             fail(errors, path, "unverified claims must not carry a verification receipt")
+        if claim["evidence_grade"] == "independent_measurement":
+            if claim["verification_status"] != "verified" or verification is None:
+                fail(errors, path, "independent_measurement requires a valid independent verification receipt, not vendor documentation alone")
+            if not claim["method_and_limitations"].strip():
+                fail(errors, path, "independent_measurement requires method and limitations")
         if claim["evidence_grade"] == "estimate" and not claim["method_and_limitations"]:
             fail(errors, path, "estimates require method, assumptions and limitations")
         if claim["fact_type"] == "pricing" and claim["value_status"] == "known":
             value = claim["value"]
-            price_schema = json.loads((SCHEMA_DIR / "pricing.schema.json").read_text())
+            price_schema = load_json(SCHEMA_DIR / "pricing.schema.json")
             errors.extend(schema_errors(value, price_schema, path + ".value"))
             if not isinstance(value, dict) or schema_errors(value, price_schema):
                 continue
             date_value(value["effective_on"], path + ".value.effective_on", errors, as_of)
             if refs.get(value["offering_id"]) != "application_offering":
                 fail(errors, path, "pricing requires an exact registered application offering")
+            if offering is not None and offering != value["offering_id"]:
+                fail(errors, path, "priced offering and scoped offering_id must agree")
             if subject["id"] != value["offering_id"]:
                 fail(errors, path, "price subject must be the priced offering")
             if claim["temporal_scope"] != "current_state":
@@ -332,7 +399,16 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                 fail(errors, path, "allowed source use requires reviewer and decision receipt")
         if right["decision_url"]:
             url_errors(right["decision_url"], path + ".decision_url", errors, synthetic)
+    relation_targets = {
+        "renamed_from": {"application_product"}, "replaces": {"application_product"},
+        "replaced_by": {"application_product"}, "fork_of": {"application_product"},
+        "discontinued_successor": {"application_product"}, "member_of": {"product_family"},
+        "sold_by": {"vendor"}, "uses_model": {"model"},
+        "integrates_with": {"integration", "application_product"},
+    }
     for relation in record["relationships"]:
+        if relation["target_entity_type"] not in relation_targets[relation["relation"]]:
+            fail(errors, "relationships", "target entity kind is invalid for relationship " + relation["relation"])
         if relation["target_id"] == identity["product_id"]:
             fail(errors, "relationships", "self relationship is not a product identity distinction")
         if not relation["target_id"].startswith(PREFIXES[relation["target_entity_type"]]):
@@ -408,14 +484,15 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
     return errors
 
 
-def validate_directory(path, *, as_of=None, taxonomy=None):
+def validate_directory(path, *, as_of=None, taxonomy=None, identity_resolutions=None):
     errors = []
     identities = {}
     urls = {}
+    names = {}
     files = sorted(path.glob("*.json")) if path.exists() else []
     for file in files:
         try:
-            record = json.loads(file.read_text())
+            record = load_json(file)
         except (ValueError, OSError) as exc:
             errors.append(f"{file}: {exc}")
             continue
@@ -427,6 +504,8 @@ def validate_directory(path, *, as_of=None, taxonomy=None):
         if rid in identities:
             errors.append(f"{file}: duplicate product identity also in {identities[rid]}")
         identities[rid] = str(file)
+        for name in [record["identity"]["name"], *record["identity"]["aliases"]]:
+            names.setdefault(normalize_identity(name), set()).add(rid)
         url = record["identity"]["canonical_url"]
         if url is not None:
             parts = urlsplit(url)
@@ -434,12 +513,49 @@ def validate_directory(path, *, as_of=None, taxonomy=None):
             if normalized in urls:
                 errors.append(f"{file}: duplicate canonical URL; resolve aliases/rebrands against {urls[normalized]}")
             urls[normalized] = str(file)
+    resolutions = {}
+    if identity_resolutions is None:
+        identity_resolutions = []
+    if not isinstance(identity_resolutions, list):
+        errors.append("identity resolutions must be a list of explicit reviewed decisions")
+        identity_resolutions = []
+    for resolution in identity_resolutions:
+        before = len(errors)
+        if not isinstance(resolution, dict) or not {"normalized_name", "product_ids", "decision", "researcher", "reviewer", "reviewed_on", "decision_url"} <= resolution.keys():
+            errors.append("identity resolution requires scoped product IDs and review metadata")
+            continue
+        name, product_ids = resolution["normalized_name"], resolution["product_ids"]
+        if not isinstance(name, str) or not name or name != normalize_identity(name) or name in resolutions:
+            errors.append("identity resolution name must be unique and normalized")
+            continue
+        if not isinstance(product_ids, list) or any(not isinstance(x, str) for x in product_ids) or len(set(product_ids)) != len(product_ids) or set(product_ids) != names.get(name, set()) or len(product_ids) < 2:
+            errors.append("identity resolution must match all colliding product IDs exactly")
+        if resolution["decision"] != "distinct_products":
+            errors.append("duplicate/rebranded identities must be consolidated, not counted through a resolution")
+        researcher, reviewer = resolution["researcher"], resolution["reviewer"]
+        if not isinstance(researcher, str) or not isinstance(reviewer, str) or not normalize_identity(researcher) or not normalize_identity(reviewer) or normalize_identity(researcher) == normalize_identity(reviewer):
+            errors.append("identity resolution requires an independent reviewer")
+        date_value(resolution["reviewed_on"], "identity resolution reviewed_on", errors, as_of or dt.datetime.now(dt.timezone.utc).date())
+        url_errors(resolution["decision_url"], "identity resolution decision_url", errors)
+        if len(errors) == before:
+            resolutions[name] = set(product_ids)
+    for name, product_ids in names.items():
+        if len(product_ids) > 1 and resolutions.get(name) != product_ids:
+            errors.append(f"unresolved name/alias collision {name!r}: {', '.join(sorted(product_ids))}; consolidate or supply an independently reviewed distinct-products decision")
     return files, errors
+
+
+def price_observation_key(claim, sources):
+    """Identify a repeated observation, even when a copy is assigned a new ID."""
+    fields = ("subject", "field", "value_status", "value", "version", "scope", "as_of", "checked_on")
+    source_urls = {source["id"]: source["url"] for source in sources}
+    evidence = sorted(source_urls.get(sid, sid) for sid in claim["source_ids"])
+    return json.dumps([[claim[key] for key in fields], evidence], sort_keys=True, ensure_ascii=False)
 
 
 def validate_pricing_record(record, applications, *, as_of=None, allow_synthetic=False):
     """Validate separate price evidence against its canonical product and offering."""
-    schema = json.loads((SCHEMA_DIR / "pricing-record.schema.json").read_text())
+    schema = load_json(SCHEMA_DIR / "pricing-record.schema.json")
     errors = check_schema_vocabulary(schema) + schema_errors(record, schema)
     if errors:
         return errors
@@ -453,6 +569,10 @@ def validate_pricing_record(record, applications, *, as_of=None, allow_synthetic
         errors.append("pricing: standalone pricing records must contain a pricing claim")
     if record["claim"]["subject"] != {"id": record["offering_id"], "entity_type": "application_offering"}:
         errors.append("pricing: the claim subject must be the exact offering_id")
+    observation = price_observation_key(record["claim"], record["sources"])
+    for existing in application["claims"]:
+        if existing["id"] == record["claim"]["id"] or (existing["fact_type"] == "pricing" and price_observation_key(existing, application["sources"]) == observation):
+            errors.append("pricing: observation duplicates a claim embedded in the canonical application")
     if record["synthetic"] != application["synthetic"]:
         errors.append("pricing: synthetic and real identities may not be mixed")
     if record["publication"]["state"] == "published" and application["publication"]["state"] not in {"eligible", "published"}:
@@ -467,10 +587,10 @@ def validate_pricing_record(record, applications, *, as_of=None, allow_synthetic
 
 def validate_pricing_directory(path, applications, *, as_of=None):
     files = sorted(path.glob("*.json")) if path.exists() else []
-    errors, ids = [], set()
+    errors, ids, claim_ids, observations = [], set(), set(), set()
     for file in files:
         try:
-            record = json.loads(file.read_text())
+            record = load_json(file)
         except (ValueError, OSError) as exc:
             errors.append(f"{file}: {exc}")
             continue
@@ -481,6 +601,12 @@ def validate_pricing_directory(path, applications, *, as_of=None):
         if record["record_id"] in ids:
             errors.append(f"{file}: duplicate price observation record ID")
         ids.add(record["record_id"])
+        cid = (record["application_id"], record["claim"]["id"])
+        observation = (record["application_id"], price_observation_key(record["claim"], record["sources"]))
+        if cid in claim_ids or observation in observations:
+            errors.append(f"{file}: duplicate standalone price observation")
+        claim_ids.add(cid)
+        observations.add(observation)
     return files, errors
 
 
@@ -489,17 +615,19 @@ def main():
     parser.add_argument("--data-dir", type=Path, default=ROOT / "data" / "applications")
     parser.add_argument("--pricing-dir", type=Path, default=ROOT / "data" / "pricing")
     parser.add_argument("--taxonomy", type=Path, default=ROOT / "taxonomy" / "taxonomy.json")
+    parser.add_argument("--identity-resolutions", type=Path, default=ROOT / "data" / "identity-resolutions.json")
     parser.add_argument("--as-of", type=dt.date.fromisoformat, default=dt.datetime.now(dt.timezone.utc).date())
     args = parser.parse_args()
     errors = []
     for file in sorted(SCHEMA_DIR.glob("*.schema.json")):
-        errors.extend(f"{file}: {e}" for e in check_schema_vocabulary(json.loads(file.read_text())))
-    taxonomy = json.loads(args.taxonomy.read_text()) if args.taxonomy.exists() else None
-    files, data_errors = validate_directory(args.data_dir, as_of=args.as_of, taxonomy=taxonomy)
+        errors.extend(f"{file}: {e}" for e in check_schema_vocabulary(load_json(file)))
+    taxonomy = load_json(args.taxonomy) if args.taxonomy.exists() else None
+    resolutions = load_json(args.identity_resolutions) if args.identity_resolutions.exists() else []
+    files, data_errors = validate_directory(args.data_dir, as_of=args.as_of, taxonomy=taxonomy, identity_resolutions=resolutions)
     errors.extend(data_errors)
     applications = {}
     if not data_errors:
-        applications = {record["record_id"]: record for record in (json.loads(file.read_text()) for file in files)}
+        applications = {record["record_id"]: record for record in (load_json(file) for file in files)}
     pricing_files, pricing_errors = validate_pricing_directory(args.pricing_dir, applications, as_of=args.as_of)
     errors.extend(pricing_errors)
     if errors:

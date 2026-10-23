@@ -199,7 +199,10 @@ class ApplicationContractTests(unittest.TestCase):
     def test_separate_price_requires_canonical_application_and_offering(self):
         self.add_price()
         price = {"schema_version": "0.1.0", "record_id": "price:synthetic-standard-20261021", "entity_type": "application_price", "synthetic": True, "application_id": self.record["record_id"], "offering_id": "offering:synthetic-standard", "sources": self.record["sources"], "claim": self.record["claims"][0], "rights_decisions": self.record["rights_decisions"], "publication": self.record["publication"], "known_unknowns": [], "research_notes": ["Synthetic price wrapper."]}
-        applications = {self.record["record_id"]: self.record}
+        canonical = copy.deepcopy(self.record)
+        canonical["claims"] = []
+        canonical["publication"] = {"state": "notes", "fields": [], "release_url": None, "consumer_acceptance_url": None}
+        applications = {self.record["record_id"]: canonical}
         self.assertEqual([], validator.validate_pricing_record(price, applications, as_of=AS_OF, allow_synthetic=True))
         errors = validator.validate_pricing_record(price, {}, as_of=AS_OF, allow_synthetic=True)
         self.assertTrue(any("canonical application" in error for error in errors), errors)

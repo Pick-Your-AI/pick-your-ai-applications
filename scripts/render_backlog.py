@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import argparse
 from collections import Counter
 from pathlib import Path
 
@@ -13,10 +14,12 @@ def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n")
 
 
-def guard_regeneration(root):
+def guard_regeneration(root, state_paths=()):
     """Never erase live identifiers or overwrite a plan after provisioning starts."""
-    if (root/'.bootstrap-state.json').exists():
+    if any(path.exists() for path in [root/'.bootstrap-state.json', root/'.bootstrap-started.json', *map(Path, state_paths)]):
         raise ValueError('provisioning state exists; reconcile the live plan before regeneration')
+    if (root/'planning/GITHUB_ESTABLISHMENT_RECEIPT.json').exists():
+        raise ValueError('live GitHub state exists in the establishment receipt; reconcile instead of regenerating')
     path=root/'planning/backlog.json'
     if path.exists():
         old=json.loads(path.read_text())
@@ -79,8 +82,11 @@ def render_body(n, by_id):
     return "\n".join(lines)
 
 
-def main():
-    guard_regeneration(ROOT)
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--state', action='append', type=Path, default=[], help='Also guard a legacy/custom external provisioning checkpoint; repeat for multiple files.')
+    args = parser.parse_args(argv)
+    guard_regeneration(ROOT, args.state)
     taxonomy=json.loads((ROOT/'taxonomy/taxonomy.json').read_text())
     foundations=json.loads((ROOT/'planning/foundation-backlog.json').read_text())
     nodes=[]

@@ -120,6 +120,18 @@ class State:
         os.replace(temp, self.path)
 
 
+def mark_live_plan(root):
+    """Protect regeneration even when the durable checkpoint lives elsewhere."""
+    marker = root / '.bootstrap-started.json'
+    try:
+        with marker.open('x', encoding='utf-8') as handle:
+            json.dump({'version': 1, 'target': TARGET, 'reason': 'live provisioning requested'}, handle)
+            handle.write('\n')
+    except FileExistsError:
+        if read_json(marker).get('target') != TARGET:
+            raise BootstrapError('Local provisioning marker belongs to a different repository.')
+
+
 class GitHub:
     """gh owns authentication. This code never obtains or prints credential values."""
     def __init__(self, state, apply=False, delay=1.1, max_mutations=0):
@@ -466,7 +478,7 @@ class Provisioner:
         remote_files = {entry['path']: entry['sha'] for entry in tree['tree'] if entry['type'] == 'blob'}
         checked = 0
         excluded = {'.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'}
-        state_names = {self.state.path.name, self.state.path.name + '.tmp', self.state.path.name + '.lock'}
+        state_names = {self.state.path.name, self.state.path.name + '.tmp', self.state.path.name + '.lock', '.bootstrap-started.json'}
         for path in sorted(self.root.rglob('*')):
             rel = path.relative_to(self.root)
             if any(part in excluded for part in rel.parts) or path.name in state_names or path.suffix == '.pyc':
@@ -541,6 +553,8 @@ def main(argv=None):
         state_path = (args.state or root / '.bootstrap-state.json').resolve()
         with locked(state_path.with_name(state_path.name + '.lock')):
             state = State(state_path)
+            if args.apply:
+                mark_live_plan(root)
             gh = GitHub(state, args.apply, args.mutation_delay, args.max_mutations)
             runner = Provisioner(root, plan, config, gh, state)
             report = runner.run(args.scaffold_commit)
