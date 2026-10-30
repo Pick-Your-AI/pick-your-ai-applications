@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def write_json(path, value):
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n")
+    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding='utf-8')
 
 
 def guard_regeneration(root, state_paths=()):
@@ -22,7 +22,7 @@ def guard_regeneration(root, state_paths=()):
         raise ValueError('live GitHub state exists in the establishment receipt; reconcile instead of regenerating')
     path=root/'planning/backlog.json'
     if path.exists():
-        old=json.loads(path.read_text())
+        old=json.loads(path.read_text(encoding='utf-8'))
         if old.get('status')!='prepared_not_provisioned' or any(any(n.get('github',{}).values()) for n in old.get('nodes',[])):
             raise ValueError('live GitHub state exists; refuse to reset identifiers or status')
 
@@ -87,8 +87,8 @@ def main(argv=None):
     parser.add_argument('--state', action='append', type=Path, default=[], help='Also guard a legacy/custom external provisioning checkpoint; repeat for multiple files.')
     args = parser.parse_args(argv)
     guard_regeneration(ROOT, args.state)
-    taxonomy=json.loads((ROOT/'taxonomy/taxonomy.json').read_text())
-    foundations=json.loads((ROOT/'planning/foundation-backlog.json').read_text())
+    taxonomy=json.loads((ROOT/'taxonomy/taxonomy.json').read_text(encoding='utf-8'))
+    foundations=json.loads((ROOT/'planning/foundation-backlog.json').read_text(encoding='utf-8'))
     nodes=[]
     program=base_node('APP-PROGRAM','Evidence-backed AI applications directory research program','program',None,'Program','Critical')
     program.update(user_decision='Which AI software applications and software-delivered services can users compare using scoped, source-linked and independently reviewable evidence?',scope_in=['Eight application research domains and the versioned taxonomy','Application identity, evidence, commercial terms, trust, coverage, maintenance and consumer handoffs','Native delivery hierarchy and explicit task/subtask acceptance'],deliverable_paths=['taxonomy/taxonomy.json','coverage/ledger.json','planning/backlog.json','docs/HANDOFFS.md'],research_questions=['What is the declared research universe and what remains unexamined?','Which independently reviewed application facts can be published for each intended use?'],acceptance_criteria=['All native child outcomes satisfy their own scoped acceptance and required receiving reviews.','Coverage reports bounded denominators, actual records, unknowns and duplication rather than a global exhaustive percentage.','Every eligible consumer projection links exact research/evidence/rights revisions and an actual receiving decision.','Research completion, independent product verification, artifact release and website delivery are reported separately.'])
@@ -128,11 +128,11 @@ def main(argv=None):
     plan={'schema_version':'1.0.0','status':'prepared_not_provisioned','target_repository':'Pick-Your-AI/pick-your-ai-applications','external_parent':{'repository':'Pick-Your-AI/pick-your-ai-research','number':509,'url':'https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509','relationship':'native_parent_of_program','verified':False},'counts':counts,'nodes':nodes}
     write_json(ROOT/'planning/backlog.json',plan)
     for n in nodes:
-        (ROOT/'planning/issue-bodies'/f"{n['id']}.md").write_text(render_body(n,by_id))
+        (ROOT/'planning/issue-bodies'/f"{n['id']}.md").write_text(render_body(n,by_id), encoding='utf-8')
     out=['# Applications delivery backlog','','This is the complete authored issue specification. Remote issue IDs and native relationships are not claimed until the establishment receipt records successful readbacks. Product research remains not started.','',f"**{len(nodes)} native issue definitions:** {counts['program']} program, {counts['epic']} epics, {counts['work_package']} work packages and {counts['task']} independent task issues. Category work packages contain {counts['checklist_task_groups']} smaller task groups. There are {counts['small_subtasks']} small subtasks across the backlog.",'','The program belongs under research #509. Native children must be attached through actual GitHub relationships. Small checklist tasks/subtasks are intentionally kept in their containing issue, following organization methodology.','', '| ID | Level | Parent | Outcome | Initial priority |','| --- | --- | --- | --- | --- |']
     for n in nodes:
         out.append(f"| [{n['id']}](issue-bodies/{n['id']}.md) | {n['kind']} | {n['parent_id'] or 'research #509'} | {n['title']} | {n['priority']} |")
-    (ROOT/'planning/BACKLOG.md').write_text('\n'.join(out)+'\n')
+    (ROOT/'planning/BACKLOG.md').write_text('\n'.join(out)+'\n', encoding='utf-8')
     readme=['# Application research taxonomy','','Version 0.1.0 is an authored research scope proposal. Its categories and facets are not product findings or a claim of worldwide exhaustive coverage.','',f"{len(taxonomy['groups'])} domains, {len(taxonomy['categories'])} categories, {sum(len(c['subcategories']) for c in taxonomy['categories'])} subcategories and {len(taxonomy['facets'])} cross-cutting facets.",'','See [machine-readable taxonomy](taxonomy.json), [coverage ledger](../coverage/ledger.json) and [delivery backlog](../planning/BACKLOG.md).','']
     for g in taxonomy['groups']:
         readme += ['## '+g['name'],'']
@@ -141,7 +141,7 @@ def main(argv=None):
                 readme += [f"- **{c['id']} — {c['name']}:** "+'; '.join(s['name'] for s in c['subcategories'])+'.']
         readme += ['']
     readme += ['## Classification rules','']+['- '+v for v in taxonomy['classification_policy'].values()]+['','## Exclusions','']+['- '+v for v in taxonomy['global_exclusions']]
-    (ROOT/'taxonomy/README.md').write_text('\n'.join(readme)+'\n')
+    (ROOT/'taxonomy/README.md').write_text('\n'.join(readme)+'\n', encoding='utf-8')
     print(json.dumps(counts,indent=2))
 
 

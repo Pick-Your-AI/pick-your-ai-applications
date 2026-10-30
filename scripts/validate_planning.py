@@ -190,9 +190,10 @@ def main():
     nodes=data[2]['nodes']; by_id={n['id']:n for n in nodes}
     for n in nodes:
         body=ROOT/'planning/issue-bodies'/f"{n['id']}.md"
-        if body.read_text()!=render_body(n,by_id):
+        text=body.read_text(encoding='utf-8')
+        if text!=render_body(n,by_id):
             raise ValueError(f"stale generated issue body: {n['id']}")
-        if re.search(r'- \[[ x]\].*https://github.com/.*/issues/',body.read_text()):
+        if re.search(r'- \[[ x]\].*https://github.com/.*/issues/',text):
             raise ValueError('native issue link duplicated as checklist')
     print(json.dumps({'validation':'passed','scope':'offline planning integrity, not GitHub creation or product verification','categories':len(data[0]['categories']),'subcategories':sum(len(c['subcategories']) for c in data[0]['categories']),'counts':counts},indent=2))
 

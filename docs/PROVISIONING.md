@@ -6,7 +6,7 @@
 
 The repository, Project #10, all 135 planned issues and all 134 internal native parent relationships already exist. The foundation is in PR #136, not `main`. Do not restart from an assumption that these resources are absent. See [establishment status](../planning/ESTABLISHMENT_STATUS.md) and [the live mapping](../planning/GITHUB_ESTABLISHMENT_RECEIPT.json).
 
-A separate repository-scoped Actions import completed the internal backlog. The general CLI helper below has not executed the remaining organization-Project or cross-repository steps. Use its readback and conflict protections to reconcile existing resources; no duplicate repository, Project or issues are needed. Project membership/fields, the native root-to-research-#509 edge, team access, review-policy enforcement and the reviewed merge remain distinct gates.
+A separate repository-scoped Actions import completed the internal backlog. The later [October 23 establishment checkpoint](../planning/ESTABLISHMENT_STATUS.md) records Project population and fields, the native root-to-research-#509 edge, team access and review-policy readbacks. The general CLI helper below did not perform those later steps; its earlier gaps are historical, not a request to recreate resources. Use readback and conflict protections to reconcile current state. The reviewed merge and research acceptance remain separate gates.
 
 The committed authored plan intentionally retains `prepared_not_provisioned` as its snapshot state. It is not the live resource inventory. The receipt provides the actual GitHub IDs; do not regenerate a competing plan or erase live triage.
 

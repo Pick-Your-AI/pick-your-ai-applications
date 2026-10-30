@@ -6,7 +6,7 @@ Research and planning for an evidence-backed directory of end-user and enterpris
 
 Parent: [Pick-Your-AI research #509, G12](https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509).
 
-**Live delivery:** [program #1](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1) contains the native hierarchy for all 135 planned issues and 134 internal parent relationships. [Project #10](https://github.com/orgs/Pick-Your-AI/projects/10) exists; its item and field population is still pending. The scaffold is submitted in [PR #136](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/136), not yet merged. See the [establishment status](planning/ESTABLISHMENT_STATUS.md) for review, access-policy and cross-repository handoff gates.
+**Recorded delivery:** The October 23, 2026 [establishment checkpoint](planning/ESTABLISHMENT_STATUS.md) verifies all 135 planned issues, 134 internal parent relationships, [Project #10](https://github.com/orgs/Pick-Your-AI/projects/10) population and fields, and the [program #1](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1) link to research #509. This is a dated observation, not a perpetual live inventory. The scaffold is submitted in [PR #136](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/136); its merge and current review state must be checked on GitHub. Research and receiving handoffs remain separate gates.
 
 ## Scope
 
