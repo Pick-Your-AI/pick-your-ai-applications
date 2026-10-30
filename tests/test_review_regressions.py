@@ -262,7 +262,7 @@ class ClaimIntegrityTests(unittest.TestCase):
 
 class IntakeIntegrityTests(unittest.TestCase):
     def test_anchored_identifiers_reject_trailing_newline(self):
-        record = fixture()
+        record, _ = price_fixture()
         self.assertEqual(v.validate_record(record, as_of=AS_OF, allow_synthetic=True), [])
         for location in ('record_id', 'product_id'):
             with self.subTest(location=location):
