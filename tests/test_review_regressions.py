@@ -168,6 +168,26 @@ class ClaimIntegrityTests(unittest.TestCase):
                 record = copy.deepcopy(valid); record['claims'][0]['version'] = version
                 self.rejected(record, 'version-pinned facts need a concrete version')
 
+    def test_application_release_requires_substantive_version(self):
+        def with_release(version):
+            record = fixture()
+            release_id = 'release:synthetic-private-probe'
+            record['entities'].append({'id': release_id, 'entity_type': 'application_release',
+                                       'name': 'Synthetic release', 'product_id': record['identity']['product_id'],
+                                       'version': version, 'url': None})
+            record['claims'][0]['subject'] = {'id': release_id, 'entity_type': 'application_release'}
+            return record
+
+        for version in ('2.1', '版本 2.1'):
+            with self.subTest(version=version):
+                self.assertEqual([], self.check(with_release(version)))
+        for version in (None, '', '   ', '\u200b'):
+            with self.subTest(version=repr(version)):
+                errors = self.check(with_release(version))
+                self.assertTrue(errors, f'invalid release version was accepted: {version!r}')
+                if version in ('   ', '\u200b'):
+                    self.assertTrue(any('release identity requires a concrete version' in error for error in errors), errors)
+
     def test_verification_receipt_requires_substantive_limitations(self):
         valid = self.verified(); valid['claims'][0]['evidence_grade'] = 'independent_measurement'
         valid['publication']['fields'][0]['display_evidence_grade'] = 'independent_measurement'
