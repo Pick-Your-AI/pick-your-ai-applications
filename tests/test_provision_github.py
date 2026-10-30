@@ -30,6 +30,28 @@ class ProvisionerTests(unittest.TestCase):
     def runner(self, gh):
         return p.Provisioner(Path(self.temp.name), {'nodes':[self.node]}, self.config, gh, self.state)
 
+    def test_recorded_project_rename_does_not_create_duplicate(self):
+        root = Path(self.temp.name)
+        (root / 'planning').mkdir()
+        (root / 'planning/GITHUB_ESTABLISHMENT_RECEIPT.json').write_text(json.dumps({
+            'repository': p.TARGET, 'project_url': 'https://github.com/orgs/Pick-Your-AI/projects/10'}), encoding='utf-8')
+        gh = type('Fake', (), {'apply': True})()
+        runner = self.runner(gh)
+        project = {'id': 'P10', 'number': 10, 'title': 'Renamed project',
+                   'url': 'https://github.com/orgs/Pick-Your-AI/projects/10',
+                   'readme': None, 'public': False, 'closed': False}
+        runner.projects = lambda: ('ORG', [project])
+        runner.ensure_project()
+        self.assertEqual(runner.project['id'], 'P10')
+        self.assertEqual(runner.report['project_title_drift']['observed_title'], 'Renamed project')
+
+    def test_missing_recorded_project_never_falls_back_to_title(self):
+        self.state.data['project'] = {'id': 'P10', 'number': 10}
+        runner = self.runner(type('Fake', (), {'apply': True})())
+        runner.projects = lambda: ('ORG', [{'id': 'P11', 'number': 11, 'title': p.PROJECT_TITLE}])
+        with self.assertRaisesRegex(p.BootstrapError, 'refusing duplicate creation'):
+            runner.ensure_project()
+
     def test_default_dry_run_is_offline(self):
         config = dict(self.config, labels=[])
         output = io.StringIO()

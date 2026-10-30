@@ -84,7 +84,7 @@ def schema_errors(value, schema, path="$", root_schema=None):
     if isinstance(value, str):
         if len(value) < schema.get("minLength", 0):
             fail(errors, path, "string too short")
-        if "pattern" in schema and not re.search(schema["pattern"], value):
+        if "pattern" in schema and not re.fullmatch(schema["pattern"], value):
             fail(errors, path, "string does not match required pattern")
     if isinstance(value, (int, float)) and not isinstance(value, bool):
         if "minimum" in schema and value < schema["minimum"]:

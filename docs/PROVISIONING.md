@@ -10,6 +10,8 @@ A separate repository-scoped Actions import completed the internal backlog. The 
 
 The committed authored plan intentionally retains `prepared_not_provisioned` as its snapshot state. It is not the live resource inventory. The receipt provides the actual GitHub IDs; do not regenerate a competing plan or erase live triage.
 
+Project discovery uses the recorded Project number or checkpoint ID before names. A rename of the recorded Project is reported without rewriting it; an inaccessible recorded Project fails closed and never authorizes creating a replacement. The prepared Project title remains historical input for a genuinely new bootstrap, not the identity of the established Project #10.
+
 ## Before executing
 
 Use an authorized GitHub CLI session on Linux or macOS. Authentication remains owned by `gh`; this script never reads or prints a token. It creates no credentials, grants no access, changes no teams or rulesets, submits no reviews and merges no pull requests. Repository and Project creation require the corresponding existing account permissions. Do not broaden credentials or bypass organization rules to make a failed request pass.

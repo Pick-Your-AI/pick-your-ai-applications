@@ -261,6 +261,18 @@ class ClaimIntegrityTests(unittest.TestCase):
 
 
 class IntakeIntegrityTests(unittest.TestCase):
+    def test_anchored_identifiers_reject_trailing_newline(self):
+        record = fixture()
+        self.assertEqual(v.validate_record(record, as_of=AS_OF, allow_synthetic=True), [])
+        for location in ('record_id', 'product_id'):
+            with self.subTest(location=location):
+                changed = copy.deepcopy(record)
+                if location == 'record_id':
+                    changed['record_id'] += '\n'
+                else:
+                    changed['entities'][0]['product_id'] += '\n'
+                self.assertTrue(any('pattern' in error for error in v.validate_record(changed, as_of=AS_OF, allow_synthetic=True)))
+
     def test_duplicate_keys_rejected_at_every_nesting_level(self):
         for text in ('{"publication":{},"publication":{}}', '{"claim":{"state":1,"state":2}}', '{"state":1,"sta\\u0074e":2}'):
             with self.subTest(text=text), tempfile.TemporaryDirectory() as d:
