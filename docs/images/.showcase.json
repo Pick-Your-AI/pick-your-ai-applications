@@ -1,0 +1,83 @@
+{
+ "config_sha256": "bd2386d654a06b2602ae9a379db613a44b7718a69e59e596c1aa59b3a6519e56",
+ "fingerprint": "faf97dc5f9f0422050bc863f391644e2ca1ada685abda022944938d6c37b1f1f",
+ "inputs": {
+  "description": "Source-linked research and delivery backlog for a comprehensive directory of end-user and enterprise AI applications, products, and services.",
+  "icon_sha256": "59220200a0557fb096aec062ad6ab9fb904b0675f999ea2c3bc78b1eb47eaa24",
+  "language": null,
+  "license": null,
+  "override_sha256": "dc2b549d0ee238956687d22aa9778d583ff8a327d3bb34217c56478435a82afc",
+  "owner": "Pick-Your-AI",
+  "repo": "pick-your-ai-applications",
+  "topics": [
+   "ai",
+   "ai-applications",
+   "ai-stack",
+   "ai-tools",
+   "data-catalog",
+   "directory",
+   "evidence",
+   "open-source",
+   "pick-your-ai",
+   "research"
+  ],
+  "type": "workspace",
+  "visibility": "public"
+ },
+ "outputs": {
+  "banner.png": {
+   "bytes": 76641,
+   "chips": [
+    {
+     "box": [
+      520,
+      238.6,
+      137.2,
+      38
+     ],
+     "kind": "key",
+     "source": "override",
+     "text": "AI directory"
+    },
+    {
+     "box": [
+      669.2,
+      238.6,
+      161.8,
+      38
+     ],
+     "kind": "attr",
+     "source": "override",
+     "text": "Source-linked"
+    },
+    {
+     "box": [
+      843.0,
+      238.6,
+      196.5,
+      38
+     ],
+     "kind": "attr",
+     "source": "override",
+     "text": "Research backlog"
+    }
+   ],
+   "icon_source": "repo",
+   "px": [
+    2560,
+    720
+   ],
+   "repository_id": 1430403712,
+   "scale": 2,
+   "sha256": "9c0eabb50291f6f14f34b96bc11f7419262c367e01904583bff36c879c75a344"
+  },
+  "card.svg": {
+   "bytes": 23814,
+   "repository_id": 1430403712,
+   "sha256": "5a53fd06dafc5fb1b859847acb42d55389f3854e933bced0fa3540c9cf16511f"
+  }
+ },
+ "schema": 1,
+ "skill_version": "1.0.0",
+ "standard": "ct-std-v1"
+}
