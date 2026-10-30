@@ -84,7 +84,7 @@ def schema_errors(value, schema, path="$", root_schema=None):
     if isinstance(value, str):
         if len(value) < schema.get("minLength", 0):
             fail(errors, path, "string too short")
-        if "pattern" in schema and not re.search(schema["pattern"], value):
+        if "pattern" in schema and not re.fullmatch(schema["pattern"], value):
             fail(errors, path, "string does not match required pattern")
     if isinstance(value, (int, float)) and not isinstance(value, bool):
         if "minimum" in schema and value < schema["minimum"]:
@@ -279,7 +279,7 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             url_errors(node["url"], "entities." + node["id"] + ".url", errors, synthetic)
         if node["entity_type"] in {"application_release", "application_offering", "application_feature"} and node["product_id"] != identity["product_id"]:
             fail(errors, "entities", "child release/offering/feature must identify this product")
-        if node["entity_type"] == "application_release" and node["version"] is None:
+        if node["entity_type"] == "application_release" and not has_substantive_content(node["version"]):
             fail(errors, "entities", "release identity requires a concrete version")
     sources = unique_map(record["sources"], "id", "sources", errors)
     claims = unique_map(record["claims"], "id", "claims", errors)

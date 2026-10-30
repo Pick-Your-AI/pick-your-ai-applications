@@ -250,7 +250,28 @@ class Provisioner:
 
     def ensure_project(self):
         owner_id, projects = self.projects()
-        matching = [p for p in projects if p['title'] == PROJECT_TITLE or PROJECT_MARKER in (p.get('readme') or '')]
+        recorded = self.state.data.get('project', {})
+        recorded_id = recorded.get('id') or self.state.data.get('created_project_id')
+        recorded_number = recorded.get('number')
+        receipt_path = self.root / 'planning/GITHUB_ESTABLISHMENT_RECEIPT.json'
+        if receipt_path.exists():
+            receipt = read_json(receipt_path)
+            match = re.fullmatch(r'https://github\.com/orgs/Pick-Your-AI/projects/([1-9][0-9]*)', receipt.get('project_url', ''))
+            if receipt.get('repository') != TARGET or match is None:
+                raise BootstrapError('Invalid recorded Project identity; refusing discovery or creation.')
+            receipt_number = int(match.group(1))
+            if recorded_number is not None and recorded_number != receipt_number:
+                raise BootstrapError('Checkpoint and receipt Project identities conflict; preserved without changes.')
+            recorded_number = receipt_number
+        has_recorded_identity = recorded_id is not None or recorded_number is not None
+        if has_recorded_identity:
+            matching = [p for p in projects if
+                        (recorded_id is None or p['id'] == recorded_id) and
+                        (recorded_number is None or p['number'] == recorded_number)]
+            if not matching:
+                raise BootstrapError('Recorded organization Project is inaccessible; refusing duplicate creation.')
+        else:
+            matching = [p for p in projects if p['title'] == PROJECT_TITLE or PROJECT_MARKER in (p.get('readme') or '')]
         if len(matching) > 1:
             raise BootstrapError('Multiple matching Projects; refusing duplicate creation or arbitrary selection.')
         project = matching[0] if matching else None
@@ -259,8 +280,10 @@ class Provisioner:
             self.state.data['created_project_id'] = project['id']; self.state.save()
         if project is None:
             raise BootstrapError('Dedicated organization Project is missing.')
-        if project['title'] != PROJECT_TITLE or project['closed']:
+        if project['closed'] or (not has_recorded_identity and project['title'] != PROJECT_TITLE):
             raise BootstrapError('Matching Project is renamed or closed; preserved without changes.')
+        if project['title'] != PROJECT_TITLE:
+            self.report['project_title_drift'] = {'prepared_title': PROJECT_TITLE, 'observed_title': project['title']}
         own_new = self.state.data.get('created_project_id') == project['id']
         if own_new and self.gh.apply and not (project.get('readme') or ''):
             self.gh.graphql('''mutation($input:UpdateProjectV2Input!){updateProjectV2(input:$input){projectV2{id}}}''', {'input': {'projectId': project['id'], 'readme': PROJECT_MARKER + '\n\n' + self.config['description'], 'shortDescription': self.config['description'], 'public': bool(self.config.get('public', False))}}, mutation=True)
