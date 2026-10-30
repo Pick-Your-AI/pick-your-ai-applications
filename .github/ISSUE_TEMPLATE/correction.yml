@@ -1,0 +1,21 @@
+name: Evidence correction or rights concern
+description: Report a factual error, stale record, identity conflict or reuse concern.
+title: "[Correction] "
+body:
+  - type: input
+    id: affected
+    attributes:
+      label: Affected record or claim ID and URL
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed correction and dated evidence
+      description: Keep private information out of public issues. Explain the exact claim and intended use affected.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Downstream impact and unresolved questions
