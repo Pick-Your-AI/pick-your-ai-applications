@@ -19,7 +19,7 @@ All four keep unknowns explicit and keep model, component, runtime and dataset o
 | --- | --- | --- |
 | Independent review of each package at its exact revision | Application research reviewer | pending |
 | Receiving decisions H01–H13 | Owners listed in `planning/handoffs.json` | pending (none named) |
-| Repository rulesets (non-author approval, latest-push approval, required checks) | Organization admins | pending; review rules are policy, not enforced |
+| Required `validate` check on `main` | #136, which adds `.github/workflows/validate.yml` | pending. Since 2026-10-23, rulesets have enforced one non-author approval of the latest push and the `validate` check on `main` (see REVIEW_POLICY.md, Enforcement status). Until #136 merges, nothing on `main` produces the check. |
 | Boundary questions U1–U4 | Domain owners named in application-scope.md | open |
 
 ## Acceptance (epic #10)
