@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "status": "proposed",
+  "description": "Receiving handoffs for application research. Every entry is pending until an actual reviewer records a decision at an exact revision; no approval is implied.",
+  "receipt_fields": ["producer_artifact", "contract_versions", "fields_and_uses", "evidence_conditions", "consumer", "reviewer", "decision", "conditions", "correction_and_rollback", "follow_ups"],
+  "handoffs": [
+    {"id": "H01", "concern": "Broad scope and G12 boundary", "consumer": "Pick-Your-AI/pick-your-ai-research#509", "producer_artifact": "docs/SCOPE.md; research/foundations/application-scope.md", "decision": "pending", "reviewer": null},
+    {"id": "H02", "concern": "Model and provider relationships", "consumer": "Pick-Your-AI/pick-your-ai-research#4", "producer_artifact": "docs/APPLICATION_CONTRACT.md (model: relationship claims)", "decision": "pending", "reviewer": null},
+    {"id": "H03", "concern": "Tool, API and integration components", "consumer": "Pick-Your-AI/pick-your-ai-research#26", "producer_artifact": "docs/APPLICATION_CONTRACT.md (integration: links)", "decision": "pending", "reviewer": null},
+    {"id": "H04", "concern": "Shared contract use", "consumer": "Pick-Your-AI/pick-your-ai-research#40", "producer_artifact": "schemas/application.schema.json; schemas/pricing-record.schema.json", "decision": "pending", "reviewer": null},
+    {"id": "H05", "concern": "Evidence grades and freshness", "consumer": "Pick-Your-AI/pick-your-ai-research#41", "producer_artifact": "docs/RESEARCH_METHOD.md", "decision": "pending", "reviewer": null},
+    {"id": "H06", "concern": "Source-use and redistribution rights", "consumer": "Pick-Your-AI/pick-your-ai-research#60", "producer_artifact": "docs/ADMISSION_POLICY.md", "decision": "pending", "reviewer": null},
+    {"id": "H07", "concern": "Shared price semantics", "consumer": "Pick-Your-AI/pick-your-ai-research#39", "producer_artifact": "schemas/pricing.schema.json", "decision": "pending", "reviewer": null},
+    {"id": "H08", "concern": "Application task evaluation", "consumer": "Pick-Your-AI/pick-your-ai-research#36", "producer_artifact": "F05 protocols (not yet written)", "decision": "pending", "reviewer": null},
+    {"id": "H09", "concern": "Ingestion and release of eligible projections", "consumer": "Pick-Your-AI/pick-your-ai-catalog-pipeline#1", "producer_artifact": "F06 export contract (not yet written)", "decision": "pending", "reviewer": null},
+    {"id": "H10", "concern": "Public directory requirements", "consumer": "Pick-Your-AI/pick-your-ai-website#15", "producer_artifact": "docs/HANDOFFS.md (website research requirements)", "decision": "pending", "reviewer": null},
+    {"id": "H11", "concern": "Datasets produced or used by applications", "consumer": "Pick-Your-AI/pick-your-ai-datasets#1", "producer_artifact": "docs/OWNERSHIP_HANDOFFS.md", "decision": "pending", "reviewer": null},
+    {"id": "H12", "concern": "Papers cited as sources", "consumer": "Pick-Your-AI/pick-your-ai-papers#1", "producer_artifact": "docs/OWNERSHIP_HANDOFFS.md", "decision": "pending", "reviewer": null},
+    {"id": "H13", "concern": "Mobile clients", "consumer": "unresolved: Pick-Your-AI/pick-your-ai-apple#1 and Pick-Your-AI/pick-your-ai-android#1 have not stated a receiving need", "producer_artifact": "F06 export contract (not yet written)", "decision": "pending", "reviewer": null}
+  ]
+}
