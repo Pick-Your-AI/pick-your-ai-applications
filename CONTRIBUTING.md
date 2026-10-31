@@ -12,6 +12,20 @@ The [organization policy](https://github.com/Pick-Your-AI/.github/blob/main/CONT
 6. Open a focused PR. Use `Refs #N` for partial progress and `Closes #N` only when the entire issue acceptance and receiving handoffs are met. Include source-check dates, evidence limitations, exact validation and consumer impact.
 7. Obtain the required review. Publication-eligible metadata still needs an accepted consumer handoff before it is called published.
 
+## Three kinds of contribution (task #92)
+
+| Kind | Where | Completeness | Counts as research |
+| --- | --- | --- | --- |
+| **Research note** | `research/notes/`, category decision records | Incomplete is fine; unknowns stay explicit | Yes, as candidates and findings, never as admitted records |
+| **Structured proposal** | `data/applications/`, `data/pricing/` | Only when the contract's required facts are evidenced | Yes, once reviewed under [docs/REVIEW_POLICY.md](docs/REVIEW_POLICY.md) |
+| **Synthetic fixture** | `tests/fixtures/` only, `synthetic: true`, reserved example hosts | Whatever the test needs | **Never** |
+
+## Linking issues
+
+- `Refs #N`: any partial progress, including a merged decision record whose receiving decisions are still pending.
+- `Closes #N`: only when **every** acceptance criterion of #N is met **and** its required receiving decisions are recorded at exact revisions. A merged PR alone never closes a research issue.
+- Disclose material affiliations in the PR description (see [docs/REVIEW_POLICY.md](docs/REVIEW_POLICY.md)).
+
 ## Research acceptance
 
 A completed package identifies the user decision, bounded discovery method, deduplicated candidates, comparison fields, claim-level evidence, scoped negatives/unknowns, source-use decisions or unresolved rights, and an accountable next action. It has a merged decision record and confirmed required handoffs. Empty tables, a generated file, a merged partial PR or a vendor page are not proof of completion.
