@@ -39,4 +39,12 @@ Undisclosed material affiliations found later trigger a re-review of the affecte
 
 ## Enforcement status
 
-As recorded on #66 (2026-10-23), the repository has **no rulesets**, so these review rules depend on maintainers following them. Configuring rulesets (required non-author approval, approval of the latest push, required checks) is an organization-admin action and is listed as pending in the F01 synthesis. This policy does not claim that enforcement exists.
+Read back on 2026-10-31 from `GET /repos/Pick-Your-AI/pick-your-ai-applications/rulesets`. The empty result recorded on #66 was observed before these rulesets were created on 2026-10-23.
+
+| Enforced by a repository ruleset | Not enforced (policy only) |
+| --- | --- |
+| On the default branch: one approving review; approval of the latest push by someone other than its pusher; the required `validate` check; no deletion or force-push. This ruleset has no bypass actors. | Review by each affected receiving owner, for decision records and policy changes |
+| Contributor branches limited to `contrib/**` and `dependabot/**`, with tags and other branches restricted. Organization admins and the maintain and admin repository roles can bypass this. | Affiliation disclosure and recusal, the evidence-grade rules, and research #40 review of shared-contract changes |
+| | Code-owner approval: CODEOWNERS routes reviews, but no ruleset requires it |
+
+The `validate` check comes from `.github/workflows/validate.yml`, which #136 adds. Until #136 merges, a pull request based on `main` cannot produce it. Rulesets enforce who may merge and that the structure validates. Whether a review actually checked the evidence still depends on the reviewer following this policy.
