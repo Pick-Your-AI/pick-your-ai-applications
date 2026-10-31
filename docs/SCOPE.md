@@ -9,11 +9,11 @@ This page is the short, normative statement of what this repository researches. 
 An **application** is identifiable software that gives a person or organization a usable workflow in which AI materially performs or assists the task. It must be one of:
 
 - a standalone product (web, desktop, mobile, CLI, browser extension or hosted service);
-- an **independently identifiable module** of a suite, with its own entry point, name or offering;
+- an **independently identifiable module** of a suite, with its own entry point, name **and** offering;
 - a complete self-hosted or local application that a user installs and operates;
 - a **software-delivered service**: a vendor-operated workflow, even with humans in the loop, that the customer uses through software and buys as a defined offering.
 
-Eligible audiences: individual consumers, professionals, teams, organizations and public bodies. Eligible delivery: hosted, local, hybrid, open source, source-available and proprietary. Predictive, classification, perception, recommendation and optimization workflows count alongside generative and agentic ones.
+Eligible audiences: individual consumers, professionals, teams, organizations and public bodies (a plain-language summary; structured `facets.*` claims use the enumerated values in `taxonomy/taxonomy.json`, including `unknown`). Eligible delivery: hosted, local, hybrid, open source, source-available and proprietary. Predictive, classification, perception, recommendation and optimization workflows count alongside generative and agentic ones.
 
 ## Out of scope (record and link instead)
 
@@ -29,7 +29,7 @@ Eligible audiences: individual consumers, professionals, teams, organizations an
 ## Counting rules
 
 - One application identity per product. Editions, plans, regions, languages and platforms are offerings or facets, not new applications.
-- A branded AI feature inside a broader product gets a `feature:` record. It becomes an application only when it has an independent entry point, offering or product identity (see the decision table).
+- A branded AI feature inside a broader product gets a `feature:` record. It becomes an application only when it has an independent entry point, name **and** offering (see the decision table).
 - The word "AI" in marketing is a discovery lead, not evidence of a material AI workflow.
 - Unknown stays unknown. An unexamined product is not out of scope, and a failed check is not a negative finding.
 

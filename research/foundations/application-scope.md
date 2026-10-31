@@ -1,6 +1,6 @@
 # APP-F01.01 decision record: application inclusion and exclusion
 
-Issue: #64 (tasks #88 review boundary cases, #89 accept scope and exclusions) · Status: proposed for review · Recorded: 2026-10-31
+Issue: #64 (tasks #88 review boundary cases, #89 accept scope and exclusions) · Version 1.0 (proposed), the same version as docs/SCOPE.md · Status: proposed for review · Recorded: 2026-10-31
 Normative summary: [docs/SCOPE.md](../../docs/SCOPE.md)
 
 ## User decision
@@ -9,7 +9,7 @@ Which purchasable, installable or directly usable AI software and service entiti
 
 ## Inputs (information only, no native blockers)
 
-- Taxonomy 1.0 global exclusions and boundary cases (`taxonomy/taxonomy.json`), Application contract 0.1.0 identity namespaces (`docs/APPLICATION_CONTRACT.md`).
+- Taxonomy 0.1.0 global exclusions and boundary cases (`taxonomy/taxonomy.json`), Application contract 0.1.0 identity namespaces (`docs/APPLICATION_CONTRACT.md`).
 - [research #509 / G12](https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509): the applications expansion; prior research boundaries are preserved.
 - [research #47 synthesis](https://github.com/Pick-Your-AI/pick-your-ai-research/blob/main/research/market/synthesis.md): the adopted NARROW program disposition.
 - [research #513](https://github.com/Pick-Your-AI/pick-your-ai-research/pull/513), proposed Stage 0 ledger. Its G12 row asks for product-versus-interface identity and cross-links before duplicating records. It is still a proposal; nothing here depends on its acceptance.
@@ -47,7 +47,7 @@ The examples are **illustrative archetypes**, not claims about any real product.
 | B14 | The same app in different languages or on different platforms | One application; offerings and facets | No duplicate per language, platform or region |
 | B15 | A dataset-labeling workbench | Application; the datasets it produces are separate entities | Taxonomy boundary: data labeling |
 
-**When an AI feature deserves its own application record (S02):** only when the feature has an independent entry point, name **and** offering (purchasable, installable or separately accessible). A feature that is merely toggled on inside a host product stays a `feature:` record, even if it is marketed prominently.
+**When an AI feature deserves its own application record (S02):** only when the feature has an independent entry point, name **and** offering (purchasable, installable or separately accessible). A feature that is merely toggled on inside a host product stays a `feature:` record, even if it is marketed prominently. S02 is the test for AI features and is narrower than the general module rule in `docs/TAXONOMY_AND_COVERAGE.md` ("independently discoverable and materially distinct in access, release, contract or workflow"): a feature that meets S02 meets that rule, but a feature that meets only that rule stays a `feature:` record. This record does not change the general rule for other modules and extensions.
 
 ## Decision 3: audiences and forms (task #89, S01)
 
@@ -57,7 +57,7 @@ The examples are **illustrative archetypes**, not claims about any real product.
 | Product form | web app; desktop app; mobile app; CLI; browser extension; suite module; self-hosted or local application; hosted service; software-delivered service |
 | Access | free; freemium; paid plan; contract or enterprise; open source; source-available |
 
-These are facet vocabularies for classification, not counts or coverage claims.
+These are plain-language eligibility summaries, not facet vocabularies. Structured `facets.*` claims use the enumerated values in `taxonomy/taxonomy.json` (including `unknown`), which `scripts/validate_applications.py` enforces; any vocabulary change belongs to APP-F02.02 as a versioned taxonomy migration. These summaries are not counts or coverage claims.
 
 ## Decision 4: compatibility with #47 NARROW
 
