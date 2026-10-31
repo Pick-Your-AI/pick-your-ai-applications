@@ -31,6 +31,10 @@ Separate observed facts, vendor statements, reproduced outcomes and estimates. D
 
 ## Open questions and follow-ups
 
+## Review and disclosure
+
+Material affiliations of the contributor and reviewer (kind only, no personal data); reviewer identity and the exact revision reviewed; any recusal. Unresolved disagreements, with both positions and their evidence.
+
 ## Consumer handoff
 
 Exact artifact/version, consumer, actual review reference or pending decision.
