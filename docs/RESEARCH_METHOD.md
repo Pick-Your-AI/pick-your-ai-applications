@@ -14,7 +14,7 @@ A claim names its exact subject (application, offering, feature or release) and 
 | --- | --- | --- | --- |
 | Was the source actually read? | `source_status` | `unchecked`, `checked` | `checked` means a researcher inspected eligible primary evidence on the stated date |
 | What kind of evidence is it? | `evidence_grade` | `primary_documentation`, `vendor_claim`, `independent_measurement`, `estimate` | Same vocabulary as research #41; graded per claim, not per source |
-| Has anyone independent confirmed it? | `verification` | `unverified`, `verified` | Requires an independent verifier plus a pinned reproducible protocol and receipt, or an independent second source |
+| Has anyone independent confirmed it? | `verification_status` (receipt in `verification`) | `unverified`, `verified` | Requires an independent verifier plus a pinned reproducible protocol and receipt, or an independent second source |
 | What does the evidence say? | `value_status` | `known`, `unknown`, `not_disclosed`, `not_applicable`, `disputed`, `unsupported` | `unsupported` needs checked, explicit negative evidence |
 
 These never collapse into each other. Reading documentation makes a claim `checked`, never `verified`.
