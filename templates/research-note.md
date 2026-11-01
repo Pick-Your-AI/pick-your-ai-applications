@@ -33,7 +33,7 @@ Separate observed facts, vendor statements, reproduced outcomes and estimates. D
 
 ## Review and disclosure
 
-Material affiliations of the contributor and reviewer (kind only, no personal data); reviewer identity and the exact revision reviewed; any recusal. Unresolved disagreements, with both positions and their evidence.
+Material affiliations of the contributor (kind only, no personal data). Reviewer identity, exact revision reviewed and any recusal: `pending` until approval; link the GitHub review or receiving receipt rather than editing this note after approval. Unresolved disagreements, with both positions and their evidence.
 
 ## Consumer handoff
 
