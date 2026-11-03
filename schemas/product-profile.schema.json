@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pickyour.ai/schemas/applications/0.1.0/product-profile.schema.json",
+  "title": "Product comparison field values (proposal 0.1.0)",
+  "description": "Value shapes for the product comparison claims in research/foundations/product-field-guide.md (APP-F02.03). A claim whose field the guide lists carries a value matching the $defs entry the guide names; unknown, undisclosed and inapplicable values stay null at claim level, as the application contract requires. A sub-field a source does not state is left out, which means not stated, never none or zero. No validator binds these shapes yet: that is a proposed, versioned contract change.",
+  "$defs": {
+    "decimal": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)?$"
+    },
+    "operating_system": {
+      "enum": ["windows", "macos", "linux", "ios", "ipados", "android", "chromeos", "web_browser", "other"]
+    },
+    "architecture": {
+      "enum": ["x86_64", "arm64", "other"]
+    },
+    "distribution": {
+      "enum": ["app_store", "direct_download", "package_manager", "browser_extension_store", "ide_marketplace", "container_image", "source_build", "hosted_web"]
+    },
+    "limit": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": ["file_size", "duration", "pages", "items", "characters", "tokens", "resolution", "requests", "other"]
+        },
+        "amount": { "$ref": "#/$defs/decimal" },
+        "unit": { "type": "string", "minLength": 1 },
+        "per": {
+          "enum": ["file", "request", "session", "day", "month", "other"]
+        },
+        "conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": ["kind", "amount", "unit", "per", "conditions"],
+      "additionalProperties": false
+    },
+    "io_channel": {
+      "type": "object",
+      "properties": {
+        "direction": { "enum": ["input", "output"] },
+        "modality": {
+          "enum": ["text", "image", "audio", "video", "structured_data", "documents", "spatial_3d", "sensor_timeseries", "code", "physical_action", "software_action", "multimodal"]
+        },
+        "formats": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limits": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/limit" },
+          "minItems": 0
+        },
+        "conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": ["direction", "modality", "formats", "limits", "conditions"],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "direction": { "const": "input" } } },
+          "then": { "properties": { "modality": { "enum": ["text", "image", "audio", "video", "structured_data", "documents", "spatial_3d", "sensor_timeseries", "multimodal"] } } }
+        },
+        {
+          "if": { "properties": { "direction": { "const": "output" } } },
+          "then": { "properties": { "modality": { "enum": ["text", "image", "audio", "video", "structured_data", "documents", "spatial_3d", "code", "physical_action", "software_action", "multimodal"] } } }
+        }
+      ]
+    },
+    "io": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/io_channel" },
+      "minItems": 1
+    },
+    "eligibility": {
+      "type": "object",
+      "properties": {
+        "account_kind": {
+          "enum": ["individual", "organization", "education", "public_sector", "developer"]
+        },
+        "eligible": { "type": "boolean" },
+        "requirements": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "basis": { "enum": ["documented_rule", "observed_sign_up"] }
+      },
+      "required": ["account_kind", "eligible", "requirements", "basis"],
+      "additionalProperties": false
+    },
+    "platform_test": {
+      "type": "object",
+      "properties": {
+        "result": { "enum": ["works", "partly_works", "fails"] },
+        "client_version": { "type": "string", "minLength": 1 },
+        "operating_system": { "$ref": "#/$defs/operating_system" },
+        "operating_system_version": { "type": "string", "minLength": 1 },
+        "architecture": { "$ref": "#/$defs/architecture" },
+        "workflow": { "type": "string", "minLength": 1 }
+      },
+      "required": ["result", "client_version", "operating_system", "operating_system_version", "architecture", "workflow"],
+      "additionalProperties": false
+    },
+    "client_platform": {
+      "type": "object",
+      "properties": {
+        "operating_systems": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/operating_system" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "architectures": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/architecture" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "minimum_os_versions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "operating_system": { "$ref": "#/$defs/operating_system" },
+              "version": { "type": "string", "minLength": 1 }
+            },
+            "required": ["operating_system", "version"],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": ["operating_systems"],
+      "additionalProperties": false
+    },
+    "installation": {
+      "type": "object",
+      "properties": {
+        "methods": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/distribution" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "requires_admin_rights": { "type": "boolean" },
+        "account_required_to_install": { "type": "boolean" }
+      },
+      "required": ["methods"],
+      "additionalProperties": false
+    },
+    "network": {
+      "type": "object",
+      "properties": {
+        "offline": { "enum": ["full", "partial", "none"] },
+        "works_offline": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "needs_network_for": {
+          "type": "array",
+          "items": {
+            "enum": ["activation", "sign_in", "license_check", "updates", "model_download", "inference", "sync", "telemetry", "other"]
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": ["offline", "works_offline", "needs_network_for"],
+      "additionalProperties": false
+    },
+    "runtime_requirements": {
+      "type": "object",
+      "properties": {
+        "kind": { "enum": ["minimum", "recommended"] },
+        "memory_gib": { "$ref": "#/$defs/decimal" },
+        "storage_gib": { "$ref": "#/$defs/decimal" },
+        "accelerator": {
+          "enum": ["not_used", "optional_gpu", "required_gpu", "optional_npu", "required_npu"]
+        },
+        "accelerator_memory_gib": { "$ref": "#/$defs/decimal" },
+        "operating_systems": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/operating_system" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "architectures": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/architecture" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "applies_to": { "type": "string", "minLength": 1 }
+      },
+      "required": ["kind", "applies_to"],
+      "additionalProperties": false
+    }
+  }
+}
