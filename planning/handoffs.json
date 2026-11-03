@@ -1,21 +1,782 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "status": "proposed",
-  "description": "Receiving handoffs for application research. Every entry is pending until an actual reviewer records a decision at an exact revision; no approval is implied.",
-  "receipt_fields": ["producer_artifact", "contract_versions", "fields_and_uses", "evidence_conditions", "consumer", "reviewer", "decision", "conditions", "correction_and_rollback", "follow_ups"],
+  "description": "Receiving handoffs for application research, one consumer per entry. docs/OWNERSHIP_HANDOFFS.md defines every field. Every decision is pending until the consumer's actual reviewer records it at an exact revision; no approval is implied. Consumer readbacks are dated; an unconfirmed consumer is unresolved, never assumed.",
+  "receipt_fields": [
+    "producer_artifact",
+    "contract_versions",
+    "fields_and_uses",
+    "evidence_conditions",
+    "consumer",
+    "reviewer",
+    "reviewer_authority",
+    "decision",
+    "conditions",
+    "correction_and_rollback",
+    "follow_ups"
+  ],
+  "entry_fields": [
+    "id",
+    "concern",
+    "kind",
+    "native_blocker",
+    "owning_package",
+    "required_for",
+    "consumer",
+    "consumer_status",
+    "consumer_evidence",
+    "unresolved_reason",
+    "producer_artifact",
+    "decision",
+    "reviewer",
+    "reviewer_authority"
+  ],
   "handoffs": [
-    {"id": "H01", "concern": "Broad scope and G12 boundary", "consumer": "Pick-Your-AI/pick-your-ai-research#509", "producer_artifact": "docs/SCOPE.md; research/foundations/application-scope.md (APP-F01.01; not yet on this branch)", "decision": "pending", "reviewer": null},
-    {"id": "H02", "concern": "Model and provider relationships", "consumer": "Pick-Your-AI/pick-your-ai-research#4", "producer_artifact": "docs/APPLICATION_CONTRACT.md (model: relationship claims)", "decision": "pending", "reviewer": null},
-    {"id": "H03", "concern": "Tool, API and integration components", "consumer": "Pick-Your-AI/pick-your-ai-research#26", "producer_artifact": "docs/APPLICATION_CONTRACT.md (integration: links)", "decision": "pending", "reviewer": null},
-    {"id": "H04", "concern": "Shared contract use", "consumer": "Pick-Your-AI/pick-your-ai-research#40", "producer_artifact": "schemas/application.schema.json; schemas/pricing-record.schema.json", "decision": "pending", "reviewer": null},
-    {"id": "H05", "concern": "Evidence grades and freshness", "consumer": "Pick-Your-AI/pick-your-ai-research#41", "producer_artifact": "docs/RESEARCH_METHOD.md (APP-F01.04; not yet on this branch)", "decision": "pending", "reviewer": null},
-    {"id": "H06", "concern": "Source-use and redistribution rights", "consumer": "Pick-Your-AI/pick-your-ai-research#60", "producer_artifact": "docs/ADMISSION_POLICY.md (APP-F01.04; not yet on this branch)", "decision": "pending", "reviewer": null},
-    {"id": "H07", "concern": "Shared price semantics", "consumer": "Pick-Your-AI/pick-your-ai-research#39", "producer_artifact": "schemas/pricing.schema.json", "decision": "pending", "reviewer": null},
-    {"id": "H08", "concern": "Application task evaluation", "consumer": "Pick-Your-AI/pick-your-ai-research#36", "producer_artifact": "F05 protocols (not yet written)", "decision": "pending", "reviewer": null},
-    {"id": "H09", "concern": "Ingestion and release of eligible projections", "consumer": "Pick-Your-AI/pick-your-ai-catalog-pipeline#1", "producer_artifact": "F06 export contract (not yet written)", "decision": "pending", "reviewer": null},
-    {"id": "H10", "concern": "Public directory requirements", "consumer": "Pick-Your-AI/pick-your-ai-website#15", "producer_artifact": "docs/HANDOFFS.md (website research requirements)", "decision": "pending", "reviewer": null},
-    {"id": "H11", "concern": "Datasets produced or used by applications", "consumer": "Pick-Your-AI/pick-your-ai-datasets#1", "producer_artifact": "docs/OWNERSHIP_HANDOFFS.md", "decision": "pending", "reviewer": null},
-    {"id": "H12", "concern": "Papers cited as sources", "consumer": "Pick-Your-AI/pick-your-ai-papers#1", "producer_artifact": "docs/OWNERSHIP_HANDOFFS.md", "decision": "pending", "reviewer": null},
-    {"id": "H13", "concern": "Mobile clients", "consumer": "unresolved: no receiving need confirmed for Pick-Your-AI/pick-your-ai-apple#1 or Pick-Your-AI/pick-your-ai-android#1", "producer_artifact": "F06 export contract (not yet written)", "decision": "pending", "reviewer": null}
+    {
+      "id": "H01",
+      "concern": "Broad scope and G12 boundary",
+      "kind": "acceptance_gate",
+      "native_blocker": false,
+      "owning_package": "APP-F01.01",
+      "required_for": [
+        "APP-F01.01 (#64)"
+      ],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 509,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Research coverage audit: near-exhaustive AI catalog, website gaps and repository routing"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/SCOPE.md",
+          "research/foundations/application-scope.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F01.01 (#141, #146)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H02",
+      "concern": "Model and provider relationships",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F02.04",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 4,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T1: Model Selection"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/APPLICATION_CONTRACT.md"
+        ],
+        "commit": "9ba7d9b458d510b08960b217916d5fb495ef7fcc",
+        "status": "existing",
+        "planned_by": null
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H03",
+      "concern": "Tool, API and integration components",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F02.04",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 26,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T4: Tools & APIs"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/APPLICATION_CONTRACT.md"
+        ],
+        "commit": "9ba7d9b458d510b08960b217916d5fb495ef7fcc",
+        "status": "existing",
+        "planned_by": null
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H04",
+      "concern": "Shared contract use",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F02.04",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 40,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T0: Component Schema & Compatibility Rules"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "schemas/application.schema.json",
+          "schemas/pricing-record.schema.json"
+        ],
+        "commit": "9ba7d9b458d510b08960b217916d5fb495ef7fcc",
+        "status": "existing",
+        "planned_by": null
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H05",
+      "concern": "Evidence grades and freshness",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F01.04",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 41,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T0: Catalog Data Sources & Freshness"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/RESEARCH_METHOD.md",
+          "docs/MAINTENANCE.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F01.04 (#144); recheck triggers APP-F04.03 (#78)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H06",
+      "concern": "Source-use and redistribution rights",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F03.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 60,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "MR-08: Validate commercial display and redistribution rights"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/ADMISSION_POLICY.md",
+          "research/foundations/source-policy.md",
+          "data/source-use-decisions.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F01.04 (#144); source, field and use permissions APP-F03.01 (#72)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H07",
+      "concern": "Shared price semantics",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F03.03",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 39,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T6: Cost Estimate"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "schemas/pricing.schema.json",
+          "schemas/pricing-record.schema.json"
+        ],
+        "commit": "9ba7d9b458d510b08960b217916d5fb495ef7fcc",
+        "status": "existing",
+        "planned_by": null
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H08",
+      "concern": "Application task evaluation",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F05.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 36,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T6: Evaluation"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/EVALUATION_METHOD.md",
+          "schemas/evaluation-run.schema.json",
+          "templates/evaluation-protocol.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F05.01 (#80)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H09",
+      "concern": "Ingestion and release of eligible projections",
+      "kind": "acceptance_gate",
+      "native_blocker": false,
+      "owning_package": "APP-F06.01",
+      "required_for": [
+        "APP-F06.01 (#84)"
+      ],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-catalog-pipeline",
+        "issue": 1,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "[CP] Establish the Pick Your AI catalog pipeline"
+      },
+      "unresolved_reason": "The issue is open and unassigned as of 2026-11-03. docs/HANDOFFS.md leaves the pipeline's receiving repository and issue to be confirmed, so this one is not assumed.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "contracts/applications/v0/README.md",
+          "schemas/application-export.schema.json",
+          "docs/CONSUMER_CONTRACT.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F06.01 (#84)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H10",
+      "concern": "Public directory requirements",
+      "kind": "acceptance_gate",
+      "native_blocker": false,
+      "owning_package": "APP-F06.03",
+      "required_for": [
+        "APP-F06.03 (#86)"
+      ],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-website",
+        "issue": 15,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Integrate the first real catalog snapshot and pricebook from merged research"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/WEBSITE_HANDOFF.md",
+          "planning/consumer-requirements.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F06.03 (#86)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H11",
+      "concern": "Datasets produced or used by applications",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": null,
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-datasets",
+        "issue": 1,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "[DATA] Pick Your AI datasets and benchmark research program"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [],
+        "commit": null,
+        "status": "unresolved",
+        "planned_by": null,
+        "unresolved_reason": "Application contract 0.1.0 has no dataset entity, relationship type or link target, so this interface cannot be expressed yet. Expressing it would be a versioned contract change."
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H12",
+      "concern": "Papers cited as sources",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F02.04",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-papers",
+        "issue": 1,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "[PAPER] AI Papers & Research Index"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "schemas/application.schema.json"
+        ],
+        "commit": "9ba7d9b458d510b08960b217916d5fb495ef7fcc",
+        "status": "existing",
+        "planned_by": null,
+        "fields": [
+          "sources"
+        ]
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H13",
+      "concern": "Mobile clients: Apple",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F06.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-apple",
+        "issue": 1,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Apple/iOS: End-to-end application delivery"
+      },
+      "unresolved_reason": "Receiving need unknown as of 2026-11-03.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "contracts/applications/v0/README.md",
+          "schemas/application-export.schema.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F06.01 (#84)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H14",
+      "concern": "Scope compatibility with research #47 NARROW",
+      "kind": "acceptance_gate",
+      "native_blocker": false,
+      "owning_package": "APP-F01.01",
+      "required_for": [
+        "APP-F01.01 (#64)"
+      ],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 47,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Market Research Program — Pick Your AI"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/SCOPE.md",
+          "research/foundations/application-scope.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F01.01 (#141, #146)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H15",
+      "concern": "Reuse of market research records with attribution",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F03.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 47,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Market Research Program — Pick Your AI"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "research/foundations/source-policy.md",
+          "data/source-use-decisions.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F03.01 (#72)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H16",
+      "concern": "Mobile clients: Android",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F06.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-android",
+        "issue": 1,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Android: End-to-end application delivery"
+      },
+      "unresolved_reason": "Receiving need unknown as of 2026-11-03.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "contracts/applications/v0/README.md",
+          "schemas/application-export.schema.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F06.01 (#84)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H17",
+      "concern": "Runtime requirements and hardware fit",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F02.03",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 61,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "MR-09: Validate GPU sizing against pinned runtime measurements"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "research/foundations/product-field-guide.md",
+          "schemas/product-profile.schema.json"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F02.03 (#70)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H18",
+      "concern": "Benchmark comparability in application evaluations",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F05.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 62,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "MR-09: Validate benchmark comparability and harness effects"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/EVALUATION_METHOD.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F05.01 (#80)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H19",
+      "concern": "Public directory data integration",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F06.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-website",
+        "issue": 24,
+        "commit": null
+      },
+      "consumer_status": "confirmed",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "open",
+        "title": "Epic: Data integration readiness (P3 → live data)"
+      },
+      "unresolved_reason": null,
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "docs/CONSUMER_CONTRACT.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F06.01 (#84)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    },
+    {
+      "id": "H20",
+      "concern": "Source policy for rights decisions",
+      "kind": "information",
+      "native_blocker": false,
+      "owning_package": "APP-F03.01",
+      "required_for": [],
+      "consumer": {
+        "repository": "Pick-Your-AI/pick-your-ai-research",
+        "issue": 41,
+        "commit": null
+      },
+      "consumer_status": "unresolved",
+      "consumer_evidence": {
+        "read_on": "2026-11-03",
+        "state": "closed",
+        "title": "T0: Catalog Data Sources & Freshness"
+      },
+      "unresolved_reason": "The issue is closed as of 2026-11-03, so it cannot record a receiving decision. The workstream's current receiving venue is to be confirmed with its owners.",
+      "producer_artifact": {
+        "repository": "Pick-Your-AI/pick-your-ai-applications",
+        "paths": [
+          "research/foundations/source-policy.md"
+        ],
+        "commit": null,
+        "status": "planned",
+        "planned_by": "APP-F03.01 (#72)"
+      },
+      "decision": {
+        "value": "pending",
+        "url": null,
+        "date": null
+      },
+      "reviewer": null,
+      "reviewer_authority": null
+    }
   ]
 }
