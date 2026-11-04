@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1.0",
+  "record_id": "app:synthetic-not-a-product",
+  "entity_type": "application_product",
+  "synthetic": true,
+  "identity": {
+    "product_id": "app:synthetic-not-a-product",
+    "name": "Synthetic contract fixture \u2014 not a real product",
+    "canonical_url": "https://product.example.invalid/",
+    "vendor_id": "vendor:synthetic",
+    "vendor_name": "Synthetic Vendor",
+    "family_id": null,
+    "aliases": [],
+    "lifecycle": "unknown"
+  },
+  "classification": {
+    "category_ids": [],
+    "facet_notes": [
+      "Fixture classification is intentionally empty."
+    ],
+    "classification_claim_ids": []
+  },
+  "entities": [],
+  "sources": [
+    {
+      "id": "source:documentation",
+      "url": "https://docs.example.invalid/documentation",
+      "title": "Synthetic documentation fixture",
+      "publisher": "Synthetic Vendor",
+      "authority": "primary",
+      "accessed_on": "2026-10-21",
+      "state": "active"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:capability",
+      "subject": {
+        "id": "app:synthetic-not-a-product",
+        "entity_type": "application_product"
+      },
+      "field": "capability.document_summary",
+      "fact_type": "capability",
+      "value_status": "known",
+      "value": true,
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": [
+        "source:documentation"
+      ],
+      "checked_on": "2026-10-21",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-10-21",
+      "scope": {
+        "offering_id": null,
+        "region": null,
+        "locale": null,
+        "platform": "web",
+        "conditions": [
+          "Synthetic demonstration; no actual vendor or capability."
+        ]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-10-22",
+        "decision_url": "https://review.example.invalid/decision/1"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic fixture demonstrates source-checked, independently unverified documentation."
+    }
+  ],
+  "rights_decisions": [
+    {
+      "id": "rights:display",
+      "source_id": "source:documentation",
+      "fields": [
+        "capability.document_summary"
+      ],
+      "uses": [
+        "display"
+      ],
+      "decision": "allowed",
+      "reviewer": "synthetic-rights-reviewer",
+      "decided_on": "2026-10-22",
+      "expires_on": null,
+      "decision_url": "https://review.example.invalid/rights/1",
+      "conditions": [
+        "Synthetic illustration only; not an actual rights grant."
+      ]
+    }
+  ],
+  "relationships": [],
+  "publication": {
+    "state": "eligible",
+    "fields": [
+      {
+        "claim_id": "claim:capability",
+        "uses": [
+          "display"
+        ],
+        "rights_decision_ids": [
+          "rights:display"
+        ],
+        "display_verification_status": "unverified",
+        "display_evidence_grade": "primary_documentation"
+      }
+    ],
+    "release_url": null,
+    "consumer_acceptance_url": null
+  },
+  "known_unknowns": [
+    "No real product is represented."
+  ],
+  "research_notes": [
+    "This fixture tests structural gates only."
+  ]
+}

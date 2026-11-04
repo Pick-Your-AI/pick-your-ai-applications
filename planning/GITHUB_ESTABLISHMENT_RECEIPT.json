@@ -1,0 +1,1382 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "Pick-Your-AI/pick-your-ai-applications",
+  "branch": "contrib/CompleteDotTech/applications-foundation",
+  "status": "repository_scaffold_and_native_backlog_verified_not_full_mission_complete",
+  "issues": {
+    "APP-PROGRAM": {
+      "id": 5991773559,
+      "node_id": "I_kwDOVUI6gM8AAAABZSM1dw",
+      "number": 1,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1"
+    },
+    "APP-D01": {
+      "id": 5991984167,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZsJw",
+      "number": 2,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/2"
+    },
+    "APP-D02": {
+      "id": 5991984453,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZtRQ",
+      "number": 3,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/3"
+    },
+    "APP-D03": {
+      "id": 5991984714,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZuSg",
+      "number": 4,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/4"
+    },
+    "APP-D04": {
+      "id": 5991984970,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZvSg",
+      "number": 5,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/5"
+    },
+    "APP-D05": {
+      "id": 5991985231,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZwTw",
+      "number": 6,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/6"
+    },
+    "APP-D06": {
+      "id": 5991985500,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZxXA",
+      "number": 7,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/7"
+    },
+    "APP-D07": {
+      "id": 5991985769,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZyaQ",
+      "number": 8,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/8"
+    },
+    "APP-D08": {
+      "id": 5991986034,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZzcg",
+      "number": 9,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/9"
+    },
+    "APP-F01": {
+      "id": 5991986309,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ0hQ",
+      "number": 10,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/10"
+    },
+    "APP-F02": {
+      "id": 5991986569,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ1iQ",
+      "number": 11,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/11"
+    },
+    "APP-F03": {
+      "id": 5991986834,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ2kg",
+      "number": 12,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/12"
+    },
+    "APP-F04": {
+      "id": 5991987122,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ3sg",
+      "number": 13,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/13"
+    },
+    "APP-F05": {
+      "id": 5991987372,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ4rA",
+      "number": 14,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/14"
+    },
+    "APP-F06": {
+      "id": 5991987666,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ50g",
+      "number": 15,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/15"
+    },
+    "APP-C01": {
+      "id": 5991987915,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ6yw",
+      "number": 16,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/16"
+    },
+    "APP-C02": {
+      "id": 5991988160,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ7wA",
+      "number": 17,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/17"
+    },
+    "APP-C03": {
+      "id": 5991988432,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ80A",
+      "number": 18,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/18"
+    },
+    "APP-C04": {
+      "id": 5991988673,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ9wQ",
+      "number": 19,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/19"
+    },
+    "APP-C05": {
+      "id": 5991988955,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ-2w",
+      "number": 20,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/20"
+    },
+    "APP-C06": {
+      "id": 5991989238,
+      "node_id": "I_kwDOVUI6gM8AAAABZSZ_9g",
+      "number": 21,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/21"
+    },
+    "APP-C07": {
+      "id": 5991989504,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaBAA",
+      "number": 22,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/22"
+    },
+    "APP-C08": {
+      "id": 5991989775,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaCDw",
+      "number": 23,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/23"
+    },
+    "APP-C09": {
+      "id": 5991990066,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaDMg",
+      "number": 24,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/24"
+    },
+    "APP-C10": {
+      "id": 5991990328,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaEOA",
+      "number": 25,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/25"
+    },
+    "APP-C11": {
+      "id": 5991990594,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaFQg",
+      "number": 26,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/26"
+    },
+    "APP-C12": {
+      "id": 5991990856,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaGSA",
+      "number": 27,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/27"
+    },
+    "APP-C13": {
+      "id": 5991991106,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaHQg",
+      "number": 28,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/28"
+    },
+    "APP-C14": {
+      "id": 5991991381,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaIVQ",
+      "number": 29,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/29"
+    },
+    "APP-C15": {
+      "id": 5991991669,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaJdQ",
+      "number": 30,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/30"
+    },
+    "APP-C16": {
+      "id": 5991991922,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaKcg",
+      "number": 31,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/31"
+    },
+    "APP-C17": {
+      "id": 5991992205,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaLjQ",
+      "number": 32,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/32"
+    },
+    "APP-C18": {
+      "id": 5991992503,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaMtw",
+      "number": 33,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/33"
+    },
+    "APP-C19": {
+      "id": 5991992769,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaNwQ",
+      "number": 34,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/34"
+    },
+    "APP-C20": {
+      "id": 5991993021,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaOvQ",
+      "number": 35,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/35"
+    },
+    "APP-C21": {
+      "id": 5991993306,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaP2g",
+      "number": 36,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/36"
+    },
+    "APP-C22": {
+      "id": 5991993562,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaQ2g",
+      "number": 37,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/37"
+    },
+    "APP-C23": {
+      "id": 5991993806,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaRzg",
+      "number": 38,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/38"
+    },
+    "APP-C24": {
+      "id": 5991994089,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaS6Q",
+      "number": 39,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/39"
+    },
+    "APP-C25": {
+      "id": 5991994371,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaUAw",
+      "number": 40,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/40"
+    },
+    "APP-C26": {
+      "id": 5991994604,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaU7A",
+      "number": 41,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/41"
+    },
+    "APP-C27": {
+      "id": 5991994912,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaWIA",
+      "number": 42,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/42"
+    },
+    "APP-C28": {
+      "id": 5991995195,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaXOw",
+      "number": 43,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/43"
+    },
+    "APP-C29": {
+      "id": 5991995509,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaYdQ",
+      "number": 44,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/44"
+    },
+    "APP-C30": {
+      "id": 5991995775,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaZfw",
+      "number": 45,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/45"
+    },
+    "APP-C31": {
+      "id": 5991996067,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaaow",
+      "number": 46,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/46"
+    },
+    "APP-C32": {
+      "id": 5991996373,
+      "node_id": "I_kwDOVUI6gM8AAAABZSab1Q",
+      "number": 47,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/47"
+    },
+    "APP-C33": {
+      "id": 5991996649,
+      "node_id": "I_kwDOVUI6gM8AAAABZSac6Q",
+      "number": 48,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/48"
+    },
+    "APP-C34": {
+      "id": 5991996958,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaeHg",
+      "number": 49,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/49"
+    },
+    "APP-C35": {
+      "id": 5991997207,
+      "node_id": "I_kwDOVUI6gM8AAAABZSafFw",
+      "number": 50,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/50"
+    },
+    "APP-C36": {
+      "id": 5991997479,
+      "node_id": "I_kwDOVUI6gM8AAAABZSagJw",
+      "number": 51,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/51"
+    },
+    "APP-C37": {
+      "id": 5991997755,
+      "node_id": "I_kwDOVUI6gM8AAAABZSahOw",
+      "number": 52,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/52"
+    },
+    "APP-C38": {
+      "id": 5991998063,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaibw",
+      "number": 53,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/53"
+    },
+    "APP-C39": {
+      "id": 5991998354,
+      "node_id": "I_kwDOVUI6gM8AAAABZSajkg",
+      "number": 54,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/54"
+    },
+    "APP-C40": {
+      "id": 5991998644,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaktA",
+      "number": 55,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/55"
+    },
+    "APP-C41": {
+      "id": 5991998918,
+      "node_id": "I_kwDOVUI6gM8AAAABZSalxg",
+      "number": 56,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/56"
+    },
+    "APP-C42": {
+      "id": 5991999195,
+      "node_id": "I_kwDOVUI6gM8AAAABZSam2w",
+      "number": 57,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/57"
+    },
+    "APP-C43": {
+      "id": 5991999451,
+      "node_id": "I_kwDOVUI6gM8AAAABZSan2w",
+      "number": 58,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/58"
+    },
+    "APP-C44": {
+      "id": 5991999723,
+      "node_id": "I_kwDOVUI6gM8AAAABZSao6w",
+      "number": 59,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/59"
+    },
+    "APP-C45": {
+      "id": 5991999994,
+      "node_id": "I_kwDOVUI6gM8AAAABZSap-g",
+      "number": 60,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/60"
+    },
+    "APP-C46": {
+      "id": 5992000261,
+      "node_id": "I_kwDOVUI6gM8AAAABZSarBQ",
+      "number": 61,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/61"
+    },
+    "APP-C47": {
+      "id": 5992000578,
+      "node_id": "I_kwDOVUI6gM8AAAABZSasQg",
+      "number": 62,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/62"
+    },
+    "APP-C48": {
+      "id": 5992000862,
+      "node_id": "I_kwDOVUI6gM8AAAABZSatXg",
+      "number": 63,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/63"
+    },
+    "APP-F01.01": {
+      "id": 5992001162,
+      "node_id": "I_kwDOVUI6gM8AAAABZSauig",
+      "number": 64,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/64"
+    },
+    "APP-F01.02": {
+      "id": 5992001445,
+      "node_id": "I_kwDOVUI6gM8AAAABZSavpQ",
+      "number": 65,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/65"
+    },
+    "APP-F01.03": {
+      "id": 5992001740,
+      "node_id": "I_kwDOVUI6gM8AAAABZSawzA",
+      "number": 66,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/66"
+    },
+    "APP-F01.04": {
+      "id": 5992002016,
+      "node_id": "I_kwDOVUI6gM8AAAABZSax4A",
+      "number": 67,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/67"
+    },
+    "APP-F02.01": {
+      "id": 5992002294,
+      "node_id": "I_kwDOVUI6gM8AAAABZSay9g",
+      "number": 68,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/68"
+    },
+    "APP-F02.02": {
+      "id": 5992002529,
+      "node_id": "I_kwDOVUI6gM8AAAABZSaz4Q",
+      "number": 69,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/69"
+    },
+    "APP-F02.03": {
+      "id": 5992002784,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa04A",
+      "number": 70,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/70"
+    },
+    "APP-F02.04": {
+      "id": 5992003064,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa1-A",
+      "number": 71,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/71"
+    },
+    "APP-F03.01": {
+      "id": 5992003354,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa3Gg",
+      "number": 72,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/72"
+    },
+    "APP-F03.02": {
+      "id": 5992003622,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa4Jg",
+      "number": 73,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/73"
+    },
+    "APP-F03.03": {
+      "id": 5992003927,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa5Vw",
+      "number": 74,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/74"
+    },
+    "APP-F03.04": {
+      "id": 5992004225,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa6gQ",
+      "number": 75,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/75"
+    },
+    "APP-F04.01": {
+      "id": 5992004495,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa7jw",
+      "number": 76,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/76"
+    },
+    "APP-F04.02": {
+      "id": 5992004765,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa8nQ",
+      "number": 77,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/77"
+    },
+    "APP-F04.03": {
+      "id": 5992005014,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa9lg",
+      "number": 78,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/78"
+    },
+    "APP-F04.04": {
+      "id": 5992005282,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa-og",
+      "number": 79,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/79"
+    },
+    "APP-F05.01": {
+      "id": 5992005528,
+      "node_id": "I_kwDOVUI6gM8AAAABZSa_mA",
+      "number": 80,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/80"
+    },
+    "APP-F05.02": {
+      "id": 5992005802,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbAqg",
+      "number": 81,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/81"
+    },
+    "APP-F05.03": {
+      "id": 5992006081,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbBwQ",
+      "number": 82,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/82"
+    },
+    "APP-F05.04": {
+      "id": 5992006358,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbC1g",
+      "number": 83,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/83"
+    },
+    "APP-F06.01": {
+      "id": 5992006593,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbDwQ",
+      "number": 84,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/84"
+    },
+    "APP-F06.02": {
+      "id": 5992006862,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbEzg",
+      "number": 85,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/85"
+    },
+    "APP-F06.03": {
+      "id": 5992007194,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbGGg",
+      "number": 86,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/86"
+    },
+    "APP-F06.04": {
+      "id": 5992007475,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbHMw",
+      "number": 87,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/87"
+    },
+    "APP-F01.01.T01": {
+      "id": 5992007731,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbIMw",
+      "number": 88,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/88"
+    },
+    "APP-F01.01.T02": {
+      "id": 5992007987,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbJMw",
+      "number": 89,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/89"
+    },
+    "APP-F01.02.T01": {
+      "id": 5992008261,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbKRQ",
+      "number": 90,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/90"
+    },
+    "APP-F01.02.T02": {
+      "id": 5992008510,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbLPg",
+      "number": 91,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/91"
+    },
+    "APP-F01.03.T01": {
+      "id": 5992008750,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbMLg",
+      "number": 92,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/92"
+    },
+    "APP-F01.03.T02": {
+      "id": 5992009031,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbNRw",
+      "number": 93,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/93"
+    },
+    "APP-F01.04.T01": {
+      "id": 5992009303,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbOVw",
+      "number": 94,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/94"
+    },
+    "APP-F01.04.T02": {
+      "id": 5992009584,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbPcA",
+      "number": 95,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/95"
+    },
+    "APP-F02.01.T01": {
+      "id": 5992009828,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbQZA",
+      "number": 96,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/96"
+    },
+    "APP-F02.01.T02": {
+      "id": 5992010105,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbReQ",
+      "number": 97,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/97"
+    },
+    "APP-F02.02.T01": {
+      "id": 5992010372,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbShA",
+      "number": 98,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/98"
+    },
+    "APP-F02.02.T02": {
+      "id": 5992010650,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbTmg",
+      "number": 99,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/99"
+    },
+    "APP-F02.03.T01": {
+      "id": 5992010919,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbUpw",
+      "number": 100,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/100"
+    },
+    "APP-F02.03.T02": {
+      "id": 5992011192,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbVuA",
+      "number": 101,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/101"
+    },
+    "APP-F02.04.T01": {
+      "id": 5992011469,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbWzQ",
+      "number": 102,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/102"
+    },
+    "APP-F02.04.T02": {
+      "id": 5992011747,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbX4w",
+      "number": 103,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/103"
+    },
+    "APP-F03.01.T01": {
+      "id": 5992012009,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbY6Q",
+      "number": 104,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/104"
+    },
+    "APP-F03.01.T02": {
+      "id": 5992012291,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbaAw",
+      "number": 105,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/105"
+    },
+    "APP-F03.02.T01": {
+      "id": 5992012566,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbbFg",
+      "number": 106,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/106"
+    },
+    "APP-F03.02.T02": {
+      "id": 5992012825,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbcGQ",
+      "number": 107,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/107"
+    },
+    "APP-F03.03.T01": {
+      "id": 5992013103,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbdLw",
+      "number": 108,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/108"
+    },
+    "APP-F03.03.T02": {
+      "id": 5992013358,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbeLg",
+      "number": 109,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/109"
+    },
+    "APP-F03.04.T01": {
+      "id": 5992013593,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbfGQ",
+      "number": 110,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/110"
+    },
+    "APP-F03.04.T02": {
+      "id": 5992013850,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbgGg",
+      "number": 111,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/111"
+    },
+    "APP-F04.01.T01": {
+      "id": 5992014108,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbhHA",
+      "number": 112,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/112"
+    },
+    "APP-F04.01.T02": {
+      "id": 5992014330,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbh-g",
+      "number": 113,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/113"
+    },
+    "APP-F04.02.T01": {
+      "id": 5992014590,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbi_g",
+      "number": 114,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/114"
+    },
+    "APP-F04.02.T02": {
+      "id": 5992014878,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbkHg",
+      "number": 115,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/115"
+    },
+    "APP-F04.03.T01": {
+      "id": 5992015125,
+      "node_id": "I_kwDOVUI6gM8AAAABZSblFQ",
+      "number": 116,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/116"
+    },
+    "APP-F04.03.T02": {
+      "id": 5992015363,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbmAw",
+      "number": 117,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/117"
+    },
+    "APP-F04.04.T01": {
+      "id": 5992015618,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbnAg",
+      "number": 118,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/118"
+    },
+    "APP-F04.04.T02": {
+      "id": 5992015882,
+      "node_id": "I_kwDOVUI6gM8AAAABZSboCg",
+      "number": 119,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/119"
+    },
+    "APP-F05.01.T01": {
+      "id": 5992016159,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbpHw",
+      "number": 120,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/120"
+    },
+    "APP-F05.01.T02": {
+      "id": 5992016451,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbqQw",
+      "number": 121,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/121"
+    },
+    "APP-F05.02.T01": {
+      "id": 5992016690,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbrMg",
+      "number": 122,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/122"
+    },
+    "APP-F05.02.T02": {
+      "id": 5992016955,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbsOw",
+      "number": 123,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/123"
+    },
+    "APP-F05.03.T01": {
+      "id": 5992017197,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbtLQ",
+      "number": 124,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/124"
+    },
+    "APP-F05.03.T02": {
+      "id": 5992017437,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbuHQ",
+      "number": 125,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/125"
+    },
+    "APP-F05.04.T01": {
+      "id": 5992017688,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbvGA",
+      "number": 126,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/126"
+    },
+    "APP-F05.04.T02": {
+      "id": 5992017979,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbwOw",
+      "number": 127,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/127"
+    },
+    "APP-F06.01.T01": {
+      "id": 5992018226,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbxMg",
+      "number": 128,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/128"
+    },
+    "APP-F06.01.T02": {
+      "id": 5992018483,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbyMw",
+      "number": 129,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/129"
+    },
+    "APP-F06.02.T01": {
+      "id": 5992018737,
+      "node_id": "I_kwDOVUI6gM8AAAABZSbzMQ",
+      "number": 130,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/130"
+    },
+    "APP-F06.02.T02": {
+      "id": 5992018976,
+      "node_id": "I_kwDOVUI6gM8AAAABZSb0IA",
+      "number": 131,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/131"
+    },
+    "APP-F06.03.T01": {
+      "id": 5992019229,
+      "node_id": "I_kwDOVUI6gM8AAAABZSb1HQ",
+      "number": 132,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/132"
+    },
+    "APP-F06.03.T02": {
+      "id": 5992019490,
+      "node_id": "I_kwDOVUI6gM8AAAABZSb2Ig",
+      "number": 133,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/133"
+    },
+    "APP-F06.04.T01": {
+      "id": 5992019742,
+      "node_id": "I_kwDOVUI6gM8AAAABZSb3Hg",
+      "number": 134,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/134"
+    },
+    "APP-F06.04.T02": {
+      "id": 5992020010,
+      "node_id": "I_kwDOVUI6gM8AAAABZSb4Kg",
+      "number": 135,
+      "html_url": "https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/135"
+    }
+  },
+  "verified_internal_relationships": [
+    {
+      "child": "APP-D01",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D02",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D03",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D04",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D05",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D06",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D07",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-D08",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F01",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F02",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F03",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F04",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F05",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-F06",
+      "parent": "APP-PROGRAM"
+    },
+    {
+      "child": "APP-C01",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C02",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C03",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C04",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C05",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C06",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C07",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C08",
+      "parent": "APP-D01"
+    },
+    {
+      "child": "APP-C09",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C10",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C11",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C12",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C13",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C14",
+      "parent": "APP-D02"
+    },
+    {
+      "child": "APP-C15",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C16",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C17",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C18",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C19",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C20",
+      "parent": "APP-D03"
+    },
+    {
+      "child": "APP-C21",
+      "parent": "APP-D04"
+    },
+    {
+      "child": "APP-C22",
+      "parent": "APP-D04"
+    },
+    {
+      "child": "APP-C23",
+      "parent": "APP-D04"
+    },
+    {
+      "child": "APP-C24",
+      "parent": "APP-D04"
+    },
+    {
+      "child": "APP-C25",
+      "parent": "APP-D04"
+    },
+    {
+      "child": "APP-C26",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C27",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C28",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C29",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C30",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C31",
+      "parent": "APP-D05"
+    },
+    {
+      "child": "APP-C32",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C33",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C34",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C35",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C36",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C37",
+      "parent": "APP-D06"
+    },
+    {
+      "child": "APP-C38",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C39",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C40",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C41",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C42",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C43",
+      "parent": "APP-D07"
+    },
+    {
+      "child": "APP-C44",
+      "parent": "APP-D08"
+    },
+    {
+      "child": "APP-C45",
+      "parent": "APP-D08"
+    },
+    {
+      "child": "APP-C46",
+      "parent": "APP-D08"
+    },
+    {
+      "child": "APP-C47",
+      "parent": "APP-D08"
+    },
+    {
+      "child": "APP-C48",
+      "parent": "APP-D08"
+    },
+    {
+      "child": "APP-F01.01",
+      "parent": "APP-F01"
+    },
+    {
+      "child": "APP-F01.02",
+      "parent": "APP-F01"
+    },
+    {
+      "child": "APP-F01.03",
+      "parent": "APP-F01"
+    },
+    {
+      "child": "APP-F01.04",
+      "parent": "APP-F01"
+    },
+    {
+      "child": "APP-F02.01",
+      "parent": "APP-F02"
+    },
+    {
+      "child": "APP-F02.02",
+      "parent": "APP-F02"
+    },
+    {
+      "child": "APP-F02.03",
+      "parent": "APP-F02"
+    },
+    {
+      "child": "APP-F02.04",
+      "parent": "APP-F02"
+    },
+    {
+      "child": "APP-F03.01",
+      "parent": "APP-F03"
+    },
+    {
+      "child": "APP-F03.02",
+      "parent": "APP-F03"
+    },
+    {
+      "child": "APP-F03.03",
+      "parent": "APP-F03"
+    },
+    {
+      "child": "APP-F03.04",
+      "parent": "APP-F03"
+    },
+    {
+      "child": "APP-F04.01",
+      "parent": "APP-F04"
+    },
+    {
+      "child": "APP-F04.02",
+      "parent": "APP-F04"
+    },
+    {
+      "child": "APP-F04.03",
+      "parent": "APP-F04"
+    },
+    {
+      "child": "APP-F04.04",
+      "parent": "APP-F04"
+    },
+    {
+      "child": "APP-F05.01",
+      "parent": "APP-F05"
+    },
+    {
+      "child": "APP-F05.02",
+      "parent": "APP-F05"
+    },
+    {
+      "child": "APP-F05.03",
+      "parent": "APP-F05"
+    },
+    {
+      "child": "APP-F05.04",
+      "parent": "APP-F05"
+    },
+    {
+      "child": "APP-F06.01",
+      "parent": "APP-F06"
+    },
+    {
+      "child": "APP-F06.02",
+      "parent": "APP-F06"
+    },
+    {
+      "child": "APP-F06.03",
+      "parent": "APP-F06"
+    },
+    {
+      "child": "APP-F06.04",
+      "parent": "APP-F06"
+    },
+    {
+      "child": "APP-F01.01.T01",
+      "parent": "APP-F01.01"
+    },
+    {
+      "child": "APP-F01.01.T02",
+      "parent": "APP-F01.01"
+    },
+    {
+      "child": "APP-F01.02.T01",
+      "parent": "APP-F01.02"
+    },
+    {
+      "child": "APP-F01.02.T02",
+      "parent": "APP-F01.02"
+    },
+    {
+      "child": "APP-F01.03.T01",
+      "parent": "APP-F01.03"
+    },
+    {
+      "child": "APP-F01.03.T02",
+      "parent": "APP-F01.03"
+    },
+    {
+      "child": "APP-F01.04.T01",
+      "parent": "APP-F01.04"
+    },
+    {
+      "child": "APP-F01.04.T02",
+      "parent": "APP-F01.04"
+    },
+    {
+      "child": "APP-F02.01.T01",
+      "parent": "APP-F02.01"
+    },
+    {
+      "child": "APP-F02.01.T02",
+      "parent": "APP-F02.01"
+    },
+    {
+      "child": "APP-F02.02.T01",
+      "parent": "APP-F02.02"
+    },
+    {
+      "child": "APP-F02.02.T02",
+      "parent": "APP-F02.02"
+    },
+    {
+      "child": "APP-F02.03.T01",
+      "parent": "APP-F02.03"
+    },
+    {
+      "child": "APP-F02.03.T02",
+      "parent": "APP-F02.03"
+    },
+    {
+      "child": "APP-F02.04.T01",
+      "parent": "APP-F02.04"
+    },
+    {
+      "child": "APP-F02.04.T02",
+      "parent": "APP-F02.04"
+    },
+    {
+      "child": "APP-F03.01.T01",
+      "parent": "APP-F03.01"
+    },
+    {
+      "child": "APP-F03.01.T02",
+      "parent": "APP-F03.01"
+    },
+    {
+      "child": "APP-F03.02.T01",
+      "parent": "APP-F03.02"
+    },
+    {
+      "child": "APP-F03.02.T02",
+      "parent": "APP-F03.02"
+    },
+    {
+      "child": "APP-F03.03.T01",
+      "parent": "APP-F03.03"
+    },
+    {
+      "child": "APP-F03.03.T02",
+      "parent": "APP-F03.03"
+    },
+    {
+      "child": "APP-F03.04.T01",
+      "parent": "APP-F03.04"
+    },
+    {
+      "child": "APP-F03.04.T02",
+      "parent": "APP-F03.04"
+    },
+    {
+      "child": "APP-F04.01.T01",
+      "parent": "APP-F04.01"
+    },
+    {
+      "child": "APP-F04.01.T02",
+      "parent": "APP-F04.01"
+    },
+    {
+      "child": "APP-F04.02.T01",
+      "parent": "APP-F04.02"
+    },
+    {
+      "child": "APP-F04.02.T02",
+      "parent": "APP-F04.02"
+    },
+    {
+      "child": "APP-F04.03.T01",
+      "parent": "APP-F04.03"
+    },
+    {
+      "child": "APP-F04.03.T02",
+      "parent": "APP-F04.03"
+    },
+    {
+      "child": "APP-F04.04.T01",
+      "parent": "APP-F04.04"
+    },
+    {
+      "child": "APP-F04.04.T02",
+      "parent": "APP-F04.04"
+    },
+    {
+      "child": "APP-F05.01.T01",
+      "parent": "APP-F05.01"
+    },
+    {
+      "child": "APP-F05.01.T02",
+      "parent": "APP-F05.01"
+    },
+    {
+      "child": "APP-F05.02.T01",
+      "parent": "APP-F05.02"
+    },
+    {
+      "child": "APP-F05.02.T02",
+      "parent": "APP-F05.02"
+    },
+    {
+      "child": "APP-F05.03.T01",
+      "parent": "APP-F05.03"
+    },
+    {
+      "child": "APP-F05.03.T02",
+      "parent": "APP-F05.03"
+    },
+    {
+      "child": "APP-F05.04.T01",
+      "parent": "APP-F05.04"
+    },
+    {
+      "child": "APP-F05.04.T02",
+      "parent": "APP-F05.04"
+    },
+    {
+      "child": "APP-F06.01.T01",
+      "parent": "APP-F06.01"
+    },
+    {
+      "child": "APP-F06.01.T02",
+      "parent": "APP-F06.01"
+    },
+    {
+      "child": "APP-F06.02.T01",
+      "parent": "APP-F06.02"
+    },
+    {
+      "child": "APP-F06.02.T02",
+      "parent": "APP-F06.02"
+    },
+    {
+      "child": "APP-F06.03.T01",
+      "parent": "APP-F06.03"
+    },
+    {
+      "child": "APP-F06.03.T02",
+      "parent": "APP-F06.03"
+    },
+    {
+      "child": "APP-F06.04.T01",
+      "parent": "APP-F06.04"
+    },
+    {
+      "child": "APP-F06.04.T02",
+      "parent": "APP-F06.04"
+    }
+  ],
+  "project_url": "https://github.com/orgs/Pick-Your-AI/projects/10",
+  "project_item_placement": "not_attempted_by_repository_scoped_import",
+  "project_field_population": "not_attempted_by_repository_scoped_import",
+  "external_parent_relationship": "not_attempted_by_repository_scoped_import",
+  "external_parent_url": "https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509",
+  "merge_status": "not_merged_independent_review_required",
+  "research_status": "not_started_no_real_product_records",
+  "validation_workflow": "requires_user_authenticated_connector_commit",
+  "source_sha256": "679f2d6a336505e72f9851e767ec561ff044ca43fe9e9ffc03c5b1a50b237f8a",
+  "files_manifest_sha256": "f8ec36349341b9f515a6414b65e983744186bd5bf8ab23bdabeafc8ecefbafbc",
+  "scaffold_file_count": 182,
+  "planned_counts": {
+    "program": 1,
+    "epic": 14,
+    "work_package": 72,
+    "task": 48,
+    "native_relationships_internal": 134,
+    "checklist_task_groups": 192,
+    "small_subtasks": 768
+  },
+  "local_validation": "both_validators_and_60_tests_passed",
+  "updated_at": "2026-10-23T04:49:44.204213+00:00",
+  "main_before": "a30d8579b9228dc692bf47fd0404443ad363a2c0",
+  "scaffold_commit": "7832b15cc6792ea5d207f999ec2f2402a9565c8a",
+  "published_scaffold_files": 181,
+  "verified_issue_count": 135
+}

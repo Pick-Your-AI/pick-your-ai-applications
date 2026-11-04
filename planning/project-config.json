@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0.0",
+  "status": "prepared_not_provisioned",
+  "owner": "Pick-Your-AI",
+  "repository": "Pick-Your-AI/pick-your-ai-applications",
+  "title": "Pick Your AI — Applications Research",
+  "public": true,
+  "description": "Evidence-backed research and delivery planning for end-user and enterprise AI software applications, products and software services.",
+  "fields": [
+    {
+      "name": "Status",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Backlog",
+        "Ready",
+        "In Progress",
+        "In Review",
+        "Blocked",
+        "Done"
+      ],
+      "node_key": "status"
+    },
+    {
+      "name": "Priority",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "node_key": "priority"
+    },
+    {
+      "name": "Readiness",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Ready",
+        "Needs input",
+        "Blocked",
+        "Awaiting decision"
+      ],
+      "node_key": "readiness"
+    },
+    {
+      "name": "Workstream",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Program",
+        "Knowledge work and personal productivity",
+        "Software, data and process tools",
+        "Creative media and interactive products",
+        "Customer and business operations",
+        "Enterprise functions and assurance",
+        "Professional, scientific and public domains",
+        "Industry, infrastructure and environment",
+        "Consumer, assistive and autonomous applications",
+        "Governance, scope and review",
+        "Identity and application data contracts",
+        "Source rights, commercial terms and trust evidence",
+        "Coverage, discovery and maintenance",
+        "Comparison, evaluation and user suitability",
+        "Consumer contracts and publication handoff"
+      ],
+      "node_key": "workstream"
+    },
+    {
+      "name": "Work Type",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Program",
+        "Epic",
+        "Research",
+        "Task"
+      ],
+      "node_key": "work_type"
+    },
+    {
+      "name": "Research Confidence",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Unverified",
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "node_key": "research_confidence"
+    },
+    {
+      "name": "Dependency Status",
+      "type": "SINGLE_SELECT",
+      "options": [
+        "Unblocked",
+        "Waiting",
+        "Blocked"
+      ],
+      "node_key": "dependency_status"
+    }
+  ],
+  "labels": [
+    {
+      "name": "type: program",
+      "color": "5319e7",
+      "description": "Cross-domain research program outcome"
+    },
+    {
+      "name": "type: epic",
+      "color": "0052cc",
+      "description": "Domain or foundation synthesis outcome"
+    },
+    {
+      "name": "type: research",
+      "color": "0e8a16",
+      "description": "Independently reviewable research work package"
+    },
+    {
+      "name": "type: task",
+      "color": "1d76db",
+      "description": "Independently reviewable task output"
+    }
+  ],
+  "views": [
+    {
+      "name": "All research",
+      "layout": "table",
+      "filter": "",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Domain coverage",
+      "layout": "table",
+      "filter": "Workstream in application domains",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Foundations",
+      "layout": "table",
+      "filter": "Workstream in foundation domains",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Ready research",
+      "layout": "table",
+      "filter": "Readiness:Ready",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Evidence review",
+      "layout": "board",
+      "filter": "Status:\"In Review\"",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Publication handoffs",
+      "layout": "table",
+      "filter": "Workstream:\"Consumer contracts and publication handoff\"",
+      "status": "proposed_ui_configuration"
+    },
+    {
+      "name": "Decisions and blockers",
+      "layout": "table",
+      "filter": "Readiness:\"Awaiting decision\",Blocked",
+      "status": "proposed_ui_configuration"
+    }
+  ],
+  "notes": [
+    "Live field IDs and existing options must be read before mutation.",
+    "No duplicate Owner field; Assignees remain authoritative.",
+    "No invented due dates, estimates or iterations.",
+    "Views are recommendations until actually configured and read back in GitHub.",
+    "Workstream values are application domains and foundations, not the frozen T0–T6 Tier taxonomy."
+  ]
+}

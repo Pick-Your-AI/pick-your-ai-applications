@@ -1,0 +1,764 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pickyour.ai/schemas/applications/0.1.0/pricing-record.schema.json",
+  "title": "Standalone application pricing observation record",
+  "description": "Evidence-bearing pricing intake that must reference an existing canonical application and declared offering. Amount semantics are defined in pricing.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^price:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "entity_type": {
+      "const": "application_price"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "application_id": {
+      "type": "string",
+      "pattern": "^app:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "offering_id": {
+      "type": "string",
+      "pattern": "^offering:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "claim": {
+      "$ref": "#/$defs/claim"
+    },
+    "rights_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/right"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "publication": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "notes",
+            "proposed",
+            "eligible",
+            "published"
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/publication_field"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "release_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "consumer_acceptance_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "state",
+        "fields",
+        "release_url",
+        "consumer_acceptance_url"
+      ],
+      "additionalProperties": false
+    },
+    "known_unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "research_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "enum": [
+            "primary",
+            "independent",
+            "secondary"
+          ]
+        },
+        "accessed_on": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "state": {
+          "enum": [
+            "active",
+            "withdrawn",
+            "superseded",
+            "unavailable"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "url",
+        "title",
+        "publisher",
+        "authority",
+        "accessed_on",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "approved",
+            "rejected"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reviewed_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "decision_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "status",
+        "reviewer",
+        "reviewed_on",
+        "decision_url"
+      ],
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "enum": [
+            "reproduced_test",
+            "independent_second_source"
+          ]
+        },
+        "independent": {
+          "type": "boolean"
+        },
+        "verifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verified_on": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "receipt_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "protocol_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "limitations": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "method",
+        "independent",
+        "verifier",
+        "verified_on",
+        "receipt_url",
+        "protocol_version",
+        "source_id",
+        "limitations"
+      ],
+      "additionalProperties": false
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "entity_type": {
+          "enum": [
+            "application_product",
+            "product_family",
+            "application_release",
+            "application_offering",
+            "application_feature",
+            "integration",
+            "model",
+            "vendor"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "entity_type"
+      ],
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "subject": {
+          "$ref": "#/$defs/subject"
+        },
+        "field": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.-]*$"
+        },
+        "fact_type": {
+          "enum": [
+            "identity",
+            "classification",
+            "capability",
+            "availability",
+            "pricing",
+            "privacy",
+            "security",
+            "compliance",
+            "accessibility",
+            "terms",
+            "support",
+            "integration",
+            "performance",
+            "lifecycle"
+          ]
+        },
+        "value_status": {
+          "enum": [
+            "known",
+            "unknown",
+            "not_disclosed",
+            "not_applicable",
+            "disputed",
+            "unsupported"
+          ]
+        },
+        "value": {
+          "type": [
+            "object",
+            "array",
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "source_status": {
+          "enum": [
+            "unchecked",
+            "checked"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "unverified",
+            "verified"
+          ]
+        },
+        "evidence_grade": {
+          "enum": [
+            "primary_documentation",
+            "vendor_claim",
+            "independent_measurement",
+            "estimate"
+          ]
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "checked_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "temporal_scope": {
+          "enum": [
+            "current_state",
+            "version_pinned"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "as_of": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "offering_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+            },
+            "region": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "locale": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "platform": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "offering_id",
+            "region",
+            "locale",
+            "platform",
+            "conditions"
+          ],
+          "additionalProperties": false
+        },
+        "evidence_state": {
+          "enum": [
+            "active",
+            "recheck_required",
+            "withdrawn",
+            "superseded"
+          ]
+        },
+        "explicit_negative_evidence": {
+          "type": "boolean"
+        },
+        "researcher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review": {
+          "$ref": "#/$defs/review"
+        },
+        "verification": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/verification"
+            }
+          ]
+        },
+        "method_and_limitations": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "subject",
+        "field",
+        "fact_type",
+        "value_status",
+        "value",
+        "source_status",
+        "verification_status",
+        "evidence_grade",
+        "source_ids",
+        "checked_on",
+        "temporal_scope",
+        "version",
+        "as_of",
+        "scope",
+        "evidence_state",
+        "explicit_negative_evidence",
+        "researcher",
+        "review",
+        "verification",
+        "method_and_limitations"
+      ],
+      "additionalProperties": false
+    },
+    "right": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "source_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "uses": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "display",
+              "cache",
+              "export",
+              "api",
+              "commercial"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "decision": {
+          "enum": [
+            "allowed",
+            "denied",
+            "unknown",
+            "unclear"
+          ]
+        },
+        "reviewer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "decided_on": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "expires_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "decision_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "source_id",
+        "fields",
+        "uses",
+        "decision",
+        "reviewer",
+        "decided_on",
+        "expires_on",
+        "decision_url",
+        "conditions"
+      ],
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "entity_type": {
+          "enum": [
+            "product_family",
+            "application_release",
+            "application_offering",
+            "application_feature",
+            "integration",
+            "model"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "entity_type",
+        "name",
+        "product_id",
+        "version",
+        "url"
+      ],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "relation": {
+          "enum": [
+            "renamed_from",
+            "replaces",
+            "replaced_by",
+            "fork_of",
+            "member_of",
+            "sold_by",
+            "integrates_with",
+            "uses_model",
+            "discontinued_successor"
+          ]
+        },
+        "target_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "target_entity_type": {
+          "enum": [
+            "application_product",
+            "product_family",
+            "application_release",
+            "application_offering",
+            "application_feature",
+            "integration",
+            "model",
+            "vendor"
+          ]
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "relation",
+        "target_id",
+        "target_entity_type",
+        "claim_ids"
+      ],
+      "additionalProperties": false
+    },
+    "publication_field": {
+      "type": "object",
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+        },
+        "uses": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "display",
+              "cache",
+              "export",
+              "api",
+              "commercial"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "rights_decision_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "display_verification_status": {
+          "enum": [
+            "unverified",
+            "verified"
+          ]
+        },
+        "display_evidence_grade": {
+          "enum": [
+            "primary_documentation",
+            "vendor_claim",
+            "independent_measurement",
+            "estimate"
+          ]
+        }
+      },
+      "required": [
+        "claim_id",
+        "uses",
+        "rights_decision_ids",
+        "display_verification_status",
+        "display_evidence_grade"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_id",
+    "entity_type",
+    "synthetic",
+    "application_id",
+    "offering_id",
+    "sources",
+    "claim",
+    "rights_decisions",
+    "publication",
+    "known_unknowns",
+    "research_notes"
+  ]
+}

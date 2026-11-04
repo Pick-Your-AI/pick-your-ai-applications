@@ -1,0 +1,2417 @@
+{
+  "schema_version": "0.1.0",
+  "snapshot_date": "2026-10-22",
+  "status": "initial_planning_baseline",
+  "count_semantics": "All zero counts mean zero products recorded by this new repository baseline, not no products exist. This ledger contains no product records and claims no global market census.",
+  "rows": [
+    {
+      "category_id": "APP-C01",
+      "category_slug": "general-assistants",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Underlying foundation models, model API routes and inference engines remain in T1/T2.",
+        "A chat interface alone does not establish sourced search or independently correct answers."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/general-assistants.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C02",
+      "category_slug": "enterprise-knowledge",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Vector databases, embedding models, RAG pipelines and storage components remain T3.",
+        "Connector presence does not prove authorized retrieval or ACL enforcement."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/enterprise-knowledge.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C03",
+      "category_slug": "writing-editorial",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Generic model text-generation capability is not a product workflow.",
+        "Authorship or detection accuracy cannot be inferred from a product name or marketing claim."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/writing-editorial.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C04",
+      "category_slug": "translation-localization",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Translation models and speech synthesis engines stay in T1.",
+        "A listed language is not proof of quality for every direction, dialect or domain."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/translation-localization.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C05",
+      "category_slug": "document-intelligence",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Bare OCR models, parsers and extraction APIs without a defined end-user workflow remain component candidates.",
+        "A document upload demonstration does not establish production accuracy or sensitive-data eligibility."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/document-intelligence.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C06",
+      "category_slug": "meetings-communication",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "ASR and diarization models remain T1 components.",
+        "Speaker attribution and consent handling require their own evidence; recording availability proves neither."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/meetings-communication.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C07",
+      "category_slug": "office-authoring",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "A charting or language model by itself is not an office application.",
+        "Formula validity and calculation correctness remain separately testable claims."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/office-authoring.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C08",
+      "category_slug": "personal-productivity",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Human-only assistants and generic non-AI productivity products are outside scope unless a material AI feature is documented.",
+        "Access to mail or calendars does not imply permission to send, book or delete."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/personal-productivity.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C09",
+      "category_slug": "coding-assistants",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Agent frameworks, SDKs and model APIs remain T4/T1 unless a separately identifiable developer application exists.",
+        "Benchmark performance and repository access permissions require scoped evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/coding-assistants.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C10",
+      "category_slug": "application-builders",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Hosting services, language models and scaffolding libraries alone are components.",
+        "Generated preview, exportable project and production deployment are separate states."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/application-builders.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C11",
+      "category_slug": "software-quality",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Evaluation datasets and benchmark suites are linked to their existing owners.",
+        "Passing generated tests does not demonstrate correctness or security."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/software-quality.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C12",
+      "category_slug": "it-operations",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Infrastructure, hosting, monitoring libraries and inference engines remain component research.",
+        "Suggested remediation and authorized executed remediation must be distinguished."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/it-operations.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C13",
+      "category_slug": "analytics-decision",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Predictive models, databases and training frameworks remain underlying components.",
+        "Correlations, forecasts and generated analyses are not validated business outcomes."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/analytics-decision.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C14",
+      "category_slug": "workflow-automation",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Agent frameworks, MCP servers and workflow execution libraries remain T4 components.",
+        "An integration listing does not establish an authorized end-to-end business action."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/workflow-automation.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C15",
+      "category_slug": "image-graphics",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Image models, checkpoints and generic inference services stay in T1/T2.",
+        "Generated output rights and training-input rights need distinct evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/image-graphics.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C16",
+      "category_slug": "video-animation",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Video models, motion models and rendering engines alone stay with component owners.",
+        "A generated clip does not establish rights to a likeness or production-ready quality."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/video-animation.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C17",
+      "category_slug": "audio-voice-music",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Underlying TTS, music and audio models remain T1.",
+        "Voice availability does not imply consent, commercial rights or impersonation permission."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/audio-voice-music.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C18",
+      "category_slug": "spatial-design",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "3D models, rendering runtimes and hardware remain components.",
+        "Visual reconstruction does not establish dimensional accuracy or engineering safety."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/spatial-design.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C19",
+      "category_slug": "games-interactive",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Raw action policies, game engines and model weights remain component research.",
+        "Synthetic characters and game agents do not imply safe real-world autonomy."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/games-interactive.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C20",
+      "category_slug": "computer-browser-agents",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Automation libraries and browser-control protocols remain components.",
+        "UI control availability is not proof of task reliability, authority or safe action execution."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/computer-browser-agents.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C21",
+      "category_slug": "sales-revenue",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Contact lists and enrichment data alone are data sources.",
+        "Lead quality, conversion and revenue-lift claims need bounded evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/sales-revenue.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C22",
+      "category_slug": "marketing-growth",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Model-generated copy alone does not establish campaign execution or measurable uplift.",
+        "Third-party platform access and permitted audience data use remain separate questions."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/marketing-growth.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C23",
+      "category_slug": "customer-support",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Generic chat models or messaging integrations alone are components.",
+        "Deflection and satisfaction claims require scoped operational evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/customer-support.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C24",
+      "category_slug": "commerce-retail",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Recommendation models and product datasets alone are components or data sources.",
+        "Fit, price advantage and conversion claims need their own evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/commerce-retail.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C25",
+      "category_slug": "project-product-management",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "A general summarizer is not automatically project-management software.",
+        "Delivery forecasts and prioritization scores are contextual estimates unless measured."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/project-product-management.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C26",
+      "category_slug": "finance-accounting",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Underlying financial models and generic extraction components remain external owners.",
+        "Tax, accounting or fiduciary suitability must not be inferred from category membership."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/finance-accounting.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C27",
+      "category_slug": "people-hr",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Applicant datasets and predictive models alone remain data/components.",
+        "Fairness, employment-law compliance and candidate suitability require scoped evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/people-hr.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C28",
+      "category_slug": "legal-contracts",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Laws, legal corpora and base models alone are reference data/components.",
+        "Listing a legal product does not establish legal advice quality or jurisdictional authorization."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/legal-contracts.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C29",
+      "category_slug": "procurement-suppliers",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Supplier lists and risk data alone are source records.",
+        "Savings, supplier reliability and compliance claims need explicit evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/procurement-suppliers.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C30",
+      "category_slug": "security-fraud",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Guardrail components, monitoring libraries and detection models remain T6/T1 components.",
+        "A security feature label does not establish protection, certification or absence of vulnerabilities."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/security-fraud.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C31",
+      "category_slug": "governance-risk-compliance",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Standards, legal analysis and guardrail components remain canonical research/reference material.",
+        "Vendor badges and self-reported compliance are not certifications or approval for a specific user."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/governance-risk-compliance.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C32",
+      "category_slug": "education-training",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Educational datasets and learning models alone are not applications.",
+        "Learning outcomes, fairness and child appropriateness need specific evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/education-training.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C33",
+      "category_slug": "healthcare",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Models, medical datasets and generic research papers remain with their owners.",
+        "Category membership or marketing language is not regulatory clearance, clinical validation or medical advice."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/healthcare.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C34",
+      "category_slug": "life-sciences",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Molecular models, laboratory datasets and instrument hardware remain separate entities.",
+        "In-silico output does not establish experimental or clinical effectiveness."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/life-sciences.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C35",
+      "category_slug": "science-research",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Papers, datasets and model releases are linked entities, not duplicate application entries.",
+        "Generated citations and experimental suggestions require validation."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/science-research.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C36",
+      "category_slug": "financial-services",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Market datasets and prediction models remain separate sources/components.",
+        "Listing does not establish investment performance, regulatory approval or suitability."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/financial-services.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C37",
+      "category_slug": "public-sector",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Public datasets and standalone policy documents remain data/reference entities.",
+        "Public-service listing is not government endorsement or authority to make consequential decisions."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/public-sector.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C38",
+      "category_slug": "manufacturing-engineering",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Accelerators, sensors, robots and predictive models remain separate component assets.",
+        "Simulation or anomaly detection does not establish physical safety or production yield."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/manufacturing-engineering.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C39",
+      "category_slug": "logistics-supply-chain",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Vehicles, sensors and optimization algorithms alone are separate entities.",
+        "Estimated savings and optimized routes need operational constraints and evidence."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/logistics-supply-chain.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C40",
+      "category_slug": "built-environment",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Design models, geospatial datasets and building hardware remain separate entities.",
+        "A design or estimate does not establish code compliance, valuation accuracy or construction safety."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/built-environment.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C41",
+      "category_slug": "energy-climate",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Weather models, sensor systems and underlying datasets remain separate entities.",
+        "Predicted environmental benefit is not measured impact or a certified carbon claim."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/energy-climate.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C42",
+      "category_slug": "agriculture-food",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Sensors, machinery, biological datasets and models remain separate entities.",
+        "Recommendations do not establish agronomic efficacy, food safety or regulatory approval."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/agriculture-food.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C43",
+      "category_slug": "geospatial-earth",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Imagery datasets, remote-sensing models and sensor platforms remain separate entities.",
+        "Map output does not establish survey accuracy or lawful surveillance use."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/geospatial-earth.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C44",
+      "category_slug": "accessibility-assistive",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Assistive hardware and underlying perception models are linked separate entities.",
+        "Feature presence does not establish accessibility conformance or suitability for an individual."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/accessibility-assistive.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C45",
+      "category_slug": "wellness-sports",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Clinical care tools belong APP-C33; devices and sensors are separate assets.",
+        "Wellness or sports benefit claims do not establish clinical effectiveness or safe personalization."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/wellness-sports.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C46",
+      "category_slug": "travel-lifestyle",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Listing directories without a material AI workflow are discovery sources, not necessarily AI products.",
+        "Availability, quotations and booking completion are separate current-state facts."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/travel-lifestyle.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C47",
+      "category_slug": "social-companionship",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Underlying models and avatar assets are separate entities.",
+        "Simulated relationships do not establish human identity, therapeutic effectiveness or emotional safety."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/social-companionship.md.",
+      "acceptance_receipts": []
+    },
+    {
+      "category_id": "APP-C48",
+      "category_slug": "robotics-autonomy",
+      "scope_version": "0.1.0",
+      "research_status": "not_started",
+      "inclusion_rule": "Include an identifiable software product, independently discoverable product module, or software-delivered service that offers an AI-assisted end-user workflow within this definition; record the evidence for AI involvement.",
+      "exclusion_rules": [
+        "Robot hardware, control models, research policies and inference runtimes remain separate linked entities.",
+        "Simulation or product availability does not establish real-world safety, certification or autonomous authority."
+      ],
+      "survey_scope": {
+        "languages": [],
+        "regions": [],
+        "source_sets": [],
+        "cutoff_date": null,
+        "denominator_definition": "No source universe has been selected yet. No market coverage percentage may be computed."
+      },
+      "candidate_sightings_count": 0,
+      "deduplicated_product_count": 0,
+      "offering_count": 0,
+      "primary_sourced_product_count": 0,
+      "reviewed_product_count": 0,
+      "independently_measured_product_count": 0,
+      "publication_eligible_product_count": 0,
+      "published_product_count": 0,
+      "required_fields": [
+        "canonical_product_identity",
+        "operator_identity_status",
+        "primary_source_links",
+        "material_ai_workflow_evidence",
+        "offering_scope",
+        "claim_evidence_and_conditions",
+        "access_dates",
+        "source_use_decision",
+        "review_record",
+        "known_unknowns"
+      ],
+      "known_unknowns": [
+        "No candidate-discovery pass has been completed for this category.",
+        "The open-world total of eligible products is unknown.",
+        "No source-use, product-capability or publication eligibility decision follows from taxonomy creation."
+      ],
+      "last_source_check": null,
+      "freshness_policy": "Use claim dates and event-triggered rechecks for current-state facts; no universal time-to-live is adopted.",
+      "source_use_decision": "not_assessed",
+      "owner": null,
+      "reviewer": null,
+      "next_action": "Define a bounded source/language/region survey and research research/categories/robotics-autonomy.md.",
+      "acceptance_receipts": []
+    }
+  ],
+  "aggregation_rules": {
+    "distinct_products": "Deduplicate canonical product IDs across category memberships; report sightings, products and offerings separately.",
+    "bounded_coverage": "Only compute ratios within an explicitly enumerated, dated source/language/region survey. Label numerator, denominator, exclusions and unresolved identities.",
+    "breadth": "Report categories and subcategories examined plus selected source families, language and regional gaps; not a percentage of all AI.",
+    "depth": "Report sourced, reviewed, independently measured and publication-eligible counts independently. A reviewed record may legitimately retain Unknown claims.",
+    "freshness": "Report current-state claims checked within a declared dated audit and claims needing event-driven recheck; immutable version facts retain their version scope.",
+    "rights": "Report eligibility by source/material/field/intended use, not blanket record-level permission.",
+    "website_delivery": "Published means an immutable admitted artifact has a consumer receipt and actual public readback. A merged research file is not published."
+  }
+}
