@@ -31,6 +31,10 @@ Separate observed facts, vendor statements, reproduced outcomes and estimates. D
 
 ## Open questions and follow-ups
 
+## Review and disclosure
+
+Material affiliations of the contributor (kind only, no personal data). Reviewer identity, exact revision reviewed and any recusal: `pending` until approval; link the GitHub review or receiving receipt rather than editing this note after approval. Unresolved disagreements, with both positions and their evidence.
+
 ## Consumer handoff
 
 Exact artifact/version, consumer, actual review reference or pending decision.
