@@ -60,7 +60,8 @@ and change no assignment automatically. For security concerns, follow the
 [existing security policy](SECURITY.md), including its conditional reporting routes.
 This routing guidance establishes no additional or verified private destination.
 
-The owner-selected scope of [organization issue #14](https://github.com/Pick-Your-AI/.github/issues/14)
+The owner-selected scope recorded in the [organization governance decisions](https://github.com/Pick-Your-AI/.github/blob/main/docs/governance/DECISIONS.md)
+for [organization issue #14](https://github.com/Pick-Your-AI/.github/issues/14)
 is all changes in Research, Sustainability, Applications, Papers, Catalog Pipeline
 and Datasets. This records scope only: current independent-review and branch/check
 requirements remain in force. Any proposed enforcement change requires separate
