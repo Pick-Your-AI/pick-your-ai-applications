@@ -26,9 +26,9 @@ review, evidence, security and release requirements. Routing identifies a contac
 it does not grant access, appoint an owner, authorize publication or waive a gate.
 
 Use the canonical [escalation guide](https://github.com/Pick-Your-AI/.github/blob/main/docs/governance/ESCALATION.md) and
-[versioned routing policy](https://github.com/Pick-Your-AI/.github/blob/main/governance/escalation-policy.json). These links depend on the organization
-governance change merging; until then, use its reviewed checkout and describe the
-route as provisional. Do not claim the central tooling is installed or active.
+[versioned routing policy](https://github.com/Pick-Your-AI/.github/blob/main/governance/escalation-policy.json). Refresh remains a manual,
+read-only operator step. This guidance does not install or activate recurring
+refresh or event automation.
 
 The order is repository team → repository maintainer → repository lead maintainer
 → applicable parent teams → CompleteDotTech. Record a disposition at each level,
