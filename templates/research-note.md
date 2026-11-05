@@ -33,7 +33,7 @@ Separate observed facts, vendor statements, reproduced outcomes and estimates. D
 
 ## Review and disclosure
 
-Material affiliations of the contributor (kind only, no personal data). Reviewer identity, exact revision reviewed and any recusal: `pending` until approval; link the GitHub review or receiving receipt rather than editing this note after approval. Unresolved disagreements, with both positions and their evidence.
+Material affiliations of the contributor: the kind and the affected record or product IDs, no personal data, terms or amounts (or "none"). Review: `pending`. The receipt lives in the GitHub review bound to its commit, or in `planning/handoffs.json` for a receiving decision; this note links it and is not edited after approval. Reviewers state their own affiliations or recusal in their review. Unresolved disagreements, with both positions and their evidence.
 
 ## Consumer handoff
 
