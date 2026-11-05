@@ -43,3 +43,8 @@ Validation checks structure and evidence prerequisites. It does not prove source
 Unknown is different from Unsupported. Reading a primary source establishes a dated source check, not independently verified behavior. Scope every claim by relevant product, feature, release, plan, platform, geography and date. Separate claimed capability, documented availability, exercised behavior, independent evidence, price and publication eligibility.
 
 Original repository code and documentation use the [MIT license](LICENSE), following the existing research repository. That license does not relicense third-party text, screenshots, logos, reviews, source databases or other evidence. See [THIRD_PARTY_RIGHTS.md](THIRD_PARTY_RIGHTS.md).
+
+## Contributor routing
+
+For a blocked decision, use [the repository routing procedure](CONTRIBUTING.md#routing-decisions).
+Start with the existing issue and its accepted owner; preserve its scope and evidence requirements.

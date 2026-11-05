@@ -13,3 +13,13 @@ Read CONTRIBUTING.md, docs/ORGANIZATION_ALIGNMENT.md, docs/RESEARCH_WORKFLOW.md,
 - Native parent relationships track independently reviewable outcomes. Small tasks/subtasks are checklists; never duplicate native child links in a checklist. Do not delete historical issues or close a parent before its scoped acceptance and consumer handoffs are complete.
 - Project fields own status, priority and readiness; labels own type/topic. Do not invent estimates or deadlines. Missing prerequisites must have explicit rationale; keep informational links distinct from native blockers.
 - Run the README validation commands and state what passed, what was inspected manually and what remains unverified. Automated validation never awards product verification.
+
+## Decisions and escalation
+
+For unresolved decisions, follow [CONTRIBUTING.md#routing-decisions](CONTRIBUTING.md#routing-decisions)
+and the [canonical escalation guide](https://github.com/Pick-Your-AI/.github/blob/main/docs/governance/ESCALATION.md).
+Refresh private routing evidence before choosing a recipient. Report unresolved
+roles and failed or stale lookups explicitly; do not infer accepted ownership from
+membership or access. Preserve the existing assignee, local gates and private-reporting
+boundaries. Central links depend on the governance change merging; no automatic
+routing, permission change or recurring job is enabled by these instructions.
