@@ -63,7 +63,7 @@
           "uniqueItems": true
         }
       },
-      "required": ["direction", "modality", "formats", "limits", "conditions"],
+      "required": ["direction", "modality"],
       "additionalProperties": false,
       "allOf": [
         {
@@ -178,7 +178,7 @@
           "uniqueItems": true
         }
       },
-      "required": ["offline", "works_offline", "needs_network_for"],
+      "required": ["offline"],
       "additionalProperties": false
     },
     "runtime_requirements": {
