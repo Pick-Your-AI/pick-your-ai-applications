@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pickyour.ai/schemas/applications/0.1.0/source.schema.json",
+  "title": "Standalone application source shape",
+  "description": "Exact v0.1.0 intake source shape. An access date is not independent verification or reuse permission.",
+  "type": "object",
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]*:[a-z0-9][a-z0-9._/-]*$"},
+    "url": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "publisher": {"type": "string", "minLength": 1},
+    "authority": {"enum": ["primary", "independent", "secondary"]},
+    "accessed_on": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "state": {"enum": ["active", "withdrawn", "superseded", "unavailable"]}
+  },
+  "required": ["id", "url", "title", "publisher", "authority", "accessed_on", "state"],
+  "additionalProperties": false
+}
