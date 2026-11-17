@@ -376,6 +376,7 @@
         "coverage_hours": "24x7 P1; business hours P2-P4",
         "first_response_hours": "4",
         "uptime_sla_percent": "99.9",
+        "uptime_measurement_window": "calendar month",
         "remedy_kind": "service_credit",
         "exclusions": ["Excludes scheduled maintenance windows and upstream model provider outages"],
         "state": {
