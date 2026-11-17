@@ -31,7 +31,7 @@ This record says where each application fact and each implementation responsibil
 
 **Runtime stays with its owners (task #90, S02).** The catalog-pipeline and website repositories own all ingestion, publication and UI code. This repository supplies contracts, eligible data and receiving tests only.
 
-**Consumer readbacks.** Every consumer was read back on 2026-11-03: its repository, issue number, title and state are in the ledger's `consumer_evidence`. Eight research issues named here are closed: #4, #24, #26, #36, #39, #40, #41 and #60. A closed issue cannot record a receiving decision, so the ledger marks those consumers `unresolved` until the workstream's current receiving venue is confirmed with its owners. That is a readback, not a finding about the workstreams.
+**Consumer readbacks.** Every consumer was read back on 2026-11-03: its repository, issue number, title and state are in the ledger's `consumer_evidence`. Eight research issues named here are closed: #4, #24, #26, #36, #39, #40, #41 and #60. Closure alone does not prevent an issue from recording a receiving decision. The ledger keeps these consumers `unresolved` because their current receiving venue and accountable owner have not been confirmed; a closed, unlocked issue may remain the venue when its owner accepts that scope. The November 3 readback is historical evidence, not a new finding about the workstreams.
 
 ## Receiving receipt (task #91)
 

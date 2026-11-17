@@ -1,6 +1,6 @@
 # Admission and publication policy
 
-Version 1.0 (proposed) · Refs #67 (tasks #94, #95) · Method: [RESEARCH_METHOD.md](RESEARCH_METHOD.md) · Contract: [APPLICATION_CONTRACT.md](APPLICATION_CONTRACT.md)
+Version 1.1 (proposed) · Refs #67 (tasks #94, #95) · Method: [RESEARCH_METHOD.md](RESEARCH_METHOD.md) · Contract: [APPLICATION_CONTRACT.md](APPLICATION_CONTRACT.md)
 
 Which evidence changes allow a claim or record to move forward, back, or out. Every transition names the evidence it needs and who is accountable. Nothing advances automatically: merging a PR or passing tests changes no state.
 
@@ -28,6 +28,11 @@ Independent verification is **not** required for eligibility. A reviewed, rights
 | Product discontinued | Lifecycle claim recorded; identity **retired**, never deleted | History, aliases and successors stay; the record leaves active listings |
 | Undisclosed material affiliation found | Affected claims → re-review | Reviewed again by an unaffiliated reviewer |
 
+Withdrawal retains the historical claim, original source/check dates, prior review
+and rights decisions, and links to the superseding decision with its reason and
+reviewed revision. Removing a field from a current projection does not erase its
+evidence history or establish that a replacement is accepted.
+
 ## Independence of the three tracks
 
 | Track | Changes when | Does not imply |
@@ -35,6 +40,35 @@ Independent verification is **not** required for eligibility. A reviewed, rights
 | Research completion | A decision record meets its issue's acceptance criteria and its receiving decisions are recorded | That anything is published |
 | Issue state | A maintainer closes the issue after the above | That records are eligible |
 | Publication eligibility | Per claim, by the rules above | That research is complete, or that the issue is closed |
+
+## Parent closure (task #95)
+
+A program, epic or work-package parent closes only when its own acceptance
+criteria and the following conditions are met:
+
+1. Each in-scope native child outcome is accepted against its criteria at an
+   exact reviewed revision, or has an explicit, reviewed scope disposition with
+   rationale and evidence (for example, a duplicate linked to the accepted
+   canonical outcome, or work removed from the agreed parent scope). A blocked,
+   deferred, rejected or unresolved child is never counted as completed. If its
+   required outcome remains in scope, the parent stays open. Preserve native
+   relationships and the original evidence; do not delete history to clear a gate.
+2. The existing parent decision record contains a synthesis of the resulting
+   outcome, preserved invariants, limitations and unresolved questions. It links
+   the accepted child revisions, scope dispositions and their actual review
+   decisions. A non-author reviewer assesses the exact parent revision; a merged
+   partial PR or a green check does not supply that acceptance. No new ledger or
+   separate synthesis artifact is required.
+3. Any affected receiving decisions required by the parent's scope are recorded
+   with the actual reviewer, reviewed revision, scope and retained conditions,
+   following [OWNERSHIP_HANDOFFS.md](OWNERSHIP_HANDOFFS.md). Missing required
+   decisions remain pending and keep the parent open. For internal-only work with
+   no affected consumer, state that and why; an informational cross-link creates
+   no external acceptance gate.
+
+Issue closure, product verification and publication eligibility remain separate
+outcomes. A parent synthesis records only the evidence actually obtained and
+retains unknowns; it never upgrades a child or a product claim by aggregation.
 
 ## Record states (contract `publication.state`)
 

@@ -1,0 +1,607 @@
+{
+  "schema_version": "0.1.0",
+  "record_id": "app:synthetic-enterprise-profile",
+  "entity_type": "application_product",
+  "synthetic": true,
+  "identity": {
+    "product_id": "app:synthetic-enterprise-profile",
+    "name": "Synthetic Enterprise Application Fixture",
+    "canonical_url": "https://enterprise-app.example.invalid/",
+    "vendor_id": "vendor:synthetic-enterprise",
+    "vendor_name": "Synthetic Enterprise Vendor",
+    "family_id": null,
+    "aliases": [],
+    "lifecycle": "active"
+  },
+  "classification": {
+    "category_ids": [],
+    "facet_notes": [
+      "Synthetic fixture demonstrating APP-F02.03 Part 1 and Part 2 claim shapes under application contract 0.1.0."
+    ],
+    "classification_claim_ids": []
+  },
+  "entities": [
+    {
+      "id": "offering:synthetic-enterprise-plan",
+      "entity_type": "application_offering",
+      "name": "Synthetic Enterprise Plan",
+      "product_id": "app:synthetic-enterprise-profile",
+      "version": null,
+      "url": "https://enterprise-app.example.invalid/plans/enterprise"
+    },
+    {
+      "id": "release:synthetic-desktop-2.0.0",
+      "entity_type": "application_release",
+      "name": "Synthetic Desktop 2.0.0",
+      "product_id": "app:synthetic-enterprise-profile",
+      "version": "2.0.0",
+      "url": "https://enterprise-app.example.invalid/releases/2.0.0"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source:enterprise-docs",
+      "url": "https://docs.enterprise-app.example.invalid/security-and-admin",
+      "title": "Synthetic enterprise administration and security documentation",
+      "publisher": "Synthetic Enterprise Vendor",
+      "authority": "primary",
+      "accessed_on": "2026-11-17",
+      "state": "active"
+    },
+    {
+      "id": "source:privacy-dpa",
+      "url": "https://legal.enterprise-app.example.invalid/dpa-retention",
+      "title": "Synthetic data processing addendum and retention terms",
+      "publisher": "Synthetic Enterprise Vendor",
+      "authority": "primary",
+      "accessed_on": "2026-11-17",
+      "state": "active"
+    },
+    {
+      "id": "source:independent-export-check",
+      "url": "https://verification.example.invalid/protocols/export-check-1",
+      "title": "Synthetic reproducible export protocol and receipt",
+      "publisher": "Synthetic Independent Lab",
+      "authority": "independent",
+      "accessed_on": "2026-11-17",
+      "state": "active"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:sso",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.enterprise.identity_access",
+      "fact_type": "security",
+      "value_status": "known",
+      "value": {
+        "control_kind": "sso",
+        "protocols_or_models": ["SAML 2.0", "OIDC"],
+        "state": {
+          "documented_status": "documented_with_conditions",
+          "entitlement_scope": "included_in_plan",
+          "configured_enforcement": "admin_configurable",
+          "exercised_status": "documented_only",
+          "conditions": ["Requires organization identity provider configuration"]
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": null,
+        "conditions": ["Enterprise plan only"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-1"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic fixture distinguishing documented SSO entitlement from unverified runtime enforcement."
+    },
+    {
+      "id": "claim:tenancy",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.enterprise.tenancy",
+      "fact_type": "security",
+      "value_status": "known",
+      "value": {
+        "isolation_model": "logical_tenant_isolation",
+        "dedicated_encryption_boundary": true,
+        "state": {
+          "documented_status": "documented",
+          "entitlement_scope": "included_in_plan",
+          "configured_enforcement": "mandatory_default",
+          "exercised_status": "documented_only"
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": "EU",
+        "locale": null,
+        "platform": null,
+        "conditions": ["Does not assert single-tenant model weights hosting"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-2"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic tenancy isolation claim scoped to documented offering architecture."
+    },
+    {
+      "id": "claim:retention-prompts",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.data.retention",
+      "fact_type": "privacy",
+      "value_status": "known",
+      "value": {
+        "data_class": "prompts_and_inputs",
+        "retention_mode": "configurable_window",
+        "duration_days": "30",
+        "state": {
+          "documented_status": "documented_with_conditions",
+          "entitlement_scope": "included_in_plan",
+          "configured_enforcement": "admin_configurable",
+          "exercised_status": "documented_only",
+          "conditions": ["Zero data retention add-on excluded in base fixture"]
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:privacy-dpa"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": null,
+        "conditions": ["Prompts and inputs only; backups tracked separately"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-3"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic retention claim from dated DPA terms."
+    },
+    {
+      "id": "claim:training-use",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.data.training_use",
+      "fact_type": "privacy",
+      "value_status": "known",
+      "value": {
+        "default_policy": "excluded_from_training_by_default",
+        "opt_out_mechanism": "contractual_term",
+        "human_review_exception": false,
+        "state": {
+          "documented_status": "documented",
+          "entitlement_scope": "included_in_plan",
+          "configured_enforcement": "mandatory_default",
+          "exercised_status": "documented_only"
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:privacy-dpa"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": null,
+        "conditions": ["Contractual DPA exclusion for commercial workspaces"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-4"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic training-exclusion claim bound to dated DPA."
+    },
+    {
+      "id": "claim:portability-export-exercised",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.data.portability_deletion",
+      "fact_type": "terms",
+      "value_status": "known",
+      "value": {
+        "capability": "data_export",
+        "initiator": "workspace_admin",
+        "export_formats": ["json", "markdown"],
+        "completeness": "partial_user_artifacts_only",
+        "state": {
+          "documented_status": "documented",
+          "entitlement_scope": "included_in_plan",
+          "configured_enforcement": "admin_configurable",
+          "exercised_status": "independently_exercised",
+          "conditions": ["Observed workspace export omits historical audit log entries"]
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "verified",
+      "evidence_grade": "independent_measurement",
+      "source_ids": ["source:enterprise-docs", "source:independent-export-check"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": "web",
+        "conditions": ["Synthetic workspace export test"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-5"
+      },
+      "verification": {
+        "method": "reproduced_test",
+        "independent": true,
+        "verifier": "synthetic-independent-verifier",
+        "verified_on": "2026-11-17",
+        "receipt_url": "https://verification.example.invalid/receipts/export-check-1",
+        "protocol_version": "0.1.0",
+        "source_id": "source:independent-export-check",
+        "limitations": "Tested on synthetic empty workspace with sample documents only."
+      },
+      "method_and_limitations": "Synthetic independent exercise verifying JSON/Markdown export while flagging audit-log omission."
+    },
+    {
+      "id": "claim:residency",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.data.residency",
+      "fact_type": "privacy",
+      "value_status": "known",
+      "value": {
+        "regions": ["EU"],
+        "applies_to_stages": ["storage_at_rest", "backups"],
+        "pinning_guarantee": "storage_pinned_inference_routed",
+        "cross_border_exceptions": ["Model inference requests may fail over outside EU under high load", "Support diagnostics accessed from US engineering team"],
+        "state": {
+          "documented_status": "documented_with_conditions",
+          "entitlement_scope": "enterprise_contract_only",
+          "configured_enforcement": "admin_configurable",
+          "exercised_status": "documented_only"
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:privacy-dpa"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": "EU",
+        "locale": null,
+        "platform": null,
+        "conditions": ["EU residency tenant setting"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-6"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic regional storage claim preserving explicit inference and support transfer exceptions."
+    },
+    {
+      "id": "claim:support-sla",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.support.sla",
+      "fact_type": "support",
+      "value_status": "known",
+      "value": {
+        "channels": ["email_ticket", "dedicated_account_manager"],
+        "coverage_hours": "24x7 P1; business hours P2-P4",
+        "first_response_hours": "4",
+        "uptime_sla_percent": "99.9",
+        "remedy_kind": "service_credit",
+        "exclusions": ["Excludes scheduled maintenance windows and upstream model provider outages"],
+        "state": {
+          "documented_status": "documented_with_conditions",
+          "entitlement_scope": "enterprise_contract_only",
+          "exercised_status": "documented_only"
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": null,
+        "conditions": ["Signed enterprise order form"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-7"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic support/SLA contract terms; uptime promise is documented, not measured."
+    },
+    {
+      "id": "claim:assurance",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.security.assurance",
+      "fact_type": "compliance",
+      "value_status": "known",
+      "value": {
+        "framework_or_standard": "SOC 2 Type II",
+        "issuer": "Synthetic Audit Firm LLP",
+        "covered_scope": "Synthetic Enterprise web control plane only; excludes desktop client 2.0",
+        "period_start": "2025-11-01",
+        "period_end": "2026-10-31",
+        "expires_on": "2027-10-31",
+        "report_access": "nda_trust_portal",
+        "documentary_limits": [
+          "Public summary inspected; full auditor report gated behind NDA trust portal",
+          "Covers control plane only; does not cover third-party integrations"
+        ]
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "vendor_claim",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": "web",
+        "conditions": ["Trust portal summary only"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-8"
+      },
+      "verification": null,
+      "method_and_limitations": "Vendor trust-center summary only; full report not inspected publicly."
+    },
+    {
+      "id": "claim:byok",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.security.byok_byom",
+      "fact_type": "security",
+      "value_status": "known",
+      "value": {
+        "kind": "byok_encryption",
+        "supported_targets": ["AWS KMS"],
+        "residual_exposure_or_fee_notes": ["Search indexes and billing metadata remain encrypted under platform keys"],
+        "state": {
+          "documented_status": "documented_with_conditions",
+          "entitlement_scope": "paid_add_on",
+          "configured_enforcement": "opt_in_disabled_by_default",
+          "exercised_status": "documented_only"
+        }
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": "EU",
+        "locale": null,
+        "platform": null,
+        "conditions": ["Paid security add-on required"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-9"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic BYOK add-on claim preserving residual key-scope limits."
+    },
+    {
+      "id": "claim:runtime-pinned",
+      "subject": {
+        "id": "release:synthetic-desktop-2.0.0",
+        "entity_type": "application_release"
+      },
+      "field": "product.runtime.requirements",
+      "fact_type": "availability",
+      "value_status": "known",
+      "value": {
+        "kind": "minimum",
+        "memory_gib": "16",
+        "accelerator": "not_used",
+        "operating_systems": ["windows", "macos"],
+        "architectures": ["arm64", "x86_64"],
+        "applies_to": "Desktop client UI syncing with remote workspace"
+      },
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "version_pinned",
+      "version": "2.0.0",
+      "as_of": null,
+      "scope": {
+        "offering_id": null,
+        "region": null,
+        "locale": null,
+        "platform": "desktop",
+        "conditions": ["Synthetic version-pinned desktop requirements"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-10"
+      },
+      "verification": null,
+      "method_and_limitations": "Synthetic release-pinned client requirement."
+    },
+    {
+      "id": "claim:scim-undisclosed",
+      "subject": {
+        "id": "offering:synthetic-enterprise-plan",
+        "entity_type": "application_offering"
+      },
+      "field": "product.enterprise.identity_access",
+      "fact_type": "security",
+      "value_status": "not_disclosed",
+      "value": null,
+      "source_status": "checked",
+      "verification_status": "unverified",
+      "evidence_grade": "primary_documentation",
+      "source_ids": ["source:enterprise-docs"],
+      "checked_on": "2026-11-17",
+      "temporal_scope": "current_state",
+      "version": null,
+      "as_of": "2026-11-17",
+      "scope": {
+        "offering_id": "offering:synthetic-enterprise-plan",
+        "region": null,
+        "locale": null,
+        "platform": null,
+        "conditions": ["SCIM provisioning not disclosed in checked security docs"]
+      },
+      "evidence_state": "active",
+      "explicit_negative_evidence": false,
+      "researcher": "synthetic-researcher",
+      "review": {
+        "status": "approved",
+        "reviewer": "synthetic-reviewer",
+        "reviewed_on": "2026-11-17",
+        "decision_url": "https://review.example.invalid/decision/enterprise-11"
+      },
+      "verification": null,
+      "method_and_limitations": "Demonstrates keeping undisclosed SCIM support at null rather than fabricating unsupported=true."
+    }
+  ],
+  "rights_decisions": [],
+  "relationships": [],
+  "publication": {
+    "state": "proposed",
+    "fields": [],
+    "release_url": null,
+    "consumer_acceptance_url": null
+  },
+  "known_unknowns": [
+    "SCIM deprovisioning latency and backup erasure SLA remain undisclosed in synthetic fixture.",
+    "No real product or vendor is represented."
+  ],
+  "research_notes": [
+    "Synthetic APP-F02.03 Part 1 + Part 2 compatibility fixture."
+  ]
+}
