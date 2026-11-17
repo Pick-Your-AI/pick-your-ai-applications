@@ -367,6 +367,7 @@
         "coverage_hours": { "type": "string", "minLength": 1 },
         "first_response_hours": { "$ref": "#/$defs/decimal" },
         "uptime_sla_percent": { "$ref": "#/$defs/decimal" },
+        "uptime_measurement_window": { "type": "string", "minLength": 1 },
         "remedy_kind": {
           "enum": ["service_credit", "termination_right", "none_documented"]
         },
@@ -379,7 +380,11 @@
         "state": { "$ref": "#/$defs/enterprise_control_state" }
       },
       "required": ["channels", "state"],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [
+        { "if": { "required": ["uptime_sla_percent"] }, "then": { "required": ["uptime_measurement_window"] } },
+        { "if": { "required": ["first_response_hours"] }, "then": { "required": ["coverage_hours"] } }
+      ]
     },
     "security_assurance": {
       "type": "object",
