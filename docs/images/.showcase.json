@@ -24,6 +24,13 @@
   "type": "workspace",
   "visibility": "public"
  },
+ "repository_license_readback": {
+  "checked_on": "2026-11-17",
+  "path": "LICENSE",
+  "spdx": "MIT",
+  "scope_note": "Repository code and documentation; third-party reuse rights are field- and use-specific under THIRD_PARTY_RIGHTS.md",
+  "generation_input_note": "inputs.license remains null because this is an immutable pre-scaffold generation-input snapshot; do not rewrite its fingerprint as if the input was MIT at generation time"
+ },
  "outputs": {
   "banner.png": {
    "bytes": 76641,
