@@ -2,7 +2,7 @@
 
 ## assets/icon.png
 - Date: 2026-10-30
-- Tool and model: Codex CLI 0.164.0 built-in image generation (session 01a18b6e-2428-7bd1-aad9-b7c8b83636c5); model id not reported by the tool
+- Tool and model: Codex CLI 0.164.0 built-in image generation; exact image model ID was not reported by the tool
 - Seed: not supported
 - Reference images: none
 - Prompt (verbatim):
