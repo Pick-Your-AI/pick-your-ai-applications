@@ -7,9 +7,9 @@ For public questions, first search this repository’s issues and pull requests,
 Use [the routing procedure](CONTRIBUTING.md#routing-decisions) for a decision that
 needs another responsible role. Keep the original issue and accepted owner;
 summarize the decision, prior disposition and next recipient without copying private
-rosters or raw API data. Central routing depends on the organization governance
-change merging and a successful private refresh; it does not promise a response
-time or assign an unaccepted owner.
+rosters or raw API data. The organization escalation guide and routing policy are published. Recipient
+selection still requires a successful private refresh; this procedure promises
+no response time and does not assign an unaccepted owner.
 
 Keep credentials, account details, personal/customer data and confidential reports
 out of public issues. For security concerns, follow the [existing security policy](SECURITY.md),
