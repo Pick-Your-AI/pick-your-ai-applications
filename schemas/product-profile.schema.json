@@ -2,8 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://pickyour.ai/schemas/applications/0.1.0/product-profile.schema.json",
   "title": "Product comparison field values (proposal 0.1.0)",
-  "description": "Value shapes for the product comparison claims in research/foundations/product-field-guide.md (APP-F02.03). A claim whose field the guide lists carries a value matching the $defs entry the guide names; unknown, undisclosed and inapplicable values stay null at claim level, as the application contract requires. A sub-field a source does not state is left out, which means not stated, never none or zero. No validator binds these shapes yet: that is a proposed, versioned contract change.",
+  "description": "Value shapes for the user-facing and enterprise product comparison claims in research/foundations/product-field-guide.md (APP-F02.03, parts 1 and 2). A claim whose field the guide lists carries a value matching the $defs entry the guide names; unknown, undisclosed and inapplicable values stay null at claim level, as the application contract requires. A sub-field a source does not state is left out, which means not stated, never none or zero. No validator binds these shapes yet: that is a proposed, versioned contract change.",
   "$defs": {
+    "iso_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
     "decimal": {
       "type": "string",
       "pattern": "^[0-9]+(\\.[0-9]+)?$"
@@ -206,6 +210,220 @@
         "applies_to": { "type": "string", "minLength": 1 }
       },
       "required": ["kind", "applies_to"],
+      "additionalProperties": false
+    },
+    "enterprise_control_state": {
+      "type": "object",
+      "description": "Separates documented availability from plan entitlement, tenant configuration enforcement, and independent exercise; unstated dimensions are omitted rather than guessed.",
+      "properties": {
+        "documented_status": {
+          "enum": ["documented", "documented_with_conditions", "explicitly_unavailable"]
+        },
+        "entitlement_scope": {
+          "enum": ["included_in_plan", "paid_add_on", "enterprise_contract_only", "seat_or_tier_minimum", "beta_or_limited"]
+        },
+        "configured_enforcement": {
+          "enum": ["mandatory_default", "admin_configurable", "opt_in_disabled_by_default"]
+        },
+        "exercised_status": {
+          "enum": ["documented_only", "independently_verified_config", "independently_exercised"]
+        },
+        "conditions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": ["documented_status", "exercised_status"],
+      "additionalProperties": false
+    },
+    "enterprise_identity_access": {
+      "type": "object",
+      "properties": {
+        "control_kind": {
+          "enum": ["sso", "scim", "rbac", "admin_audit_logs"]
+        },
+        "protocols_or_models": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["control_kind", "state"],
+      "additionalProperties": false
+    },
+    "enterprise_tenancy": {
+      "type": "object",
+      "properties": {
+        "isolation_model": {
+          "enum": ["shared_multi_tenant", "logical_tenant_isolation", "dedicated_single_tenant", "customer_hosted_isolated"]
+        },
+        "dedicated_encryption_boundary": { "type": "boolean" },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["isolation_model", "state"],
+      "additionalProperties": false
+    },
+    "data_retention": {
+      "type": "object",
+      "properties": {
+        "data_class": {
+          "enum": ["prompts_and_inputs", "uploaded_files", "outputs_and_artifacts", "audit_and_usage_logs", "telemetry", "backups_and_archives"]
+        },
+        "retention_mode": {
+          "enum": ["zero_data_retention", "fixed_window", "configurable_window", "indefinite_until_deleted", "retained_in_backups"]
+        },
+        "duration_days": { "$ref": "#/$defs/decimal" },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["data_class", "retention_mode", "state"],
+      "additionalProperties": false
+    },
+    "training_use": {
+      "type": "object",
+      "properties": {
+        "default_policy": {
+          "enum": ["excluded_from_training_by_default", "used_unless_opted_out", "used_for_service_improvement_opt_in_required", "used_with_no_opt_out"]
+        },
+        "opt_out_mechanism": {
+          "enum": ["admin_setting", "user_setting", "contractual_term", "support_request", "not_offered"]
+        },
+        "human_review_exception": { "type": "boolean" },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["default_policy", "state"],
+      "additionalProperties": false
+    },
+    "portability_deletion": {
+      "type": "object",
+      "properties": {
+        "capability": {
+          "enum": ["data_export", "account_deletion", "workspace_migration"]
+        },
+        "initiator": {
+          "enum": ["self_serve_user", "workspace_admin", "support_ticket"]
+        },
+        "export_formats": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "completeness": {
+          "enum": ["full_workspace_and_history", "partial_user_artifacts_only", "excludes_audit_logs_or_metadata"]
+        },
+        "deletion_sla_days": { "$ref": "#/$defs/decimal" },
+        "retained_backups_note": { "type": "string", "minLength": 1 },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["capability", "state"],
+      "additionalProperties": false
+    },
+    "data_residency": {
+      "type": "object",
+      "properties": {
+        "regions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "applies_to_stages": {
+          "type": "array",
+          "items": {
+            "enum": ["storage_at_rest", "model_inference_processing", "backups", "telemetry", "support_diagnostics"]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "pinning_guarantee": {
+          "enum": ["contractual_in_region_only", "storage_pinned_inference_routed", "best_effort_routing"]
+        },
+        "cross_border_exceptions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["regions", "applies_to_stages", "state"],
+      "additionalProperties": false
+    },
+    "support_sla": {
+      "type": "object",
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "enum": ["community_forum", "email_ticket", "in_app_chat", "phone", "dedicated_account_manager", "private_slack_or_channel"]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "coverage_hours": { "type": "string", "minLength": 1 },
+        "first_response_hours": { "$ref": "#/$defs/decimal" },
+        "uptime_sla_percent": { "$ref": "#/$defs/decimal" },
+        "remedy_kind": {
+          "enum": ["service_credit", "termination_right", "none_documented"]
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["channels", "state"],
+      "additionalProperties": false
+    },
+    "security_assurance": {
+      "type": "object",
+      "properties": {
+        "framework_or_standard": { "type": "string", "minLength": 1 },
+        "issuer": { "type": "string", "minLength": 1 },
+        "covered_scope": { "type": "string", "minLength": 1 },
+        "period_start": { "$ref": "#/$defs/iso_date" },
+        "period_end": { "$ref": "#/$defs/iso_date" },
+        "expires_on": { "$ref": "#/$defs/iso_date" },
+        "report_access": {
+          "enum": ["public", "nda_trust_portal", "vendor_summary_only"]
+        },
+        "documentary_limits": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": ["framework_or_standard", "issuer", "covered_scope", "report_access", "documentary_limits"],
+      "additionalProperties": false
+    },
+    "byok_byom": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": ["byok_encryption", "byom_model_endpoint", "byok_provider_api_key"]
+        },
+        "supported_targets": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "residual_exposure_or_fee_notes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "state": { "$ref": "#/$defs/enterprise_control_state" }
+      },
+      "required": ["kind", "state"],
       "additionalProperties": false
     }
   }
