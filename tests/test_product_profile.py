@@ -1,16 +1,33 @@
 """The product comparison value shapes (schemas/product-profile.schema.json, APP-F02.03): the schema keeps to the
 validator's keyword set, and synthetic values show what each shape takes and refuses. No real product is described."""
 import copy
+import datetime as dt
 import importlib.util
 import json
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+AS_OF = dt.date(2026, 11, 17)
 spec = importlib.util.spec_from_file_location("application_validation", ROOT / "scripts" / "validate_applications.py")
 validator = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(validator)
 PROFILE = json.loads((ROOT / "schemas" / "product-profile.schema.json").read_text(encoding="utf-8"))
+FIXTURE = json.loads((ROOT / "tests" / "fixtures" / "synthetic_enterprise_profile.json").read_text(encoding="utf-8"))
+TAXONOMY = json.loads((ROOT / "taxonomy" / "taxonomy.json").read_text(encoding="utf-8"))
+
+PART2_FIELD_TO_SHAPE = {
+    "product.runtime.requirements": "runtime_requirements",
+    "product.enterprise.identity_access": "enterprise_identity_access",
+    "product.enterprise.tenancy": "enterprise_tenancy",
+    "product.data.retention": "data_retention",
+    "product.data.training_use": "training_use",
+    "product.data.portability_deletion": "portability_deletion",
+    "product.data.residency": "data_residency",
+    "product.support.sla": "support_sla",
+    "product.security.assurance": "security_assurance",
+    "product.security.byok_byom": "byok_byom",
+}
 
 EXAMPLES = {
     "io": [
@@ -29,6 +46,86 @@ EXAMPLES = {
     "runtime_requirements": {"kind": "minimum", "memory_gib": "16", "accelerator": "optional_gpu",
                              "operating_systems": ["linux"], "architectures": ["x86_64"],
                              "applies_to": "the bundled model"},
+    "enterprise_control_state": {"documented_status": "documented_with_conditions",
+                                 "entitlement_scope": "included_in_plan",
+                                 "configured_enforcement": "admin_configurable",
+                                 "exercised_status": "documented_only",
+                                 "conditions": ["Requires verified organization domain"]},
+    "enterprise_identity_access": {
+        "control_kind": "sso",
+        "protocols_or_models": ["SAML 2.0", "OIDC"],
+        "state": {"documented_status": "documented", "entitlement_scope": "enterprise_contract_only",
+                  "configured_enforcement": "admin_configurable", "exercised_status": "documented_only"},
+    },
+    "enterprise_tenancy": {
+        "isolation_model": "logical_tenant_isolation",
+        "dedicated_encryption_boundary": True,
+        "state": {"documented_status": "documented", "entitlement_scope": "included_in_plan",
+                  "configured_enforcement": "mandatory_default", "exercised_status": "documented_only"},
+    },
+    "data_retention": {
+        "data_class": "prompts_and_inputs",
+        "retention_mode": "configurable_window",
+        "duration_days": "30",
+        "state": {"documented_status": "documented", "entitlement_scope": "included_in_plan",
+                  "configured_enforcement": "admin_configurable", "exercised_status": "documented_only"},
+    },
+    "training_use": {
+        "default_policy": "excluded_from_training_by_default",
+        "opt_out_mechanism": "contractual_term",
+        "human_review_exception": False,
+        "state": {"documented_status": "documented", "entitlement_scope": "included_in_plan",
+                  "configured_enforcement": "mandatory_default", "exercised_status": "documented_only"},
+    },
+    "portability_deletion": {
+        "capability": "data_export",
+        "initiator": "workspace_admin",
+        "export_formats": ["json", "markdown"],
+        "completeness": "partial_user_artifacts_only",
+        "deletion_sla_days": "30",
+        "retained_backups_note": "Immutable backups purge on a 30-day rolling cycle",
+        "state": {"documented_status": "documented", "entitlement_scope": "included_in_plan",
+                  "configured_enforcement": "admin_configurable", "exercised_status": "independently_exercised"},
+    },
+    "data_residency": {
+        "regions": ["EU"],
+        "applies_to_stages": ["storage_at_rest", "backups"],
+        "pinning_guarantee": "storage_pinned_inference_routed",
+        "cross_border_exceptions": ["Model inference requests may fail over outside EU"],
+        "state": {"documented_status": "documented_with_conditions",
+                  "entitlement_scope": "enterprise_contract_only",
+                  "exercised_status": "documented_only"},
+    },
+    "support_sla": {
+        "channels": ["email_ticket", "dedicated_account_manager"],
+        "coverage_hours": "24x7 P1; business hours P2-P4",
+        "first_response_hours": "4",
+        "uptime_sla_percent": "99.9",
+        "remedy_kind": "service_credit",
+        "exclusions": ["Excludes upstream model provider outages"],
+        "state": {"documented_status": "documented_with_conditions",
+                  "entitlement_scope": "enterprise_contract_only",
+                  "exercised_status": "documented_only"},
+    },
+    "security_assurance": {
+        "framework_or_standard": "SOC 2 Type II",
+        "issuer": "Synthetic Audit Firm LLP",
+        "covered_scope": "Synthetic Enterprise web control plane",
+        "period_start": "2025-11-01",
+        "period_end": "2026-10-31",
+        "expires_on": "2027-10-31",
+        "report_access": "nda_trust_portal",
+        "documentary_limits": ["Summary page reviewed; full report requires NDA"],
+    },
+    "byok_byom": {
+        "kind": "byok_encryption",
+        "supported_targets": ["AWS KMS"],
+        "residual_exposure_or_fee_notes": ["Search index keys remain vendor-managed"],
+        "state": {"documented_status": "documented_with_conditions",
+                  "entitlement_scope": "paid_add_on",
+                  "configured_enforcement": "opt_in_disabled_by_default",
+                  "exercised_status": "documented_only"},
+    },
 }
 
 
@@ -119,8 +216,65 @@ class ProductProfileTests(unittest.TestCase):
 
     def test_the_guide_names_every_shape(self):
         guide = (ROOT / "research" / "foundations" / "product-field-guide.md").read_text(encoding="utf-8")
-        for name in EXAMPLES:
+        for name in (*EXAMPLES, "iso_date"):
             self.assertIn(f"`{name}`", guide, name)
+
+    def test_enterprise_control_separates_existence_entitlement_enforcement_and_exercise(self):
+        minimal = {"documented_status": "documented", "exercised_status": "documented_only"}
+        self.assertEqual([], errors("enterprise_control_state", minimal))
+        for missing in ("documented_status", "exercised_status"):
+            bad = dict(minimal)
+            del bad[missing]
+            self.assertTrue(errors("enterprise_control_state", bad), missing)
+        self.assertTrue(errors("enterprise_control_state", {**minimal, "documented_status": "unknown"}))
+        self.assertTrue(errors("enterprise_control_state", {**minimal, "entitlement_scope": "all_users"}))
+        self.assertTrue(errors("enterprise_control_state", {**minimal, "configured_enforcement": True}))
+
+    def test_retention_and_sla_use_decimal_strings_when_stated_and_allow_omission(self):
+        minimal_ret = {
+            "data_class": "prompts_and_inputs",
+            "retention_mode": "zero_data_retention",
+            "state": {"documented_status": "documented", "exercised_status": "documented_only"},
+        }
+        self.assertEqual([], errors("data_retention", minimal_ret))
+        self.assertTrue(errors("data_retention", {**minimal_ret, "duration_days": 30}))
+        self.assertTrue(errors("data_retention", {**minimal_ret, "duration_days": "forever"}))
+        minimal_sla = {
+            "channels": ["email_ticket"],
+            "state": {"documented_status": "documented", "exercised_status": "documented_only"},
+        }
+        self.assertEqual([], errors("support_sla", minimal_sla))
+        self.assertTrue(errors("support_sla", {**minimal_sla, "uptime_sla_percent": 99.9}))
+
+    def test_assurance_retains_issuer_scope_dates_and_nonempty_limits(self):
+        base = copy.deepcopy(EXAMPLES["security_assurance"])
+        for missing in ("framework_or_standard", "issuer", "covered_scope", "report_access", "documentary_limits"):
+            bad = copy.deepcopy(base)
+            del bad[missing]
+            self.assertTrue(errors("security_assurance", bad), missing)
+        self.assertTrue(errors("security_assurance", {**base, "documentary_limits": []}))
+        self.assertTrue(errors("security_assurance", {**base, "expires_on": "2027/10/31"}))
+
+    def test_residency_portability_and_byok_keep_stages_and_notes_typed(self):
+        self.assertTrue(errors("data_residency", {**EXAMPLES["data_residency"], "regions": []}))
+        self.assertTrue(errors("data_residency", {**EXAMPLES["data_residency"], "applies_to_stages": ["everywhere"]}))
+        self.assertTrue(errors("portability_deletion", {**EXAMPLES["portability_deletion"], "deletion_sla_days": 30}))
+        self.assertTrue(errors("byok_byom", {**EXAMPLES["byok_byom"], "kind": "custom_crypto"}))
+
+    def test_synthetic_enterprise_fixture_satisfies_contract_and_profile_shapes(self):
+        self.assertEqual([], validator.validate_record(FIXTURE, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+        self.assertTrue(validator.validate_record(FIXTURE, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=False))
+        checked = 0
+        for claim in FIXTURE["claims"]:
+            shape = PART2_FIELD_TO_SHAPE.get(claim["field"])
+            if not shape:
+                continue
+            if claim["value_status"] in ("unknown", "not_disclosed", "not_applicable", "disputed"):
+                self.assertIsNone(claim["value"], claim["id"])
+            else:
+                self.assertEqual([], errors(shape, claim["value"]), claim["id"])
+                checked += 1
+        self.assertGreaterEqual(checked, 10)
 
 
 if __name__ == "__main__":
