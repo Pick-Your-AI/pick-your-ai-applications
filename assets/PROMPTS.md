@@ -23,3 +23,10 @@ RENDERING: produce this as a flat vector-style graphic, as if exported from a ve
 
 - Candidates: 1 per attempt, 3 attempts (1 and 2 rejected: icon-ground, corner spread over the 3.0 limit); selected: attempt 3 (flat teal strokes, one amber spark, uniform ground)
 - Post-processing: showcase.py 1.0.0 `content icon normalize --option A --ground transparent`; output sha256 59220200a0557fb096aec062ad6ab9fb904b0675f999ea2c3bc78b1eb47eaa24; size 109.6 KB
+
+## assets/social-preview.png
+
+- Origin: reused from [PR #140](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/140), not regenerated for [PR #153](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/153). Its unchanged Git blob at the time of this provenance update is `fd4c508d20595dd48904002862d3357436b0ffb4`.
+- Generation method (historical contributor's recorded statement): the PR #140 description describes the banner, card, and social preview as *typeset by showcase tooling*, not drawn by an image-generation model. That statement was not independently reproduced in this continuation.
+- The original generation command, tool version, invocation date, source fonts, layout parameters and prompt/seed for this particular preview were not retained in this repository's provenance file. **Unknown**, rather than inferred from the icon's separate image-generation record.
+- Review boundary: no new preview render, image appearance inspection, remote badge render, third-party source-use permission check or live-link check is represented by this entry. The MIT repository license governs original code/documentation; third-party material remains subject to `THIRD_PARTY_RIGHTS.md`.
