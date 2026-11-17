@@ -101,6 +101,7 @@ EXAMPLES = {
         "coverage_hours": "24x7 P1; business hours P2-P4",
         "first_response_hours": "4",
         "uptime_sla_percent": "99.9",
+        "uptime_measurement_window": "calendar month",
         "remedy_kind": "service_credit",
         "exclusions": ["Excludes upstream model provider outages"],
         "state": {"documented_status": "documented_with_conditions",
@@ -245,6 +246,33 @@ class ProductProfileTests(unittest.TestCase):
         }
         self.assertEqual([], errors("support_sla", minimal_sla))
         self.assertTrue(errors("support_sla", {**minimal_sla, "uptime_sla_percent": 99.9}))
+
+    def test_numeric_sla_promises_require_their_measurement_windows(self):
+        base = copy.deepcopy(EXAMPLES["support_sla"])
+        self.assertEqual([], errors("support_sla", base))
+        for field in ("uptime_measurement_window", "coverage_hours"):
+            bad = dict(base)
+            del bad[field]
+            self.assertTrue(errors("support_sla", bad), field)
+        for metric, context in (("uptime_sla_percent", "uptime_measurement_window"),
+                                ("first_response_hours", "coverage_hours")):
+            partial = dict(base)
+            del partial[metric]
+            del partial[context]
+            self.assertEqual([], errors("support_sla", partial), metric)
+        self.assertTrue(errors("support_sla", {**base, "uptime_measurement_window": ""}))
+
+    def test_unsupported_enterprise_claim_requires_explicit_negative_evidence(self):
+        record = copy.deepcopy(FIXTURE)
+        claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+        claim.update(value_status="unsupported", value=False, explicit_negative_evidence=False)
+        result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+        self.assertTrue(any("explicit negative evidence" in e for e in result), result)
+        claim["explicit_negative_evidence"] = True
+        self.assertEqual([], validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+        claim["value"] = {}
+        result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+        self.assertTrue(any("explicit JSON false" in e for e in result), result)
 
     def test_assurance_retains_issuer_scope_dates_and_nonempty_limits(self):
         base = copy.deepcopy(EXAMPLES["security_assurance"])
