@@ -17,7 +17,7 @@ An application product is an end-user or enterprise software product that expose
 | Model | `model:` | An informational relationship to underlying model research; not a compatibility assertion. |
 | Vendor | `vendor:` | The publisher or responsible business identity. |
 
-Aliases remain attached to canonical product identities. Rebrands, forks, acquisitions, replacements and discontinued successors are evidence-linked relationships rather than reasons to count the same product multiple times. Integration and model relationships do not imply that every version, region or product plan supports them.
+Aliases remain attached to canonical product identities. Rebrands, forks, acquisitions, replacements and discontinued successors are evidence-linked relationships rather than reasons to count the same product multiple times. Merges and splits of intake records are reviewed identity decisions ([application identity](../research/foundations/application-identity.md)); retired IDs are never reused. Integration and model relationships do not imply that every version, region or product plan supports them.
 
 `identity`, proposed category IDs and research notes are intake locators. Their existence in JSON does not certify the product name, availability or category as reviewed. **Only factual claims admitted by the publication manifest may be rendered as product facts.** Product identity facts also need corresponding reviewed claims before a consumer can display them as approved directory content.
 
