@@ -1,6 +1,8 @@
 # Review and conflict policy
 
-Version 1.1 (proposed) · Refs #66 (tasks #92, #93) · Organization rules: [.github CONTRIBUTING](https://github.com/Pick-Your-AI/.github/blob/main/CONTRIBUTING.md)
+Version 1.1 · Adoption: effective when this revision is independently reviewed and merged · Refs #66 (tasks #92, #93) · Organization rules: [.github CONTRIBUTING](https://github.com/Pick-Your-AI/.github/blob/main/CONTRIBUTING.md)
+
+This adoption covers the local review workflow and role definition only. It does not adopt product claims, grant source-use rights, accept external handoffs, or change GitHub rulesets. The required non-author approval and latest-push review still gate this policy change itself.
 
 Reviews keep the directory truthful and commercially neutral. A review checks the evidence, not the reputation of the contributor or the product.
 
@@ -20,7 +22,7 @@ All of these follow the organization rule:
 - approval of the latest push by someone other than its pusher;
 - a merge by a maintainer.
 
-**Application research reviewer (proposed).** This is a non-author who has read the contract and this policy, discloses as below, and either belongs to this repository's maintainer or lead team or is named on the PR by a maintainer. CODEOWNERS routes every path to one login (`.github/CODEOWNERS`); that routes requests, and it neither grants nor proves the role.
+**Application research reviewer.** This is a non-author who has read the contract and this policy, discloses as below, and either belongs to this repository's maintainer or lead team or is named on the PR by a maintainer. CODEOWNERS routes every path to one login (`.github/CODEOWNERS`); that routes requests, and it neither grants nor proves the role.
 
 ## Issues, branches and assignment
 
@@ -101,7 +103,7 @@ The empty result recorded on #66 was observed before these rulesets were created
 - research #40 review of shared-contract changes;
 - code-owner approval.
 
-The `validate` check comes from `.github/workflows/validate.yml`, which #136 adds. Until #136 merges, a pull request based on `main` cannot produce it. Rulesets enforce who may merge and that the structure validates. Whether a review actually checked the evidence still depends on the reviewer following this policy.
+The `validate` check comes from `.github/workflows/validate.yml`, delivered by the merged scaffold PR #136. Its historical pre-merge absence no longer applies; inspect the current exact-head check and active rules before each merge. Rulesets enforce who may merge and that the structure validates. Whether a review actually checked the evidence still depends on the reviewer following this policy.
 
 ## Receiving owners for this policy
 
