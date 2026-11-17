@@ -19,3 +19,15 @@ body:
     id: impact
     attributes:
       label: Downstream impact and unresolved questions
+  - type: textarea
+    id: routing_context
+    attributes:
+      label: Routing context (optional)
+      description: Only for an unresolved decision; reuse information above and follow CONTRIBUTING.md. Keep private rosters and sensitive details out of this form. Security concerns follow SECURITY.md; this field establishes no private intake.
+      placeholder: |
+        Decision needed:
+        Current responsible role:
+        Prior disposition:
+        Proposed next recipient:
+    validations:
+      required: false
