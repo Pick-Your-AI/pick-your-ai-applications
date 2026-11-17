@@ -183,9 +183,14 @@ def validate(taxonomy, ledger, plan, project, *, as_of=None):
 
 def main():
     files=['taxonomy/taxonomy.json','coverage/ledger.json','planning/backlog.json','planning/project-config.json']
-    from validate_applications import load_json
+    from validate_applications import load_json, schema_errors
     data=[load_json(ROOT/f) for f in files]
+    shape_errors=schema_errors(data[1], load_json(ROOT/'schemas/coverage-ledger.schema.json'))
+    if shape_errors:
+        raise ValueError('invalid coverage counter envelope: ' + '; '.join(shape_errors))
     counts=validate(*data)
+    from coverage_membership import reconcile_repository
+    global_counts=reconcile_repository(ROOT, data[1], data[0])
     from render_backlog import render_body
     nodes=data[2]['nodes']; by_id={n['id']:n for n in nodes}
     for n in nodes:
@@ -195,7 +200,7 @@ def main():
             raise ValueError(f"stale generated issue body: {n['id']}")
         if re.search(r'- \[[ x]\].*https://github.com/.*/issues/',text):
             raise ValueError('native issue link duplicated as checklist')
-    print(json.dumps({'validation':'passed','scope':'offline planning integrity, not GitHub creation or product verification','categories':len(data[0]['categories']),'subcategories':sum(len(c['subcategories']) for c in data[0]['categories']),'counts':counts},indent=2))
+    print(json.dumps({'validation':'passed','scope':'offline planning integrity, not GitHub creation or product verification','categories':len(data[0]['categories']),'subcategories':sum(len(c['subcategories']) for c in data[0]['categories']),'counts':counts,'global_record_counts':global_counts},indent=2))
 
 
 if __name__=='__main__':
