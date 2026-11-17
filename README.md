@@ -1,4 +1,28 @@
+<!-- showcase:banner:start -->
+<p align="center">
+  <img src="docs/images/banner.png" alt="pick-your-ai-applications by Pick Your AI" width="100%">
+</p>
+<!-- showcase:banner:end -->
+
+<!-- showcase:nav:start -->
+**Pick Your AI** · [All repositories](https://github.com/Pick-Your-AI) · [Contributing](https://github.com/Pick-Your-AI/.github/blob/main/CONTRIBUTING.md) · [Security](https://github.com/Pick-Your-AI/.github/blob/main/SECURITY.md)
+<!-- showcase:nav:end -->
+
+<div align="center">
+
 # Pick Your AI Applications
+
+<!-- showcase:badges:start -->
+![Type Workspace](https://img.shields.io/badge/type-Workspace-0F766E)
+<!-- showcase:badges:end -->
+
+<!-- showcase:tagline:start -->
+**Source-linked research and delivery backlog for a comprehensive directory of end-user and enterprise AI applications, products, and services.**
+<!-- showcase:tagline:end -->
+
+</div>
+
+---
 
 Research and planning for an evidence-backed directory of end-user and enterprise AI applications, products and software services.
 
@@ -6,7 +30,7 @@ Research and planning for an evidence-backed directory of end-user and enterpris
 
 Parent: [Pick-Your-AI research #509, G12](https://github.com/Pick-Your-AI/pick-your-ai-research/issues/509).
 
-**Recorded delivery:** The October 23, 2026 [establishment checkpoint](planning/ESTABLISHMENT_STATUS.md) verifies all 135 planned issues, 134 internal parent relationships, [Project #10](https://github.com/orgs/Pick-Your-AI/projects/10) population and fields, and the [program #1](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1) link to research #509. This is a dated observation, not a perpetual live inventory. The scaffold is submitted in [PR #136](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/136); its merge and current review state must be checked on GitHub. Research and receiving handoffs remain separate gates.
+**Recorded delivery:** The October 23, 2026 [establishment checkpoint](planning/ESTABLISHMENT_STATUS.md) verifies all 135 planned issues, 134 internal parent relationships, [Project #10](https://github.com/orgs/Pick-Your-AI/projects/10) population and fields, and the [program #1](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/1) link to research #509. This is a dated observation, not a perpetual live inventory. The scaffold merged through [PR #136](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/136) on November 4, 2026; its current CI state must be checked against the latest default branch. Research and receiving handoffs remain separate gates.
 
 ## Scope
 
