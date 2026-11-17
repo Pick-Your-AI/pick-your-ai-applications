@@ -49,6 +49,25 @@ class ProductProfileTests(unittest.TestCase):
         value[0]["modality"] = "code"
         self.assertTrue(errors("io", value))
 
+    def test_a_known_input_can_omit_unstated_details(self):
+        value = [{"direction": "input", "modality": "documents", "formats": ["pdf"]}]
+        self.assertEqual([], errors("io", value))
+
+    def test_sourced_empty_io_details_are_valid(self):
+        value = [{"direction": "input", "modality": "documents", "formats": [],
+                  "limits": [], "conditions": []}]
+        self.assertEqual([], errors("io", value))
+
+    def test_provided_io_details_keep_their_types(self):
+        value = [{"direction": "input", "modality": "documents", "formats": "pdf"}]
+        self.assertTrue(errors("io", value))
+        value[0]["formats"] = ["pdf"]
+        value[0]["limits"] = "none"
+        self.assertTrue(errors("io", value))
+        value[0].pop("limits")
+        value[0]["conditions"] = None
+        self.assertTrue(errors("io", value))
+
     def test_a_limit_is_a_decimal_string_with_its_scope(self):
         value = copy.deepcopy(EXAMPLES["io"])
         value[0]["limits"][0]["amount"] = 50
@@ -77,6 +96,21 @@ class ProductProfileTests(unittest.TestCase):
         self.assertTrue(errors("runtime_requirements", value))
         value = dict(EXAMPLES["runtime_requirements"], kind="minimum_or_recommended")
         self.assertTrue(errors("runtime_requirements", value))
+
+    def test_partial_network_knowledge_can_omit_unstated_network_uses(self):
+        value = {"offline": "partial", "works_offline": ["editing"]}
+        self.assertEqual([], errors("network", value))
+
+    def test_sourced_empty_network_details_are_valid(self):
+        value = {"offline": "partial", "works_offline": [], "needs_network_for": []}
+        self.assertEqual([], errors("network", value))
+
+    def test_provided_network_details_keep_their_types(self):
+        value = {"offline": "partial", "needs_network_for": "inference"}
+        self.assertTrue(errors("network", value))
+        value["needs_network_for"] = ["inference"]
+        value["works_offline"] = None
+        self.assertTrue(errors("network", value))
 
     def test_unknown_fields_are_refused_everywhere(self):
         for name, value in EXAMPLES.items():
