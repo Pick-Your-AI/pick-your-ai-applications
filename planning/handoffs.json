@@ -59,9 +59,9 @@
           "docs/SCOPE.md",
           "research/foundations/application-scope.md"
         ],
-        "commit": null,
-        "status": "planned",
-        "planned_by": "APP-F01.01 (#141, #146)"
+        "commit": "63d8ada68c3dbf807d94b94f53ffa26c6bb8b214",
+        "status": "existing",
+        "planned_by": null
       },
       "decision": {
         "value": "pending",
@@ -547,9 +547,9 @@
           "docs/SCOPE.md",
           "research/foundations/application-scope.md"
         ],
-        "commit": null,
-        "status": "planned",
-        "planned_by": "APP-F01.01 (#141, #146)"
+        "commit": "63d8ada68c3dbf807d94b94f53ffa26c6bb8b214",
+        "status": "existing",
+        "planned_by": null
       },
       "decision": {
         "value": "pending",
