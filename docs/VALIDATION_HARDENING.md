@@ -73,6 +73,20 @@ This file is an array of objects containing:
 The resolution does not override duplicate canonical URLs, product IDs, source
 rights or claim evidence. No real resolution is fabricated in the empty scaffold.
 
+The same file also records identity changes ([application identity
+decisions](../research/foundations/application-identity.md)). Every entry must match
+[schemas/application-identity.schema.json](../schemas/application-identity.schema.json):
+
+- `merged`: `retired_product_ids` (one or more) and a `surviving_product_id`.
+- `split`: one `retired_product_id` and two or more `successor_product_ids`.
+
+Both carry the same independent review metadata as `distinct_products`. A retired ID
+must not be a live record and is retired by one decision only; following the
+decisions from any retired ID must end at live records without a cycle. Within a
+record, aliases must stay distinct after normalization and must not repeat the
+product name, and a placeholder vendor (for example `vendor:unknown` or "N/A") is
+rejected: a product with an unknown publisher stays a research note.
+
 ## Coverage receipts and percentages
 
 `acceptance_receipts` remains an empty array for the zero-start ledger. Nonempty

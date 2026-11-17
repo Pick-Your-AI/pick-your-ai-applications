@@ -19,6 +19,7 @@ SCHEMA_DIR = ROOT / "schemas"
 KINDS = {"application_product", "product_family", "application_release", "application_offering", "application_feature", "integration", "model", "vendor"}
 USES = {"display", "cache", "export", "api", "commercial"}
 VERSION = "0.1.0"
+PLACEHOLDER_OPERATORS = {"unknown", "unknown vendor", "unknown operator", "tbd", "todo", "n/a", "na", "none", "unspecified", "undisclosed", "placeholder", "various", "anonymous"}
 PREFIXES = {"application_product": "app:", "product_family": "family:", "application_release": "release:", "application_offering": "offering:", "application_feature": "feature:", "integration": "integration:", "model": "model:", "vendor": "vendor:"}
 
 
@@ -259,6 +260,15 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
             fail(errors, "identity", f"{key} must not be blank")
     if any(not normalize_identity(alias) for alias in identity["aliases"]):
         fail(errors, "identity", "aliases must not be blank")
+    alias_keys = [normalize_identity(alias) for alias in identity["aliases"]]
+    if len(set(alias_keys)) != len(alias_keys):
+        fail(errors, "identity", "aliases must be distinct after normalization")
+    if normalize_identity(identity["name"]) in alias_keys:
+        fail(errors, "identity", "an alias must not repeat the product name")
+    operator_slug = identity["vendor_id"].split(":", 1)[1].replace("-", " ").replace("_", " ")
+    operator_keys = {normalize_identity(identity["vendor_name"]), normalize_identity(operator_slug)}
+    if operator_keys & PLACEHOLDER_OPERATORS or {key.replace(" ", "") for key in operator_keys} & PLACEHOLDER_OPERATORS:
+        fail(errors, "identity", "operator is unknown: keep the product in research notes; a placeholder vendor is not an identity")
     if identity["canonical_url"] is not None:
         url_errors(identity["canonical_url"], "identity.canonical_url", errors, synthetic)
     if record["record_id"] != identity["product_id"]:
@@ -531,7 +541,13 @@ def validate_directory(path, *, as_of=None, taxonomy=None, identity_resolutions=
     if not isinstance(identity_resolutions, list):
         errors.append("identity resolutions must be a list of explicit reviewed decisions")
         identity_resolutions = []
-    for resolution in identity_resolutions:
+    decision_schema = load_json(SCHEMA_DIR / "application-identity.schema.json")
+    changes = []
+    for index, resolution in enumerate(identity_resolutions):
+        errors.extend(schema_errors(resolution, {"$ref": "#/$defs/decision"}, f"identity resolution [{index}]", decision_schema))
+        if isinstance(resolution, dict) and resolution.get("decision") in {"merged", "split"}:
+            changes.append(resolution)
+            continue
         before = len(errors)
         if not isinstance(resolution, dict) or not {"normalized_name", "product_ids", "decision", "researcher", "reviewer", "reviewed_on", "decision_url"} <= resolution.keys():
             errors.append("identity resolution requires scoped product IDs and review metadata")
@@ -551,10 +567,58 @@ def validate_directory(path, *, as_of=None, taxonomy=None, identity_resolutions=
         url_errors(resolution["decision_url"], "identity resolution decision_url", errors)
         if len(errors) == before:
             resolutions[name] = set(product_ids)
+    errors.extend(identity_change_errors(changes, set(identities), as_of))
     for name, product_ids in names.items():
         if len(product_ids) > 1 and resolutions.get(name) != product_ids:
             errors.append(f"unresolved name/alias collision {name!r}: {', '.join(sorted(product_ids))}; consolidate or supply an independently reviewed distinct-products decision")
     return files, errors
+
+
+def identity_change_errors(changes, live_ids, as_of=None):
+    """Check reviewed merges and splits against the live intake.
+
+    A retired ID is never reused as a live record and is retired by one decision only.
+    Following merges and splits from any retired ID must end at live records without a cycle.
+    """
+    errors, successors = [], {}
+    for change in changes:
+        if not isinstance(change, dict):
+            continue
+        if change.get("decision") == "merged":
+            retired, targets = change.get("retired_product_ids"), [change.get("surviving_product_id")]
+        else:
+            retired, targets = [change.get("retired_product_id")], change.get("successor_product_ids")
+        if not isinstance(retired, list) or not isinstance(targets, list) or not all(isinstance(x, str) for x in [*retired, *targets]):
+            continue
+        researcher, reviewer = change.get("researcher"), change.get("reviewer")
+        if not isinstance(researcher, str) or not isinstance(reviewer, str) or not normalize_identity(researcher) or not normalize_identity(reviewer) or normalize_identity(researcher) == normalize_identity(reviewer):
+            errors.append("identity change requires an independent reviewer")
+        date_value(change.get("reviewed_on"), "identity change reviewed_on", errors, as_of or dt.datetime.now(dt.timezone.utc).date())
+        url = change.get("decision_url")
+        if isinstance(url, str):
+            url_errors(url, "identity change decision_url", errors)
+        if set(retired) & set(targets):
+            errors.append("identity change cannot retire a product into itself")
+        for rid in retired:
+            if rid in live_ids:
+                errors.append(f"retired product ID {rid} is still a live record; retired IDs are never reused")
+            if rid in successors:
+                errors.append(f"product ID {rid} is retired by more than one identity decision")
+            successors[rid] = targets
+    for start in successors:
+        stack, seen = [(start, (start,))], set()
+        while stack:
+            current, path = stack.pop()
+            for target in successors.get(current, []):
+                if target in path:
+                    errors.append(f"identity changes form a cycle through {target}")
+                elif target in successors:
+                    if target not in seen:
+                        seen.add(target)
+                        stack.append((target, path + (target,)))
+                elif target not in live_ids:
+                    errors.append(f"identity change from {start} resolves to {target}, which is not a live record")
+    return list(dict.fromkeys(errors))
 
 
 def price_observation_key(claim, sources):

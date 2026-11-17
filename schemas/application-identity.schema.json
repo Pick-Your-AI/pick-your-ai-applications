@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Pick-Your-AI/pick-your-ai-applications/schemas/application-identity.schema.json",
+  "title": "Application identity decisions",
+  "description": "Reviewed identity decisions for data/identity-resolutions.json: distinct products that share a name, merges of duplicate records and splits of one record into several products. Structure only; the validator also checks independence, dates, decision URLs and that every referenced product ID resolves against the intake directory. See research/foundations/application-identity.md.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/decision"
+  },
+  "$defs": {
+    "product_id": {
+      "type": "string",
+      "pattern": "^app:[a-z0-9][a-z0-9._/-]*$"
+    },
+    "review_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "decision": {
+          "enum": [
+            "distinct_products",
+            "merged",
+            "split"
+          ]
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "merged"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          },
+          "then": {
+            "$ref": "#/$defs/merged"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "split"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          },
+          "then": {
+            "$ref": "#/$defs/split"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "distinct_products"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          },
+          "then": {
+            "$ref": "#/$defs/distinct_products"
+          }
+        }
+      ]
+    },
+    "distinct_products": {
+      "description": "Two or more distinct products whose normalized names or aliases collide. Shape unchanged from contract 0.1.0.",
+      "type": "object",
+      "properties": {
+        "decision": {
+          "const": "distinct_products"
+        },
+        "normalized_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product_id"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "researcher": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewed_on": {
+          "type": "string"
+        },
+        "decision_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "normalized_name",
+        "product_ids",
+        "researcher",
+        "reviewer",
+        "reviewed_on",
+        "decision_url"
+      ]
+    },
+    "merged": {
+      "description": "Records found to describe one product. The retired IDs leave the intake and are never reused; consumers resolve them to the surviving product.",
+      "type": "object",
+      "properties": {
+        "decision": {
+          "const": "merged"
+        },
+        "retired_product_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product_id"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "surviving_product_id": {
+          "$ref": "#/$defs/product_id"
+        },
+        "researcher": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewed_on": {
+          "type": "string"
+        },
+        "decision_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "retired_product_ids",
+        "surviving_product_id",
+        "researcher",
+        "reviewer",
+        "reviewed_on",
+        "decision_url"
+      ],
+      "additionalProperties": false
+    },
+    "split": {
+      "description": "One record found to describe several products. The retired ID leaves the intake and is never reused; it has no single successor, so consumers must disambiguate between the successors.",
+      "type": "object",
+      "properties": {
+        "decision": {
+          "const": "split"
+        },
+        "retired_product_id": {
+          "$ref": "#/$defs/product_id"
+        },
+        "successor_product_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/product_id"
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "researcher": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewer": {
+          "$ref": "#/$defs/review_text"
+        },
+        "reviewed_on": {
+          "type": "string"
+        },
+        "decision_url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision",
+        "retired_product_id",
+        "successor_product_ids",
+        "researcher",
+        "reviewer",
+        "reviewed_on",
+        "decision_url"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
