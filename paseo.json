@@ -8,6 +8,15 @@
   "scripts": {
     "diff-check": {
       "command": "git diff --check"
+    },
+    "validate-applications": {
+      "command": "python3 scripts/validate_applications.py"
+    },
+    "validate-planning": {
+      "command": "python3 scripts/validate_planning.py"
+    },
+    "test": {
+      "command": "python3 -m unittest discover -s tests -v"
     }
   }
 }
