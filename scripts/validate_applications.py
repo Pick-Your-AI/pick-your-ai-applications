@@ -19,7 +19,7 @@ SCHEMA_DIR = ROOT / "schemas"
 KINDS = {"application_product", "product_family", "application_release", "application_offering", "application_feature", "integration", "model", "vendor"}
 USES = {"display", "cache", "export", "api", "commercial"}
 VERSION = "0.1.0"
-PLACEHOLDER_OPERATORS = {"unknown", "unknown vendor", "unknown operator", "tbd", "todo", "n/a", "na", "none", "unspecified", "undisclosed", "placeholder", "various", "anonymous"}
+PLACEHOLDER_OPERATORS = {"unknown", "unknownvendor", "unknownoperator", "tbd", "todo", "na", "none", "unspecified", "undisclosed", "placeholder", "various", "anonymous"}
 PREFIXES = {"application_product": "app:", "product_family": "family:", "application_release": "release:", "application_offering": "offering:", "application_feature": "feature:", "integration": "integration:", "model": "model:", "vendor": "vendor:"}
 
 
@@ -267,7 +267,8 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
         fail(errors, "identity", "an alias must not repeat the product name")
     operator_slug = identity["vendor_id"].split(":", 1)[1].replace("-", " ").replace("_", " ")
     operator_keys = {normalize_identity(identity["vendor_name"]), normalize_identity(operator_slug)}
-    if operator_keys & PLACEHOLDER_OPERATORS or {key.replace(" ", "") for key in operator_keys} & PLACEHOLDER_OPERATORS:
+    operator_keys |= {re.sub(r"[^\w]", "", key) for key in operator_keys}
+    if operator_keys & PLACEHOLDER_OPERATORS or "" in operator_keys:
         fail(errors, "identity", "operator is unknown: keep the product in research notes; a placeholder vendor is not an identity")
     if identity["canonical_url"] is not None:
         url_errors(identity["canonical_url"], "identity.canonical_url", errors, synthetic)
@@ -545,7 +546,7 @@ def validate_directory(path, *, as_of=None, taxonomy=None, identity_resolutions=
     changes = []
     for index, resolution in enumerate(identity_resolutions):
         errors.extend(schema_errors(resolution, {"$ref": "#/$defs/decision"}, f"identity resolution [{index}]", decision_schema))
-        if isinstance(resolution, dict) and resolution.get("decision") in {"merged", "split"}:
+        if isinstance(resolution, dict) and resolution.get("decision") in ("merged", "split"):
             changes.append(resolution)
             continue
         before = len(errors)
@@ -599,7 +600,7 @@ def identity_change_errors(changes, live_ids, as_of=None):
             url_errors(url, "identity change decision_url", errors)
         if set(retired) & set(targets):
             errors.append("identity change cannot retire a product into itself")
-        for rid in retired:
+        for rid in dict.fromkeys(retired):
             if rid in live_ids:
                 errors.append(f"retired product ID {rid} is still a live record; retired IDs are never reused")
             if rid in successors:

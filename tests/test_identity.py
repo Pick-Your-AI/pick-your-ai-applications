@@ -69,7 +69,8 @@ class RecordIdentityTests(unittest.TestCase):
 
     def test_unknown_operator_is_not_given_a_placeholder_vendor(self):
         cases = (('vendor:unknown', 'Synthetic Vendor'), ('vendor:synthetic', ' Unknown '), ('vendor:n-a', 'Synthetic Vendor'),
-                 ('vendor:tbd', 'Synthetic Vendor'), ('vendor:synthetic', 'Undisclosed'), ('vendor:unknown_vendor', 'Synthetic Vendor'))
+                 ('vendor:tbd', 'Synthetic Vendor'), ('vendor:synthetic', 'Undisclosed'), ('vendor:unknown_vendor', 'Synthetic Vendor'),
+                 ('vendor:synthetic', 'N.A.'), ('vendor:synthetic', 'Unknown.'), ('vendor:synthetic', '?'), ('vendor:synthetic', 'Unknown Vendor'))
         for vendor_id, vendor_name in cases:
             with self.subTest(vendor_id=vendor_id, vendor_name=vendor_name):
                 record = product('a', 'Synthetic Alpha')
@@ -132,6 +133,11 @@ class DirectoryIdentityTests(unittest.TestCase):
         decisions = [merged(['app:synthetic-old'], 'app:synthetic-a'), merged(['app:synthetic-old'], 'app:synthetic-b')]
         self.assertTrue(any('more than one identity decision' in e for e in directory_errors(records, decisions)))
 
+    def test_id_listed_twice_in_one_merge_is_not_reported_as_two_decisions(self):
+        errors = directory_errors([product('a', 'Synthetic Alpha')], [merged(['app:synthetic-old', 'app:synthetic-old'], 'app:synthetic-a')])
+        self.assertTrue(any('duplicate array items' in e for e in errors), errors)
+        self.assertFalse(any('more than one identity decision' in e for e in errors), errors)
+
     def test_chained_changes_resolve_through_history(self):
         records = [product('c', 'Synthetic Gamma')]
         decisions = [merged(['app:synthetic-a'], 'app:synthetic-b'), merged(['app:synthetic-b'], 'app:synthetic-c')]
@@ -154,7 +160,7 @@ class DirectoryIdentityTests(unittest.TestCase):
         cases = ({'decision': 'merged'}, merged('app:synthetic-old', 'app:synthetic-survivor'), merged([], 'app:synthetic-survivor'),
                  merged(['family:synthetic'], 'app:synthetic-survivor'), merged(['app:synthetic-old'], None),
                  split('app:synthetic-old', 'app:synthetic-survivor'), merged(['app:synthetic-old'], 'app:synthetic-survivor', note='x'),
-                 {'decision': 'renamed'}, 'merged', None)
+                 {'decision': 'renamed'}, {'decision': []}, {'decision': {}}, 'merged', None)
         for decision in cases:
             with self.subTest(decision=decision):
                 self.assertTrue(directory_errors([survivor], [decision]))
