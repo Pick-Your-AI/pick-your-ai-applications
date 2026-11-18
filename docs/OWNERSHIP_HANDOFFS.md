@@ -1,6 +1,6 @@
 # Ownership matrix and receiving receipts
 
-Version 1.1 (proposed) · Refs #65 (tasks #90, #91) · Machine-readable ledger: [planning/handoffs.json](../planning/handoffs.json)
+Version 1.2 (proposed) · Refs #65 (tasks #90, #91) · Machine-readable ledger: [planning/handoffs.json](../planning/handoffs.json)
 
 This record says where each application fact and each implementation responsibility lives, and what a cross-repository handoff must carry. It grants no approval, creates no repository and implies no consumer implementation. Every receiving decision listed here is **pending** until the consumer's actual reviewer records it at an exact revision.
 
@@ -89,6 +89,8 @@ A record's `publication.consumer_acceptance_url`, and any coverage receipt, must
 | `consumer_status` | `confirmed` when the consumer was read back and can record a decision, otherwise `unresolved` |
 | `consumer_evidence` | The dated readback: `read_on`, `state`, `title` |
 | `unresolved_reason` | Why an unresolved consumer or artifact is unresolved |
+
+Each entry also carries these receipt fields: `producer_artifact`, `consumer`, `reviewer`, `reviewer_authority`, `decision`, `conditions` and `follow_ups`. `conditions` and `follow_ups` are empty lists until a recorded decision retains a condition or leaves an item open. They were added in version 1.2, the first recorded decision (H14).
 
 The ledger has one consumer per entry. A consumer whose identity or receiving need is not confirmed is recorded as `unresolved`, never assumed (task #91, S02). Silence is unknown, not refusal.
 
