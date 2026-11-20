@@ -220,8 +220,9 @@
           "enum": ["documented", "documented_with_conditions", "explicitly_unavailable"]
         },
         "entitlement_scope": {
-          "enum": ["included_in_plan", "paid_add_on", "enterprise_contract_only", "seat_or_tier_minimum", "beta_or_limited"]
+          "enum": ["included_in_plan", "paid_add_on", "enterprise_contract_only", "seat_or_tier_minimum", "beta_or_limited", "not_entitled"]
         },
+        "configuration_status": { "enum": ["enabled", "disabled"] },
         "configured_enforcement": {
           "enum": ["mandatory_default", "admin_configurable", "opt_in_disabled_by_default"]
         },
