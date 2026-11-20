@@ -97,18 +97,21 @@ A platform test is an observation, so the contract requires it to be an `indepen
 
 ### Feature existence vs plan entitlement vs configured enforcement (#101 T02.S01)
 
-Every control using `enterprise_control_state` keeps four distinct facts separate:
+Every control using `enterprise_control_state` keeps five distinct facts separate:
 
 | Question | Field / value | What it establishes | What it never implies |
 | --- | --- | --- | --- |
 | Does the vendor document the control at all? | `documented_status` (`documented`, `documented_with_conditions`, `explicitly_unavailable`) | Supplier docs or terms state the capability or its explicit unavailability for this scope | That it is included in every plan or turned on |
-| Who is entitled to it on this offering? | `entitlement_scope` (`included_in_plan`, `paid_add_on`, `enterprise_contract_only`, `seat_or_tier_minimum`, `beta_or_limited`) | Commercial/plan gate documented for the scoped offering (`scope.offering_id`) | Default runtime enforcement |
+| Who is entitled to it on this offering? | `entitlement_scope` (`included_in_plan`, `paid_add_on`, `enterprise_contract_only`, `seat_or_tier_minimum`, `beta_or_limited`, `not_entitled`) | Commercial/plan gate documented for the scoped offering (`scope.offering_id`) | Default runtime enforcement |
 | How is it enforced in tenant configuration? | `configured_enforcement` (`mandatory_default`, `admin_configurable`, `opt_in_disabled_by_default`) | Whether an admin/user must configure or enable it before it protects data | That an independent verifier observed it working |
+| What state is evidenced for this configuration? | `configuration_status` (`enabled`, `disabled`) | The state of the exact documented or tested configuration identified in `scope.conditions` | That the product lacks the feature or the plan lacks entitlement |
 | Has a claim been independently exercised? | `exercised_status` (`documented_only`, `independently_verified_config`, `independently_exercised`) | Whether the claim rests solely on vendor docs or on a reproduced configuration/functional test | Broad certification beyond the tested product, plan and workflow |
 
 Rules for `enterprise_control_state`:
-- Unstated sub-fields (`entitlement_scope`, `configured_enforcement`, `conditions`, `duration_days`, `opt_out_mechanism`, `export_formats`, etc.) are **omitted**, never recorded as `false`, `"0"` or `"unlimited"`.
-- Missing disclosures at the claim level use `value_status: "unknown"` or `"not_disclosed"` with JSON `value: null`. Explicit absence requires checked explicit negative evidence (`value_status: "unsupported"`, `explicit_negative_evidence: true`, and `documented_status: "explicitly_unavailable"` if captured in a structured shape or `value: false` where appropriate).
+- Unstated sub-fields (`entitlement_scope`, `configured_enforcement`, `configuration_status`, `conditions`, `duration_days`, `opt_out_mechanism`, `export_formats`, etc.) are **omitted**, never recorded as `false`, `"0"` or `"unlimited"`.
+- Missing disclosures at the claim level use `value_status: "unknown"` or `"not_disclosed"` with JSON `value: null`. A whole unsupported capability requires checked explicit negative evidence, `value_status: "unsupported"`, `explicit_negative_evidence: true` and literal JSON `value: false`. A structured `documented_status: "explicitly_unavailable"` object is never a valid Unsupported envelope; known-object shape validation applies only to `value_status: "known"`.
+- A documented feature can have `documented_status: "documented"` and `entitlement_scope: "not_entitled"` for the selected offering. This is a **known scoped negative entitlement**, not whole-feature Unsupported. `configured_enforcement` describes default/configuration policy; `configuration_status: "disabled"` describes an evidenced configuration state. Neither implies the other.
+- Keep existence, entitlement and configuration as separate claims when their evidence or scope differs. Identify the dimension and control in `scope.conditions`, including when the entire dimension is unknown (`value_status: "unknown"`, `value: null`). For example, SSO can be documented, not entitled on the selected plan, and disabled in a separately scoped configuration. Omitted `configuration_status` is unstated, never enabled or disabled. A configuration statement requires a sanitized exact configuration scope and its own source or permitted test receipt; do not publish private account or identity-provider details.
 - Any claim with `exercised_status` set to `"independently_verified_config"` or `"independently_exercised"` **must** carry `evidence_grade: "independent_measurement"`, `verification_status: "verified"`, and a non-null `verification` receipt naming a verifier distinct from both the researcher and the vendor. Documentation alone always leaves `exercised_status: "documented_only"` and `verification_status: "unverified"`.
 
 ### Dated sources for privacy, retention, residency, portability and BYOK/BYOM (#101 T02.S02, #70)
@@ -134,7 +137,7 @@ Both #70 deliverables list `schemas/application.schema.json` for review while pr
 
 ### Proposed `0.2.0` validator & contract binding (for single versioned review)
 
-When reviewers and downstream consumers (`H17`, `H04`, catalog pipeline, website) review a coordinated `0.2.0` application contract bump, bind `claim.field` -> `$defs/<shape>` in `schemas/product-profile.schema.json` (analogous to `pricing` -> `pricing.schema.json`) as follows:
+If a future shared-use interface is proposed, obtain the genuinely affected receiving owners' decisions (research #40 and applicable catalog-pipeline/website owners) on that concrete artifact before adoption. The proposed coordinated `0.2.0` application contract bump would bind `claim.field` -> `$defs/<shape>` in `schemas/product-profile.schema.json` (analogous to `pricing` -> `pricing.schema.json`) as follows:
 
 | `claim.field` | `$defs` shape | Required `fact_type` | Binding invariants to enforce in `0.2.0` |
 | --- | --- | --- | --- |
@@ -175,7 +178,7 @@ When reviewers and downstream consumers (`H17`, `H04`, catalog pipeline, website
 | Security/compliance claims retain issuer, scope, dates and documentary limits | Part 2: `product.security.assurance` (`security_assurance` with required `issuer`, `covered_scope`, `report_access`, non-empty `documentary_limits` and optional `iso_date` period/expiry dates) |
 | Portability, deletion and BYOK/BYOM claims identify product, plan and date, and documented promises are distinguished from exercised behavior | Part 2: `product.data.portability_deletion` (`portability_deletion`) and `product.security.byok_byom` (`byok_byom`), embedding `enterprise_control_state` (`exercised_status`) and claim-level `scope.offering_id` + `checked_on`/`as_of` |
 | Factual conclusions scoped or unknown; source dates real | No real product claims are made; all repository fixtures are marked `synthetic: true` in `tests/fixtures/` with `.invalid` hosts |
-| Receiving decisions linked or pending | Pending: independent non-author review of this exact revision; receiving-owner decision for `research #61` (`H17` in `planning/handoffs.json`) and any downstream `0.2.0` consumer schema review |
+| Receiving decisions linked or pending | Pending: qualified independent non-author review of this exact revision. H17 / research #61 is information only; a future concrete shared-use `0.2.0` interface has its own affected-owner acceptance |
 | #100 S01: modality and input/output constraints at feature level | "Inputs and outputs at feature level (S01)" |
 | #100 S02: advertised availability separate from account eligibility and platform testing | "Advertised, eligible and tested are three facts (S02)" |
 | #101 S01: distinguish feature existence from entitlement and configured enforcement | "Feature existence vs plan entitlement vs configured enforcement (#101 T02.S01)" and `$defs/enterprise_control_state` |
@@ -184,4 +187,4 @@ When reviewers and downstream consumers (`H17`, `H04`, catalog pipeline, website
 
 ## Review requested
 
-An independent non-author application-research reviewer on this exact revision. Structural validation (`validate_applications.py`, `validate_planning.py`, `tests/test_product_profile.py` and full `tests/` suite) is reported separately from factual acceptance. Leave `#70`, `#100` and `#101` open until independent review and required receiving decisions (`H17` and downstream `0.2.0` schema acceptance) are recorded.
+An independent non-author application-research reviewer on this exact revision. Structural validation (`validate_applications.py`, `validate_planning.py`, `tests/test_product_profile.py` and full `tests/` suite) is reported separately from factual acceptance. Bounded #101 acceptance requires its scoped decision record merged and qualified non-author exact-revision review; parent #70 separately synthesizes #100 and #101. `planning/handoffs.json` records H17 as `kind: information`, `native_blocker: false`, `required_for: []` for research #61 runtime sizing. This change preserves that boundary and proposes no concrete new external interface, so H17 and future `0.2.0` adoption are not premerge or child-closure gates. Any actual future shared-use contract change needs its genuinely affected receiving owners' decisions at that revision; none is implied here.
