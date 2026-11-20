@@ -24,6 +24,11 @@ DECISION_URL = re.compile(
     r'|blob/[0-9a-f]{40}/[^\s#?]+)')
 
 
+def is_commit(value):
+    """Whether value is a whole 40-character lower-case commit id: COMMIT must match all of it, not part."""
+    return isinstance(value, str) and COMMIT.fullmatch(value) is not None
+
+
 class HandoffLedgerTests(unittest.TestCase):
     def test_every_entry_has_exactly_the_declared_fields(self):
         fields = set(LEDGER['entry_fields'])
@@ -61,7 +66,7 @@ class HandoffLedgerTests(unittest.TestCase):
             artifact = entry['producer_artifact']
             self.assertIn(artifact['status'], ('existing', 'planned', 'unresolved'), entry['id'])
             if artifact['status'] == 'existing':
-                self.assertRegex(artifact['commit'], COMMIT, entry['id'])
+                self.assertTrue(is_commit(artifact['commit']), entry['id'])
                 self.assertTrue(artifact['paths'], entry['id'])
             else:
                 self.assertIsNone(artifact['commit'], entry['id'])
@@ -102,7 +107,13 @@ class HandoffLedgerTests(unittest.TestCase):
             self.assertLessEqual(date, today, entry['id'])
             artifact = entry['producer_artifact']
             self.assertEqual(artifact['status'], 'existing', entry['id'])
-            self.assertRegex(artifact['commit'], COMMIT, entry['id'])
+            self.assertTrue(is_commit(artifact['commit']), entry['id'])
+
+    def test_a_commit_is_exactly_forty_lower_case_hex_characters(self):
+        good = 'a' * 40
+        self.assertTrue(is_commit(good))
+        for bad in ('a' * 41, 'a' * 39, 'invalid-' + good + '-suffix', good + '\n', ' ' + good, good.upper(), None, 40):
+            self.assertFalse(is_commit(bad), repr(bad))
 
     def test_conditions_and_follow_ups_travel_with_the_entry(self):
         for entry in LEDGER['handoffs']:
