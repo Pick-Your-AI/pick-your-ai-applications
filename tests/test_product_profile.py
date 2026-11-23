@@ -360,6 +360,31 @@ class ProductProfileTests(unittest.TestCase):
                 result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
                 self.assertTrue(any("must remain null" in e for e in result), result)
 
+    def test_explicitly_unavailable_cannot_carry_configuration_status(self):
+        unavailable = {"documented_status": "explicitly_unavailable", "exercised_status": "documented_only"}
+        self.assertEqual([], errors("enterprise_control_state", unavailable))
+        for status in ("enabled", "disabled"):
+            contradictory = {**unavailable, "configuration_status": status}
+            self.assertTrue(errors("enterprise_control_state", contradictory), status)
+            wrapped = {**EXAMPLES["enterprise_identity_access"], "state": contradictory}
+            self.assertTrue(errors("enterprise_identity_access", wrapped), status)
+            record = copy.deepcopy(FIXTURE)
+            claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+            claim["value"]["state"] = contradictory
+            result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+            self.assertTrue(any("explicitly_unavailable" in e and "configuration_status" in e for e in result), result)
+        # Positive controls: documented + not_entitled and documented + disabled/enabled remain valid in both schema and intake.
+        for valid_state in (
+            {"documented_status": "documented", "entitlement_scope": "not_entitled", "exercised_status": "documented_only"},
+            {"documented_status": "documented", "configuration_status": "disabled", "exercised_status": "documented_only"},
+            {"documented_status": "documented", "configuration_status": "enabled", "exercised_status": "documented_only"},
+        ):
+            self.assertEqual([], errors("enterprise_control_state", valid_state))
+            record = copy.deepcopy(FIXTURE)
+            claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+            claim["value"]["state"] = valid_state
+            self.assertEqual([], validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+
 
 if __name__ == "__main__":
     unittest.main()

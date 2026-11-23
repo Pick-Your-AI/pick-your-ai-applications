@@ -386,6 +386,10 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                 fail(errors, path, "independent_measurement requires method and limitations")
         if claim["evidence_grade"] == "estimate" and not has_substantive_content(claim["method_and_limitations"]):
             fail(errors, path, "estimates require method, assumptions and limitations")
+        if claim["value_status"] == "known" and isinstance(claim["value"], dict):
+            control_state = claim["value"].get("state") if isinstance(claim["value"].get("state"), dict) else (claim["value"] if "documented_status" in claim["value"] else None)
+            if isinstance(control_state, dict) and control_state.get("documented_status") == "explicitly_unavailable" and "configuration_status" in control_state:
+                fail(errors, path + ".value", "explicitly_unavailable cannot also carry configuration_status; omit configuration_status or record separately scoped claims")
         if claim["fact_type"] == "pricing" and claim["value_status"] == "known":
             value = claim["value"]
             price_schema = load_json(SCHEMA_DIR / "pricing.schema.json")

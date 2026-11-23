@@ -237,7 +237,16 @@
         }
       },
       "required": ["documented_status", "exercised_status"],
-      "additionalProperties": false
+      "additionalProperties": false,
+      "if": {
+        "properties": { "documented_status": { "const": "explicitly_unavailable" } },
+        "required": ["documented_status"]
+      },
+      "then": {
+        "properties": {
+          "configuration_status": { "enum": [] }
+        }
+      }
     },
     "enterprise_identity_access": {
       "type": "object",
