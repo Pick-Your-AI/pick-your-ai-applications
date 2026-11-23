@@ -361,18 +361,42 @@ class ProductProfileTests(unittest.TestCase):
                 self.assertTrue(any("must remain null" in e for e in result), result)
 
     def test_explicitly_unavailable_cannot_carry_configuration_status(self):
+        # Verify CONTROL_STATE_FIELDS matches the exact canonical product-profile shapes referencing enterprise_control_state.
+        defs = PROFILE["$defs"]
+        expected_fields = {
+            field for field, shape in PART2_FIELD_TO_SHAPE.items()
+            if "enterprise_control_state" in json.dumps(defs[shape])
+        }
+        self.assertEqual(expected_fields, validator.CONTROL_STATE_FIELDS)
+
         unavailable = {"documented_status": "explicitly_unavailable", "exercised_status": "documented_only"}
         self.assertEqual([], errors("enterprise_control_state", unavailable))
         for status in ("enabled", "disabled"):
             contradictory = {**unavailable, "configuration_status": status}
             self.assertTrue(errors("enterprise_control_state", contradictory), status)
-            wrapped = {**EXAMPLES["enterprise_identity_access"], "state": contradictory}
-            self.assertTrue(errors("enterprise_identity_access", wrapped), status)
-            record = copy.deepcopy(FIXTURE)
-            claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
-            claim["value"]["state"] = contradictory
-            result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
-            self.assertTrue(any("explicitly_unavailable" in e and "configuration_status" in e for e in result), result)
+            for shape, field_claim_id in (("enterprise_identity_access", "claim:sso"), ("data_retention", "claim:retention-prompts")):
+                wrapped = {**EXAMPLES[shape], "state": contradictory}
+                self.assertTrue(errors(shape, wrapped), (shape, status))
+                record = copy.deepcopy(FIXTURE)
+                claim = next(c for c in record["claims"] if c["id"] == field_claim_id)
+                claim["value"]["state"] = contradictory
+                result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+                self.assertTrue(
+                    any("value.state" in e and "explicitly_unavailable" in e and "configuration_status" in e for e in result),
+                    result,
+                )
+
+            # Generic 0.1.0 regression: unrelated claim fields carrying the same nested or direct keys remain valid.
+            for unrelated_field, unrelated_value in (
+                ("security.other_documented_state", {**EXAMPLES["enterprise_identity_access"], "state": contradictory}),
+                ("security.other_direct_state", contradictory),
+            ):
+                record = copy.deepcopy(FIXTURE)
+                claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+                claim["field"] = unrelated_field
+                claim["value"] = unrelated_value
+                self.assertEqual([], validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+
         # Positive controls: documented + not_entitled and documented + disabled/enabled remain valid in both schema and intake.
         for valid_state in (
             {"documented_status": "documented", "entitlement_scope": "not_entitled", "exercised_status": "documented_only"},
