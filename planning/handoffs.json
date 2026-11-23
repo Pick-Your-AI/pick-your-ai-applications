@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "status": "proposed",
   "description": "Receiving handoffs for application research, one consumer per entry. docs/OWNERSHIP_HANDOFFS.md defines every field. Every decision is pending until the consumer's actual reviewer records it at an exact revision; no approval is implied. Consumer readbacks are dated; an unconfirmed consumer is unresolved, never assumed.",
   "receipt_fields": [
@@ -29,7 +29,9 @@
     "producer_artifact",
     "decision",
     "reviewer",
-    "reviewer_authority"
+    "reviewer_authority",
+    "conditions",
+    "follow_ups"
   ],
   "handoffs": [
     {
@@ -59,9 +61,9 @@
           "docs/SCOPE.md",
           "research/foundations/application-scope.md"
         ],
-        "commit": null,
-        "status": "planned",
-        "planned_by": "APP-F01.01 (#141, #146)"
+        "commit": "63d8ada68c3dbf807d94b94f53ffa26c6bb8b214",
+        "status": "existing",
+        "planned_by": null
       },
       "decision": {
         "value": "pending",
@@ -69,7 +71,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H02",
@@ -105,7 +109,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H03",
@@ -141,7 +147,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H04",
@@ -178,7 +186,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H05",
@@ -215,7 +225,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H06",
@@ -253,7 +265,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H07",
@@ -290,7 +304,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H08",
@@ -328,7 +344,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H09",
@@ -368,7 +386,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H10",
@@ -407,7 +427,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H11",
@@ -442,7 +464,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H12",
@@ -481,7 +505,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H13",
@@ -518,7 +544,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H14",
@@ -536,7 +564,7 @@
       },
       "consumer_status": "confirmed",
       "consumer_evidence": {
-        "read_on": "2026-11-03",
+        "read_on": "2026-11-18",
         "state": "open",
         "title": "Market Research Program — Pick Your AI"
       },
@@ -547,17 +575,31 @@
           "docs/SCOPE.md",
           "research/foundations/application-scope.md"
         ],
-        "commit": null,
-        "status": "planned",
-        "planned_by": "APP-F01.01 (#141, #146)"
+        "commit": "63d8ada68c3dbf807d94b94f53ffa26c6bb8b214",
+        "status": "existing",
+        "planned_by": null
       },
       "decision": {
-        "value": "pending",
-        "url": null,
-        "date": null
+        "value": "accepted_with_conditions",
+        "url": "https://github.com/Pick-Your-AI/pick-your-ai-research/issues/47#issuecomment-6967194913",
+        "date": "2026-11-18"
       },
-      "reviewer": null,
-      "reviewer_authority": null
+      "reviewer": "appletechie",
+      "reviewer_authority": "Live assignee of Pick-Your-AI/pick-your-ai-research#47 (assignees tynamite and appletechie, read 2026-11-18).",
+      "conditions": [
+        "Accepted scope 1: NARROW stays as decided. The directory makes no product-validation, demand, exclusivity, launch or runtime claim, and it does not change `contracts/v1` or the builder's component kinds.",
+        "Accepted scope 2: it does not repeat research #47's recruitment or willingness-to-pay studies. It runs no demand or pricing research of its own.",
+        "Accepted scope 3: any use of application data by the builder remains a separate, owner-reviewed consumer handoff.",
+        "C1, competitor records: the research #47 market competitor catalog stays a linked source, as `application-scope.md` already says (\"do not duplicate\"). Any record reused from it names research #47's synthesis (pinned blob) as its source, and records are not bulk-copied.",
+        "C2: if a later revision adds a demand, pricing or launch claim, the decision comes back to research #47 for a new receiving review."
+      ],
+      "follow_ups": [
+        {
+          "item": "C1: add one line to `research/foundations/application-scope.md` saying that a record reused from the research #47 competitor catalog names research #47's synthesis (pinned blob) as its source and is not bulk-copied. The reviewed files do not say this yet.",
+          "owner": "APP-F01.01",
+          "when": "The next edit of `research/foundations/application-scope.md`, as the decision asks."
+        }
+      ]
     },
     {
       "id": "H15",
@@ -594,7 +636,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H16",
@@ -631,7 +675,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H17",
@@ -668,7 +714,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H18",
@@ -704,7 +752,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H19",
@@ -740,7 +790,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     },
     {
       "id": "H20",
@@ -776,7 +828,9 @@
         "date": null
       },
       "reviewer": null,
-      "reviewer_authority": null
+      "reviewer_authority": null,
+      "conditions": [],
+      "follow_ups": []
     }
   ]
 }
