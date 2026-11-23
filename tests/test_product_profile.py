@@ -289,20 +289,76 @@ class ProductProfileTests(unittest.TestCase):
         self.assertTrue(errors("portability_deletion", {**EXAMPLES["portability_deletion"], "deletion_sla_days": 30}))
         self.assertTrue(errors("byok_byom", {**EXAMPLES["byok_byom"], "kind": "custom_crypto"}))
 
-    def test_synthetic_enterprise_fixture_satisfies_contract_and_profile_shapes(self):
-        self.assertEqual([], validator.validate_record(FIXTURE, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
-        self.assertTrue(validator.validate_record(FIXTURE, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=False))
+    def assert_fixture_shapes(self, record):
+        self.assertEqual([], validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+        self.assertTrue(validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=False))
         checked = 0
-        for claim in FIXTURE["claims"]:
+        for claim in record["claims"]:
             shape = PART2_FIELD_TO_SHAPE.get(claim["field"])
             if not shape:
                 continue
             if claim["value_status"] in ("unknown", "not_disclosed", "not_applicable", "disputed"):
                 self.assertIsNone(claim["value"], claim["id"])
+            elif claim["value_status"] == "unsupported":
+                self.assertIs(claim["value"], False, claim["id"])
+                self.assertTrue(claim["explicit_negative_evidence"])
             else:
+                self.assertEqual("known", claim["value_status"], claim["id"])
                 self.assertEqual([], errors(shape, claim["value"]), claim["id"])
                 checked += 1
-        self.assertGreaterEqual(checked, 10)
+        return checked
+
+    def test_synthetic_enterprise_fixture_satisfies_contract_and_profile_shapes(self):
+        self.assertGreaterEqual(self.assert_fixture_shapes(FIXTURE), 10)
+
+    def test_unsupported_envelope_requires_false_and_bypasses_known_object_shape(self):
+        record = copy.deepcopy(FIXTURE)
+        claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+        claim.update(value_status="unsupported", value=False, explicit_negative_evidence=True)
+        self.assertEqual(9, self.assert_fixture_shapes(record))
+        for bad in (None, {}, {"documented_status": "explicitly_unavailable"}):
+            claim["value"] = bad
+            result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+            self.assertTrue(any("explicit JSON false" in e for e in result), result)
+        claim.update(value=False, source_status="unchecked", checked_on=None)
+        result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+        self.assertTrue(any("explicit negative evidence" in e for e in result), result)
+
+    def test_documented_not_entitled_and_disabled_are_separately_scoped_claims(self):
+        record = copy.deepcopy(FIXTURE)
+        original = next(c for c in record["claims"] if c["id"] == "claim:sso")
+        record["claims"].remove(original)
+        for dimension in ("feature_exists", "plan_entitlement", "configured_enforcement"):
+            claim = copy.deepcopy(original)
+            claim["id"] += "-" + dimension.replace("_", "-")
+            claim["scope"]["conditions"] = ["Synthetic SSO dimension=" + dimension]
+            state = {"documented_status": "documented", "exercised_status": "documented_only"}
+            if dimension == "plan_entitlement":
+                state["entitlement_scope"] = "not_entitled"
+            if dimension == "configured_enforcement":
+                state["configuration_status"] = "disabled"
+                claim["scope"]["conditions"].append("Synthetic configuration only; no real account tested")
+            claim["value"]["state"] = state
+            record["claims"].append(claim)
+            self.assertEqual("known", claim["value_status"])
+            self.assertEqual([], errors("enterprise_identity_access", claim["value"]))
+        self.assertEqual([], validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True))
+        for status in ("enabled", "disabled"):
+            self.assertEqual([], errors("enterprise_control_state", {**state, "configuration_status": status}))
+        for guessed in (False, "unknown", "admin_configurable"):
+            self.assertTrue(errors("enterprise_control_state", {**state, "configuration_status": guessed}))
+
+    def test_each_unknown_control_dimension_retains_null_and_scope(self):
+        for dimension in ("feature_exists", "plan_entitlement", "configured_enforcement"):
+            record = copy.deepcopy(FIXTURE)
+            claim = next(c for c in record["claims"] if c["id"] == "claim:sso")
+            claim.update(value_status="unknown", value=None)
+            claim["scope"]["conditions"] = ["Synthetic SSO dimension=" + dimension]
+            self.assertEqual(9, self.assert_fixture_shapes(record))
+            for guessed in (False, {}, {"configuration_status": "disabled"}):
+                claim["value"] = guessed
+                result = validator.validate_record(record, as_of=AS_OF, taxonomy=TAXONOMY, allow_synthetic=True)
+                self.assertTrue(any("must remain null" in e for e in result), result)
 
 
 if __name__ == "__main__":
