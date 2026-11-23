@@ -73,3 +73,33 @@ retains unknowns; it never upgrades a child or a product claim by aggregation.
 ## Record states (contract `publication.state`)
 
 `notes` → `proposed` → `eligible` → `published`, where a record is only as eligible as the claims its manifest admits. Claims that stop being admissible leave the manifest; a record with no admissible claim left (for example, all withdrawn, superseded, rejected or awaiting recheck) must return to `notes` or `proposed`, because an eligible or published record cannot have an empty manifest. Retirement is a lifecycle fact on the identity, not a publication state.
+
+## APP-F01.04 acceptance synthesis
+
+Recorded 2026-11-17 for #67, at `main` `89e663afad0e112e060402a21e8cdaa5591e22ac`. This is the parent synthesis that "Parent closure" (condition 2) requires. It records only evidence that exists on GitHub.
+
+**Accepted children.** Both native children are closed with acceptance receipts:
+
+- [#94](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/94), claim states and evidence transitions. Delivered by PR #144 (merge `cc3a79e`). Its exact head `5de9bd7e68b4bd3999f7052bb7342b4e9c23c209` has a [non-author approval](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/144#pullrequestreview-5777753393). [Closure receipt](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/94#issuecomment-6960099855).
+- [#95](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/95), acceptance, withdrawal and parent closure. Delivered by PR #161 (merge `1713315`). Its exact head `7851bbcac0fbe361bc9cba71c5578dfb6b89a95d` has a [non-author approval](https://github.com/Pick-Your-AI/pick-your-ai-applications/pull/161#pullrequestreview-5946062757). [Closure receipt](https://github.com/Pick-Your-AI/pick-your-ai-applications/issues/95#issuecomment-6960224052).
+
+No child was deferred, rejected or removed from scope.
+
+**Outcome against #67's acceptance criteria:**
+
+| Criterion | Where it is met |
+| --- | --- |
+| Each state transition has required evidence and accountable review | "Claim states" and "Paths out and back" above. Every forward, backward and exit transition names its evidence and who is accountable. Nothing advances on a merge or a passing check |
+| Unknown cannot become false/zero by default | [RESEARCH_METHOD.md](RESEARCH_METHOD.md), "Unknown never becomes false or zero" and "Feature-matrix states". An absent or failed check is Unknown, and `unsupported` needs checked, explicit negative evidence |
+| Research completion, issue state and publication eligibility are independent | "Independence of the three tracks" above |
+| Factual conclusions are scoped or explicitly unknown, with real dates | RESEARCH_METHOD "Every claim is scoped" and "Freshness"; "candidate → source checked" requires a real, recorded check date |
+| Required receiving decisions are linked or remain pending | None is required (see below) |
+
+**Receiving decisions.** This package's only handoff, `H05` (research #41), is an `information` entry with an empty `required_for` in [planning/handoffs.json](../planning/handoffs.json). The research #60 link in #67 is information-only as well. The method changes no interface that another repository consumes, so no receiving decision is required. A later change that does alter a consumed interface needs its own decision under [OWNERSHIP_HANDOFFS.md](OWNERSHIP_HANDOFFS.md).
+
+**Limits.**
+- This method is used locally. It has not been adopted by research #41 or any consumer.
+- No real application record has been admitted, reviewed, verified or published under these states; the ledger is still empty.
+- Passing validators and tests show structure only. They are not source truth, independent reproduction, source-use rights or consumer acceptance.
+
+#67 can close once a non-author reviews this synthesis at its exact revision and it merges. Closing #67 does not close epic #10 or accept any external handoff.
