@@ -21,6 +21,17 @@ USES = {"display", "cache", "export", "api", "commercial"}
 VERSION = "0.1.0"
 PLACEHOLDER_OPERATORS = {"unknown", "unknownvendor", "unknownoperator", "tbd", "todo", "na", "none", "unspecified", "undisclosed", "placeholder", "various", "anonymous"}
 PREFIXES = {"application_product": "app:", "product_family": "family:", "application_release": "release:", "application_offering": "offering:", "application_feature": "feature:", "integration": "integration:", "model": "model:", "vendor": "vendor:"}
+# Canonical product-profile fields whose shapes embed $defs.enterprise_control_state at value.state.
+CONTROL_STATE_FIELDS = {
+    "product.enterprise.identity_access",
+    "product.enterprise.tenancy",
+    "product.data.retention",
+    "product.data.training_use",
+    "product.data.portability_deletion",
+    "product.data.residency",
+    "product.support.sla",
+    "product.security.byok_byom",
+}
 
 
 def fail(errors, path, message):
@@ -386,6 +397,15 @@ def validate_record(record, *, as_of=None, allow_synthetic=False, taxonomy=None)
                 fail(errors, path, "independent_measurement requires method and limitations")
         if claim["evidence_grade"] == "estimate" and not has_substantive_content(claim["method_and_limitations"]):
             fail(errors, path, "estimates require method, assumptions and limitations")
+        if (
+            claim["field"] in CONTROL_STATE_FIELDS
+            and claim["value_status"] == "known"
+            and isinstance(claim["value"], dict)
+            and isinstance(claim["value"].get("state"), dict)
+        ):
+            control_state = claim["value"]["state"]
+            if control_state.get("documented_status") == "explicitly_unavailable" and "configuration_status" in control_state:
+                fail(errors, path + ".value.state", "explicitly_unavailable cannot also carry configuration_status; omit configuration_status or record separately scoped claims")
         if claim["fact_type"] == "pricing" and claim["value_status"] == "known":
             value = claim["value"]
             price_schema = load_json(SCHEMA_DIR / "pricing.schema.json")
